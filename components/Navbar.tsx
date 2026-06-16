@@ -15,6 +15,7 @@ const navItems: NavItem[] = [
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Connect", href: "/connect" },
   { label: "Events", href: "/events" },
+  { label: "Support", href: "/support" },
   { label: "Discover Your Part", href: "/discover-your-part" },
   { label: "Contact", href: "/contact" },
 ];
@@ -45,15 +46,15 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-3" aria-label="Gulf Coast Underground home">
-          <Logo className="h-10 w-10" />
-          <span className="hidden text-sm font-semibold uppercase tracking-[0.18em] text-mist sm:block">
-            Gulf Coast Underground
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Gulf Coast Underground home">
+          <Logo className="h-9 w-9" />
+          <span className="text-sm font-bold uppercase tracking-[0.16em] text-mist">
+            GC Underground
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex">
           {navItems.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -61,7 +62,7 @@ export function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-teal ${
+                  className={`text-[13px] font-semibold uppercase tracking-wide transition-colors hover:text-teal ${
                     active ? "text-teal" : "text-mist-soft"
                   }`}
                 >
@@ -71,15 +72,6 @@ export function Navbar() {
             );
           })}
         </ul>
-
-        <div className="hidden lg:block">
-          <Link
-            href="/support"
-            className="rounded-full bg-teal px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-deep"
-          >
-            Give
-          </Link>
-        </div>
 
         {/* Mobile toggle */}
         <button
@@ -119,14 +111,6 @@ export function Navbar() {
                 </li>
               );
             })}
-            <li className="mt-2">
-              <Link
-                href="/support"
-                className="block rounded-full bg-teal px-3 py-3 text-center text-base font-semibold text-white"
-              >
-                Give
-              </Link>
-            </li>
           </ul>
         </div>
       )}

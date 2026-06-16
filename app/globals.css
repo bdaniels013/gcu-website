@@ -16,6 +16,8 @@
   --color-teal-deep: #013b42;  /* darker brand (hover) */
   --color-amber: #c47f29;      /* warm secondary accent (used sparingly) */
   --color-amber-deep: #a9691c;
+  --color-charcoal: #353b3b;   /* dark mission section (matches original) */
+  --color-teal-darkest: #002a30;
 
   --font-display: var(--font-raleway), "Raleway", Helvetica, Arial, sans-serif;
   --font-body: var(--font-opensans), "Open Sans", Helvetica, Arial, sans-serif;
