@@ -43,7 +43,7 @@ export function ContactForm() {
   }
 
   const fieldClass =
-    "w-full rounded-xl border border-white/10 bg-ink-card px-4 py-3 text-sm text-mist placeholder:text-mist-soft/60 outline-none transition-colors focus:border-teal";
+    "w-full rounded-xl border border-black/10 bg-ink-card px-4 py-3 text-sm text-mist placeholder:text-mist-soft/60 outline-none transition-colors focus:border-teal";
   const labelClass =
     "mb-1.5 block text-xs font-semibold uppercase tracking-widest text-mist-soft";
 
@@ -99,7 +99,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="w-full rounded-full bg-amber px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.02]"
+        className="w-full rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-deep"
       >
         Send Message
       </button>

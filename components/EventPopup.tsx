@@ -86,7 +86,7 @@ export function EventPopup() {
       role="dialog"
       aria-modal="true"
       aria-label={`Featured event: ${featuredEvent.title}`}
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-ink/95 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-mist/70 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
@@ -95,12 +95,12 @@ export function EventPopup() {
       <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-teal/20 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-amber/15 blur-3xl" />
 
-      <div className="animate-fade-in relative mx-4 my-12 w-full max-w-2xl rounded-3xl border border-white/10 bg-ink-soft p-8 text-center shadow-2xl sm:p-12">
+      <div className="animate-fade-in relative mx-4 my-12 w-full max-w-2xl rounded-3xl border border-black/10 bg-ink p-8 text-center shadow-2xl sm:p-12">
         <button
           type="button"
           onClick={close}
           aria-label="Close event announcement"
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-mist-soft transition-colors hover:bg-white/10 hover:text-mist"
+          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-mist-soft transition-colors hover:bg-black/[0.06] hover:text-mist"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
@@ -134,12 +134,12 @@ export function EventPopup() {
           {units.map((u) => (
             <div
               key={u.label}
-              className="rounded-2xl border border-white/10 bg-ink-card px-2 py-4"
+              className="rounded-2xl bg-teal px-2 py-4"
             >
-              <div className="text-3xl font-bold tabular-nums text-mist sm:text-4xl">
+              <div className="text-3xl font-bold tabular-nums text-white sm:text-4xl">
                 {t.ready ? String(u.value).padStart(2, "0") : "--"}
               </div>
-              <div className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-mist-soft">
+              <div className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-white/70">
                 {u.label}
               </div>
             </div>
@@ -160,14 +160,14 @@ export function EventPopup() {
           <Link
             href={featuredEvent.ctaHref}
             onClick={close}
-            className="w-full rounded-full bg-amber px-7 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.03] sm:w-auto"
+            className="w-full rounded-full bg-teal px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-deep sm:w-auto"
           >
             {featuredEvent.ctaLabel}
           </Link>
           <button
             type="button"
             onClick={close}
-            className="w-full rounded-full border border-white/15 px-7 py-3 text-sm font-medium text-mist-soft transition-colors hover:bg-white/5 sm:w-auto"
+            className="w-full rounded-full border border-black/10 px-7 py-3 text-sm font-medium text-mist-soft transition-colors hover:bg-black/[0.04] sm:w-auto"
           >
             Maybe Later
           </button>

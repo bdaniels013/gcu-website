@@ -33,9 +33,9 @@ export function PageHero({
   subtitle?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-white/10 bg-ink-soft">
-      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal/10 blur-3xl" />
-      <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-amber/10 blur-3xl" />
+    <section className="relative overflow-hidden border-b border-black/10 bg-ink-soft">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-teal/5 blur-3xl" />
+      <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-teal/5 blur-3xl" />
       <Container className="relative py-20 sm:py-24">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
         <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-mist sm:text-5xl">
@@ -67,9 +67,10 @@ export function ButtonLink({
   const base =
     "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]";
   const styles: Record<string, string> = {
-    primary: "bg-amber text-ink",
-    secondary: "bg-teal text-ink",
-    ghost: "border border-white/15 text-mist hover:bg-white/5 hover:scale-100",
+    primary: "bg-teal text-white hover:bg-teal-deep",
+    secondary: "bg-amber text-white hover:bg-amber-deep",
+    ghost:
+      "border border-teal/30 text-teal hover:bg-teal/[0.06] hover:scale-100",
   };
   const external = href.startsWith("http");
   if (external) {
@@ -100,7 +101,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-3xl border border-white/10 bg-ink-card p-7 transition-colors hover:border-teal/40 ${className}`}
+      className={`rounded-3xl border border-black/[0.07] bg-ink-card p-7 shadow-[0_2px_20px_rgba(16,32,31,0.05)] transition-all hover:border-teal/30 hover:shadow-[0_6px_28px_rgba(16,32,31,0.08)] ${className}`}
     >
       {children}
     </div>

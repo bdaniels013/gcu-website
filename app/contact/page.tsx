@@ -62,7 +62,7 @@ export default function ContactPage() {
               </div>
             </dl>
 
-            <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
+            <div className="mt-10 overflow-hidden rounded-3xl border border-black/10">
               <iframe
                 title="Map to Gulf Coast Underground"
                 src="https://maps.google.com/maps?q=1109%20Cowan%20Road%20Unit%20B9%20Gulfport%20MS%2039507&t=&z=14&ie=UTF8&iwloc=&output=embed"
@@ -74,7 +74,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="rounded-3xl border border-white/10 bg-ink-soft p-8">
+          <div className="rounded-3xl border border-black/10 bg-ink-soft p-8">
             <h2 className="text-2xl font-bold text-mist">Send us a message</h2>
             <p className="mt-2 text-sm text-mist-soft">
               Fill this out and your email app will open with your message ready

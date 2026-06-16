@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink-soft">
+    <footer className="border-t border-black/10 bg-ink-soft">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-4">
         <div className="md:col-span-2">
           <Link href="/" className="flex items-center gap-3">
@@ -46,14 +46,14 @@ export function Footer() {
           </address>
           <Link
             href="/contact"
-            className="mt-4 inline-block rounded-full border border-white/15 px-4 py-2 text-xs font-semibold text-mist transition-colors hover:bg-white/5"
+            className="mt-4 inline-block rounded-full border border-black/10 px-4 py-2 text-xs font-semibold text-mist transition-colors hover:bg-black/[0.04]"
           >
             Get in touch
           </Link>
         </div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-black/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-mist-soft sm:flex-row sm:px-8">
           <p>© {new Date().getFullYear()} Gulf Coast Underground. All rights reserved.</p>
           <p>Advancing the Missio Dei on the Gulf Coast.</p>

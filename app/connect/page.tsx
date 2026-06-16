@@ -58,7 +58,7 @@ export default function ConnectPage() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-3xl border border-white/10 bg-ink-soft p-10 text-center">
+        <div className="mt-14 rounded-3xl border border-black/10 bg-ink-soft p-10 text-center">
           <Eyebrow>Ready to take a step?</Eyebrow>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-mist">
             Let&apos;s help you get connected.

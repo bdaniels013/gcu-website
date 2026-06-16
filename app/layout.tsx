@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
+import { Raleway, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { EventPopup } from "@/components/EventPopup";
 import { CountdownBar } from "@/components/CountdownBar";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-raleway",
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-opensans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +49,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${raleway.variable} ${openSans.variable}`}>
       <body className="flex min-h-screen flex-col">
         <Navbar />
         {/* pb gives clearance for the fixed countdown bar */}

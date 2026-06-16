@@ -46,7 +46,7 @@ export default function EventsPage() {
           </div>
         </section>
 
-        <section className="mt-16 rounded-3xl border border-white/10 bg-ink-soft p-10 text-center">
+        <section className="mt-16 rounded-3xl border border-black/10 bg-ink-soft p-10 text-center">
           <h2 className="text-2xl font-bold text-mist">
             Don&apos;t see a group near you?
           </h2>
@@ -56,7 +56,7 @@ export default function EventsPage() {
           </p>
           <a
             href="/contact"
-            className="mt-7 inline-flex rounded-full bg-amber px-6 py-3 text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
+            className="mt-7 inline-flex rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-deep"
           >
             Connect With Us
           </a>

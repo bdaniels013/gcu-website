@@ -40,7 +40,7 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-40 transition-colors duration-300 ${
         scrolled
-          ? "bg-ink/90 backdrop-blur border-b border-white/10"
+          ? "bg-ink/90 backdrop-blur border-b border-black/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -75,7 +75,7 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Link
             href="/support"
-            className="rounded-full bg-amber px-5 py-2 text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
+            className="rounded-full bg-teal px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-teal-deep"
           >
             Give
           </Link>
@@ -101,7 +101,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-white/10 bg-ink/95 backdrop-blur lg:hidden">
+        <div className="border-t border-black/10 bg-ink/95 backdrop-blur lg:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8">
             {navItems.map((item) => {
               const active =
@@ -111,7 +111,7 @@ export function Navbar() {
                   <Link
                     href={item.href}
                     className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors ${
-                      active ? "bg-white/5 text-teal" : "text-mist-soft hover:bg-white/5"
+                      active ? "bg-black/[0.04] text-teal" : "text-mist-soft hover:bg-black/[0.04]"
                     }`}
                   >
                     {item.label}
@@ -122,7 +122,7 @@ export function Navbar() {
             <li className="mt-2">
               <Link
                 href="/support"
-                className="block rounded-full bg-amber px-3 py-3 text-center text-base font-semibold text-ink"
+                className="block rounded-full bg-teal px-3 py-3 text-center text-base font-semibold text-white"
               >
                 Give
               </Link>

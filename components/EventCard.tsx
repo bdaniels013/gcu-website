@@ -24,7 +24,7 @@ export function EventCard({ event }: { event: GcuEvent }) {
     : "";
 
   return (
-    <article className="flex h-full gap-5 rounded-3xl border border-white/10 bg-ink-card p-6 transition-colors hover:border-teal/40">
+    <article className="flex h-full gap-5 rounded-3xl border border-black/10 bg-ink-card p-6 transition-colors hover:border-teal/40">
       {/* Date block */}
       <div className="flex h-20 w-16 flex-none flex-col items-center justify-center rounded-2xl bg-ink-soft">
         <span className="text-xs font-bold tracking-widest text-amber">

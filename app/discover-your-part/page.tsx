@@ -82,7 +82,7 @@ export default function DiscoverYourPartPage() {
       </Container>
 
       {/* Tracks */}
-      <section className="border-t border-white/10 bg-ink-soft">
+      <section className="border-t border-black/10 bg-ink-soft">
         <Container className="py-20">
           <div className="max-w-2xl">
             <Eyebrow>Where Are You Starting?</Eyebrow>

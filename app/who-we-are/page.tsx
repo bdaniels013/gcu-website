@@ -69,7 +69,7 @@ export default function WhoWeArePage() {
       </Container>
 
       {/* Our Manifesto */}
-      <section id="manifesto" className="border-y border-white/10 bg-ink-soft">
+      <section id="manifesto" className="border-y border-black/10 bg-ink-soft">
         <Container className="py-20">
           <div className="max-w-2xl">
             <Eyebrow>Our Manifesto</Eyebrow>

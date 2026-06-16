@@ -53,7 +53,7 @@ export default function SupportPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-ink-soft p-8 text-center lg:sticky lg:top-28">
+          <div className="rounded-3xl border border-black/10 bg-ink-soft p-8 text-center lg:sticky lg:top-28">
             <p className="text-xs font-semibold uppercase tracking-widest text-amber">
               Give Securely
             </p>
