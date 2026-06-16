@@ -30,7 +30,7 @@ const leftItems: NavItem[] = [
     label: "Connect",
     href: "/connect",
     children: [
-      { label: "Discovery Bible Study", href: "/connect#dbs" },
+      { label: "DBS", href: "/connect#dbs" },
       { label: "IDE's", href: "/connect#ides" },
       { label: "Microchurch", href: "/connect#microchurch" },
       { label: "Connect With Us", href: "/connect#connect-with-us" },
@@ -84,13 +84,13 @@ function DesktopLink({ item, pathname }: { item: NavItem; pathname: string }) {
           <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </Link>
-      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-        <ul className="min-w-[210px] rounded-xl border border-black/10 bg-ink p-2 shadow-xl">
+      <div className="invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+        <ul className="w-[240px] border-t-[3px] border-[#7a7a7a] bg-white py-5 shadow-[0_2px_5px_rgba(0,0,0,0.1)]">
           {item.children.map((c) => (
             <li key={c.href}>
               <Link
                 href={c.href}
-                className="block whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-mist-soft transition-colors hover:bg-teal/[0.06] hover:text-teal"
+                className="block whitespace-nowrap px-5 py-1.5 text-[13px] font-normal uppercase tracking-[0.04em] text-black transition-colors hover:text-teal"
               >
                 {c.label}
               </Link>
