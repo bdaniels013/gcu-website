@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, Container, Eyebrow, PageHero } from "@/components/ui";
+import {
+  ButtonLink,
+  Card,
+  Container,
+  Eyebrow,
+  PageHero,
+} from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Connect",
   description:
-    "Find your place at Gulf Coast Underground — Discovery Bible Study (DBS), IDE's, microchurches, and ways to connect with us.",
+    "Find your place at Gulf Coast Underground, Discovery Bible Study (DBS), IDE's, microchurches, and ways to connect with us.",
 };
 
 const ways = [
@@ -12,19 +18,19 @@ const ways = [
     id: "dbs",
     name: "Discovery Bible Study (DBS)",
     tag: "DBS",
-    body: "A simple, reproducible way to read, obey, and share the Scriptures together. No expert required — just a group of people and an open Bible. It's often the first step into the family.",
+    body: "A simple, reproducible way to read, obey, and share the Scriptures together. No expert required, just a group of people and an open Bible. It's often the first step into the family.",
   },
   {
     id: "ides",
     name: "IDE's",
     tag: "Immersive Discipleship",
-    body: "Immersive Discipleship Experiences — focused seasons of being formed as a disciple of Jesus and equipped to disciple others in your everyday context.",
+    body: "Immersive Discipleship Experiences, focused seasons of being formed as a disciple of Jesus and equipped to disciple others in your everyday context.",
   },
   {
     id: "microchurch",
     name: "Microchurch",
     tag: "Community",
-    body: "Small, family-sized communities living out the way of Jesus together — a shared meal, the Word, prayer, and mission woven into ordinary life across the coast.",
+    body: "Small, family-sized communities living out the way of Jesus together, a shared meal, the Word, prayer, and mission woven into ordinary life across the coast.",
   },
   {
     id: "connect",
@@ -50,7 +56,9 @@ export default function ConnectPage() {
               <span className="w-fit rounded-full bg-teal/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal">
                 {w.tag}
               </span>
-              <h2 className="mt-4 text-2xl font-semibold text-mist">{w.name}</h2>
+              <h2 className="mt-4 text-2xl font-semibold text-mist">
+                {w.name}
+              </h2>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-mist-soft">
                 {w.body}
               </p>
@@ -64,8 +72,8 @@ export default function ConnectPage() {
             Let&apos;s help you get connected.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-mist-soft">
-            Tell us a little about where you are, and we&apos;ll point you toward
-            a Discovery Bible Study or microchurch near you.
+            Tell us a little about where you are, and we&apos;ll point you
+            toward a Discovery Bible Study or microchurch near you.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <ButtonLink href="/contact">Connect With Us</ButtonLink>

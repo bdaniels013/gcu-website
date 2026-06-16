@@ -31,39 +31,56 @@ const cards = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — Gulf Coast banner with teal overlay + white wordmark */}
-      <section className="relative isolate flex min-h-[460px] items-center justify-center overflow-hidden sm:min-h-[560px]">
+      {/* Hero, Gulf Coast banner with teal overlay + white wordmark */}
+      <section className="relative isolate flex min-h-[620px] items-center justify-center overflow-hidden sm:min-h-[760px]">
         <img
           src="/images/quadrant.jpg"
           alt=""
           aria-hidden
-          className="absolute inset-0 -z-20 h-full w-full object-cover"
+          className="animate-kenburns absolute inset-0 -z-20 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-teal/85" />
-        <Container className="py-20 text-center sm:py-28">
+        {/* layered overlay: dark at the edges for legibility, lighter in the
+ middle so the coast imagery stays vivid */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-teal-darkest/90 via-teal/40 to-teal-darkest/95" />
+        <div className="absolute inset-0 -z-10 bg-teal-deep/20 mix-blend-multiply" />
+
+        <Container className="py-24 text-center">
           <img
             src="/images/logo-06.png"
-            alt="Gulf Coast Underground — Missio Dei"
-            className="mx-auto w-full max-w-2xl"
+            alt="Gulf Coast Underground, Missio Dei"
+            className="animate-rise mx-auto w-[90%] max-w-4xl drop-shadow-[0_4px_30px_rgba(0,0,0,0.35)]"
           />
-          <p className="mx-auto mt-8 max-w-2xl text-base font-medium uppercase tracking-[0.25em] text-white/85 sm:text-lg">
+          <p
+            className="animate-rise mx-auto mt-7 max-w-2xl text-sm font-semibold uppercase tracking-[0.3em] text-white/90 sm:text-base"
+            style={{ animationDelay: "0.12s" }}
+          >
             Advancing the Missio Dei on the Mississippi Gulf Coast
           </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div
+            className="animate-rise mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            style={{ animationDelay: "0.24s" }}
+          >
             <Link
               href="/contact"
-              className="rounded-md bg-white px-7 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-white/90"
+              className="rounded-md bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-teal shadow-lg shadow-teal-darkest/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
               Become a Part
             </Link>
             <Link
-              href="/events"
-              className="rounded-md border border-white/70 px-7 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/10"
+              href="/gala"
+              className="rounded-md border border-white/60 px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
             >
-              Upcoming Events
+              The Gala
             </Link>
           </div>
         </Container>
+
+        {/* scroll cue */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60">
+          <span className="block text-[10px] font-semibold uppercase tracking-[0.3em]">
+            Scroll
+          </span>
+        </div>
       </section>
 
       {/* Featured event strip */}
@@ -73,7 +90,7 @@ export default function HomePage() {
             <span className="font-bold uppercase tracking-wide">
               {featuredEvent.title}
             </span>{" "}
-            <span className="text-white/75">— {featuredEvent.tagline}</span>
+            <span className="text-white/75">, {featuredEvent.tagline}</span>
           </p>
           <Link
             href="/gala"
@@ -84,7 +101,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Mission statement — Missio Dei (dark charcoal) */}
+      {/* Mission statement, Missio Dei (dark charcoal) */}
       <section className="relative bg-charcoal">
         {/* torn edges biting up into the hero and down into the next band */}
         <TornDivider fill="fill-charcoal" position="top" />
@@ -111,63 +128,74 @@ export default function HomePage() {
               to advance the Missio Dei on the Mississippi Gulf Coast, and we
               accomplish that by focusing on what Christ called &ldquo;making
               disciples.&rdquo; Discipleship is a fairly simple concept at the
-              Underground &ndash; it simply means to learn and discover how to
-              live in missional rhythms in our everyday context, which is fueled
-              and grows by deep intimate relationship that only comes from
-              sitting at the feet of Jesus and living in regular community with
-              other believers. This is how we learn what it means to follow
-              Christ. It is an obedience-based approach, but it is very important
-              to understand that obedience is a heart posture as opposed to a
-              list of do&apos;s and don&apos;ts. We seek to obey the Lord in all
-              things, not to obtain His approval but because we realize who He is
-              and what He did for us&hellip;because we love Him and He is worthy
-              of our obedience.
+              Underground, it simply means to learn and discover how to live in
+              missional rhythms in our everyday context, which is fueled and
+              grows by deep intimate relationship that only comes from sitting
+              at the feet of Jesus and living in regular community with other
+              believers. This is how we learn what it means to follow Christ. It
+              is an obedience-based approach, but it is very important to
+              understand that obedience is a heart posture as opposed to a list
+              of do&apos;s and don&apos;ts. We seek to obey the Lord in all
+              things, not to obtain His approval but because we realize who He
+              is and what He did for us&hellip;because we love Him and He is
+              worthy of our obedience.
             </p>
             <p>
               As we experience the transformational power of the Gospel in our
               lives it begins to impact the world around us, ultimately bringing
               Him glory, which is our reason for living. One of the biggest
-              things that sets us apart is our approach to &ldquo;gathering&rdquo;
-              and &ldquo;mission.&rdquo; We do not believe that discipleship, and
-              ultimately God&apos;s Mission, are best carried out by recruiting
-              people to serve our organization. Our approach is actually the
-              opposite&hellip;as each individual learns to sit at the feet of
-              Jesus and hear His voice, they will discover what the Lord is
-              calling them to do, <span className="font-semibold text-white">and
-              we exist to equip and support</span> each person to succeed at
-              their calling! And, since we operate as a mission hub, we are set
-              up to work with everyone &mdash; whether you are part of one of our
-              micro-churches or another local church in our community. We look
-              forward to meeting you!
+              things that sets us apart is our approach to
+              &ldquo;gathering&rdquo; and &ldquo;mission.&rdquo; We do not
+              believe that discipleship, and ultimately God&apos;s Mission, are
+              best carried out by recruiting people to serve our organization.
+              Our approach is actually the opposite&hellip;as each individual
+              learns to sit at the feet of Jesus and hear His voice, they will
+              discover what the Lord is calling them to do,{" "}
+              <span className="font-semibold text-white">
+                and we exist to equip and support
+              </span>{" "}
+              each person to succeed at their calling! And, since we operate as
+              a mission hub, we are set up to work with everyone, whether you
+              are part of one of our micro-churches or another local church in
+              our community. We look forward to meeting you!
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Become a Part of the Underground — alternating rows */}
+      {/* Become a Part of the Underground, alternating rows */}
       <section className="bg-ink">
         <Container className="py-20 sm:py-24">
-          <h2 className="mx-auto max-w-3xl text-center text-4xl font-extrabold uppercase tracking-tight text-mist sm:text-5xl">
-            Become a Part of the Underground.
-          </h2>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">
+              Get Involved
+            </p>
+            <h2 className="mt-3 text-4xl font-extrabold uppercase leading-[1.05] tracking-tight text-mist sm:text-5xl">
+              Become a Part of the Underground.
+            </h2>
+            <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-amber" />
+          </div>
 
-          <div className="mt-14 space-y-8">
+          <div className="mt-14 space-y-7">
             {cards.map((c, i) => (
               <div
                 key={c.title}
-                className={`flex flex-col overflow-hidden rounded-2xl bg-ink-soft shadow-[0_2px_20px_rgba(16,32,31,0.06)] md:flex-row ${
-                  i % 2 === 1 ? "md:flex-row-reverse" : ""
+                className={`group grid overflow-hidden rounded-2xl border border-black/[0.06] bg-ink-soft shadow-[0_2px_24px_rgba(16,32,31,0.06)] transition-shadow hover:shadow-[0_14px_40px_rgba(16,32,31,0.12)] md:grid-cols-2 ${
+                  i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
                 }`}
               >
-                <div className="md:w-2/5">
+                <div className="relative overflow-hidden">
                   <img
                     src={c.photo}
                     alt=""
-                    className="h-56 w-full object-cover md:h-full"
+                    className="h-60 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 md:h-full"
                   />
+                  <span className="absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-sm font-extrabold text-teal shadow">
+                    0{i + 1}
+                  </span>
                 </div>
-                <div className="flex flex-1 flex-col justify-center p-8 sm:p-10">
-                  <h3 className="text-xl font-bold uppercase tracking-tight text-mist sm:text-2xl">
+                <div className="flex flex-col justify-center p-8 sm:p-12">
+                  <h3 className="text-xl font-bold uppercase leading-snug tracking-tight text-mist sm:text-2xl">
                     {c.title}
                   </h3>
                   <p className="mt-4 text-[15px] leading-relaxed text-mist-soft">
@@ -176,9 +204,10 @@ export default function HomePage() {
                   <div className="mt-6">
                     <Link
                       href={c.href}
-                      className="inline-flex rounded-md bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal-deep"
+                      className="inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:gap-3 hover:bg-teal-deep"
                     >
                       {c.cta}
+                      <span aria-hidden>→</span>
                     </Link>
                   </div>
                 </div>

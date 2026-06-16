@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Gulf Coast Underground — brand theme
-   Matches gulfcoastunderground.org: light, clean, grassroots.
-   Deep-teal (#00545e) brand accent on white, Raleway headings
-   + Open Sans body.
-   ============================================================ */
+ Gulf Coast Underground, brand theme
+ Matches gulfcoastunderground.org: light, clean, grassroots.
+ Deep-teal (#00545e) brand accent on white, Raleway headings
+ + Open Sans body.
+ ============================================================ */
 @theme {
-  --color-ink: #ffffff;        /* page background */
-  --color-ink-soft: #f2f5f5;   /* alternating section background */
-  --color-ink-card: #ffffff;   /* card surface (uses border + shadow) */
-  --color-mist: #16201f;       /* primary text (near-black) */
-  --color-mist-soft: #53625f;  /* muted body text */
-  --color-teal: #00545e;       /* brand accent */
-  --color-teal-deep: #013b42;  /* darker brand (hover) */
-  --color-amber: #c47f29;      /* warm secondary accent (used sparingly) */
+  --color-ink: #ffffff; /* page background */
+  --color-ink-soft: #f2f5f5; /* alternating section background */
+  --color-ink-card: #ffffff; /* card surface (uses border + shadow) */
+  --color-mist: #16201f; /* primary text (near-black) */
+  --color-mist-soft: #53625f; /* muted body text */
+  --color-teal: #00545e; /* brand accent */
+  --color-teal-deep: #013b42; /* darker brand (hover) */
+  --color-amber: #c47f29; /* warm secondary accent (used sparingly) */
   --color-amber-deep: #a9691c;
-  --color-charcoal: #353b3b;   /* dark mission section (matches original) */
+  --color-charcoal: #353b3b; /* dark mission section (matches original) */
   --color-teal-darkest: #002a30;
 
   --font-display: var(--font-raleway), "Raleway", Helvetica, Arial, sans-serif;
@@ -39,14 +39,23 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
 }
 
 /* Marquee animation for the scrolling countdown bar */
 @keyframes gcu-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -58,18 +67,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee { animation: none; }
-  html { scroll-behavior: auto; }
+  .animate-marquee {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 /* Subtle fade-in used on popup + sections */
 @keyframes gcu-fade-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
   animation: gcu-fade-in 0.5s ease-out both;
+}
+
+/* Slow Ken Burns drift for the hero banner */
+@keyframes gcu-kenburns {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(1.12) translateY(-1.5%);
+  }
+}
+
+.animate-kenburns {
+  animation: gcu-kenburns 24s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns {
+    animation: none;
+  }
+}
+
+/* Staggered rise-in for content blocks */
+@keyframes gcu-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: gcu-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
 }
 
 ::selection {

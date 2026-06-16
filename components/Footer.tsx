@@ -20,7 +20,7 @@ export function Footer() {
       <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8">
         <img
           src="/images/logo-06.png"
-          alt="Gulf Coast Underground — Missio Dei"
+          alt="Gulf Coast Underground, Missio Dei"
           className="mx-auto w-full max-w-xs"
         />
 

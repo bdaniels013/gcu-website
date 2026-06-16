@@ -1,5 +1,5 @@
 /**
- * Torn-paper / textured edge divider — mimics the ragged edges on the
+ * Torn-paper / textured edge divider, mimics the ragged edges on the
  * original gulfcoastunderground.org between the hero, the dark mission
  * band, and the footer (instead of a flat straight line).
  *
@@ -7,8 +7,8 @@
  * top of a section (it overlaps upward into the section above) so the
  * section's color "tears" up into the previous one.
  *
- *   position="top"    → teeth bite upward into the section above
- *   position="bottom" → teeth bite downward into the section below
+ * position="top" → teeth bite upward into the section above
+ * position="bottom" → teeth bite downward into the section below
  */
 type Props = {
   /** Tailwind fill class for the torn shape, e.g. "fill-charcoal" */

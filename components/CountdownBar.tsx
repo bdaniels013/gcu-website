@@ -37,11 +37,11 @@ export function CountdownBar() {
 
   const countText = t.ready
     ? t.isPast
-      ? "Happening now — come join us!"
+      ? "Happening now, come join us!"
       : `${t.days}d ${String(t.hours).padStart(2, "0")}h ${String(t.minutes).padStart(2, "0")}m ${String(t.seconds).padStart(2, "0")}s`
     : "Loading…";
 
-  // One marquee "segment" — duplicated so the loop is seamless.
+  // One marquee "segment", duplicated so the loop is seamless.
   const Segment = (
     <span className="mx-8 inline-flex items-center gap-3 text-sm font-medium">
       <span className="text-amber">★</span>
@@ -62,7 +62,7 @@ export function CountdownBar() {
         <Link
           href={featuredEvent.ctaHref}
           className="group relative flex-1 overflow-hidden py-2.5"
-          aria-label={`${featuredEvent.title} — view event details`}
+          aria-label={`${featuredEvent.title}, view event details`}
         >
           <div className="flex w-max animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
             {Segment}
@@ -83,7 +83,14 @@ export function CountdownBar() {
           aria-label="Hide countdown bar"
           className="flex h-10 w-10 flex-none items-center justify-center text-ink/70 transition-colors hover:bg-ink/10 hover:text-ink"
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+          >
             <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
           </svg>
         </button>

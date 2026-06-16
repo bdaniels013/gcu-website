@@ -52,7 +52,7 @@ export default function EventsPage() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-mist-soft">
             New Discovery Bible Studies and microchurches are starting all the
-            time. Reach out and we&apos;ll connect you — or help you start one.
+            time. Reach out and we&apos;ll connect you, or help you start one.
           </p>
           <a
             href="/contact"

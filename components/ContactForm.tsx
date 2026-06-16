@@ -5,7 +5,7 @@ import { useState } from "react";
 const CONTACT_EMAIL = "gcundergroundmission@gmail.com";
 
 const interests = [
-  "I'm new — help me get connected",
+  "I'm new, help me get connected",
   "Discovery Bible Study (DBS)",
   "Microchurch",
   "I want to start something new",
@@ -26,7 +26,7 @@ export function ContactForm() {
     const interest = String(data.get("interest") || "");
     const message = String(data.get("message") || "");
 
-    const subject = `Website inquiry — ${interest || "General"}`;
+    const subject = `Website inquiry, ${interest || "General"}`;
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
@@ -36,7 +36,7 @@ export function ContactForm() {
     ].join("\n");
 
     const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
     setSubmitted(true);
@@ -53,7 +53,13 @@ export function ContactForm() {
         <label className={labelClass} htmlFor="name">
           Name
         </label>
-        <input id="name" name="name" required className={fieldClass} placeholder="Your name" />
+        <input
+          id="name"
+          name="name"
+          required
+          className={fieldClass}
+          placeholder="Your name"
+        />
       </div>
 
       <div>
@@ -74,7 +80,12 @@ export function ContactForm() {
         <label className={labelClass} htmlFor="interest">
           I&apos;m reaching out about
         </label>
-        <select id="interest" name="interest" className={fieldClass} defaultValue={interests[0]}>
+        <select
+          id="interest"
+          name="interest"
+          className={fieldClass}
+          defaultValue={interests[0]}
+        >
           {interests.map((i) => (
             <option key={i} value={i} className="bg-ink-card">
               {i}
@@ -106,8 +117,8 @@ export function ContactForm() {
 
       {submitted && (
         <p className="text-center text-sm text-teal">
-          Your email app should have opened with your message. If it didn&apos;t,
-          email us directly at {CONTACT_EMAIL}.
+          Your email app should have opened with your message. If it
+          didn&apos;t, email us directly at {CONTACT_EMAIL}.
         </p>
       )}
     </form>

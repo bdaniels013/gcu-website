@@ -6,13 +6,13 @@ import { GalaCountdown } from "@/components/GalaCountdown";
 import { gala, galaSponsorTiers } from "@/lib/event";
 
 export const metadata: Metadata = {
-  title: "GC Underground Gala — Fishers of Men",
+  title: "GC Underground Gala, Fishers of Men",
   description:
-    "Join us for the Second Annual GC Underground Gala — “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, September 17, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
+    "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, September 17, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
 };
 
 const reserveHref = `sms:+1${gala.reserveNumberRaw}?&body=${encodeURIComponent(
-  gala.reserveMessage
+  gala.reserveMessage,
 )}`;
 
 function ReserveButton({
@@ -142,7 +142,10 @@ export default function GalaPage() {
                   </dt>
                   <dd className="mt-1 text-base text-mist">
                     {gala.ticketNote}. Text{" "}
-                    <a href={reserveHref} className="font-semibold text-teal hover:underline">
+                    <a
+                      href={reserveHref}
+                      className="font-semibold text-teal hover:underline"
+                    >
                       {gala.reserveNumber}
                     </a>{" "}
                     to lock in your spot.
@@ -170,7 +173,10 @@ export default function GalaPage() {
       </section>
 
       {/* ───────── Sponsorship ───────── */}
-      <section id="sponsor" className="scroll-mt-24 border-t border-black/10 bg-ink">
+      <section
+        id="sponsor"
+        className="scroll-mt-24 border-t border-black/10 bg-ink"
+      >
         <Container className="py-16 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
@@ -182,7 +188,7 @@ export default function GalaPage() {
             <p className="mt-4 text-base leading-relaxed text-mist-soft">
               We are always looking for strategic partnerships to advance the
               Missio Dei. Thank you for considering a sponsorship of the GC
-              Underground Gala — every level helps spread the Gospel across the
+              Underground Gala, every level helps spread the Gospel across the
               Gulf Coast.
             </p>
           </div>
@@ -215,7 +221,9 @@ export default function GalaPage() {
                   {tier.benefits.map((b) => (
                     <li key={b} className="flex gap-2.5">
                       <span
-                        className={tier.highlighted ? "text-white" : "text-teal"}
+                        className={
+                          tier.highlighted ? "text-white" : "text-teal"
+                        }
                         aria-hidden
                       >
                         ✦
@@ -246,7 +254,10 @@ export default function GalaPage() {
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-mist-soft">
             Interested in sponsoring or have questions?{" "}
-            <Link href="/contact" className="font-semibold text-teal hover:underline">
+            <Link
+              href="/contact"
+              className="font-semibold text-teal hover:underline"
+            >
               Reach out to our team
             </Link>{" "}
             or text {gala.reserveNumber} and we&apos;ll follow up with you.

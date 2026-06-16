@@ -102,7 +102,14 @@ export function EventPopup() {
           aria-label="Close event announcement"
           className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-mist-soft transition-colors hover:bg-black/[0.06] hover:text-mist"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
           </svg>
         </button>
@@ -132,10 +139,7 @@ export function EventPopup() {
         {/* Countdown */}
         <div className="mt-8 grid grid-cols-4 gap-2 sm:gap-3">
           {units.map((u) => (
-            <div
-              key={u.label}
-              className="rounded-2xl bg-teal px-2 py-4"
-            >
+            <div key={u.label} className="rounded-2xl bg-teal px-2 py-4">
               <div className="text-3xl font-bold tabular-nums text-white sm:text-4xl">
                 {t.ready ? String(u.value).padStart(2, "0") : "--"}
               </div>
@@ -148,7 +152,7 @@ export function EventPopup() {
 
         {t.ready && t.isPast && (
           <p className="mt-4 text-sm font-medium text-amber">
-            This event is happening now — come on out!
+            This event is happening now, come on out!
           </p>
         )}
 

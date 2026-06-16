@@ -14,7 +14,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact Us"
         title="We'd love to hear from you."
-        subtitle="Questions, prayer requests, or ready to get connected? Reach out — there's a real person on the other end who'd love to walk with you."
+        subtitle="Questions, prayer requests, or ready to get connected? Reach out, there's a real person on the other end who'd love to walk with you."
       />
 
       <Container className="py-20">
@@ -56,8 +56,8 @@ export default function ContactPage() {
                 </dt>
                 <dd className="mt-2 text-base leading-relaxed text-mist-soft">
                   Discovery Bible Studies and microchurches meet throughout the
-                  week across the Gulf Coast. Reach out and we&apos;ll connect you
-                  with the group nearest you.
+                  week across the Gulf Coast. Reach out and we&apos;ll connect
+                  you with the group nearest you.
                 </dd>
               </div>
             </dl>

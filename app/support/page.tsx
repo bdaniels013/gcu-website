@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, Container, Eyebrow, PageHero } from "@/components/ui";
+import {
+  ButtonLink,
+  Card,
+  Container,
+  Eyebrow,
+  PageHero,
+} from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -17,7 +23,7 @@ const reasons = [
   },
   {
     title: "Multiply the movement",
-    body: "We invest in reproducible discipleship — every dollar helps disciples make more disciples.",
+    body: "We invest in reproducible discipleship, every dollar helps disciples make more disciples.",
   },
   {
     title: "Serve our neighbors",
@@ -61,8 +67,8 @@ export default function SupportPage() {
               Make a gift today
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-mist-soft">
-              Give a one-time gift or set up recurring support through our secure
-              giving partner.
+              Give a one-time gift or set up recurring support through our
+              secure giving partner.
             </p>
             <div className="mt-7 flex flex-col gap-3">
               <ButtonLink href={GIVING_URL}>Give Online</ButtonLink>

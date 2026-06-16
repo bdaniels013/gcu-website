@@ -47,7 +47,11 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Gulf Coast Underground home">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5"
+          aria-label="Gulf Coast Underground home"
+        >
           <Logo className="h-9 w-9" />
           <span className="hidden text-sm font-bold uppercase tracking-[0.16em] text-mist xl:inline">
             GC Underground
@@ -58,7 +62,9 @@ export function Navbar() {
         <ul className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => {
             const active =
-              item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
             return (
               <li key={item.href}>
                 <Link
@@ -82,7 +88,14 @@ export function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             {open ? (
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
             ) : (
@@ -98,13 +111,17 @@ export function Navbar() {
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8">
             {navItems.map((item) => {
               const active =
-                item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href);
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     className={`block rounded-lg px-3 py-3 text-base font-medium transition-colors ${
-                      active ? "bg-black/[0.04] text-teal" : "text-mist-soft hover:bg-black/[0.04]"
+                      active
+                        ? "bg-black/[0.04] text-teal"
+                        : "text-mist-soft hover:bg-black/[0.04]"
                     }`}
                   >
                     {item.label}

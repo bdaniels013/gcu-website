@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, Container, Eyebrow, PageHero } from "@/components/ui";
+import {
+  ButtonLink,
+  Card,
+  Container,
+  Eyebrow,
+  PageHero,
+} from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Who We Are",
@@ -14,11 +20,11 @@ const manifesto = [
   },
   {
     claim: "We equip people, not recruit them.",
-    body: "A mission hub releases people into their calling. We're not here to fill our own roster — we're here to help you find yours.",
+    body: "A mission hub releases people into their calling. We're not here to fill our own roster, we're here to help you find yours.",
   },
   {
     claim: "We disciple in everyday rhythms.",
-    body: "Discipleship happens at kitchen tables, on job sites, and in neighborhoods — not only in a building on a Sunday.",
+    body: "Discipleship happens at kitchen tables, on job sites, and in neighborhoods, not only in a building on a Sunday.",
   },
   {
     claim: "We make disciples who make disciples.",
@@ -36,7 +42,7 @@ export default function WhoWeArePage() {
       />
 
       {/* Our Background */}
-      <Container className="py-20" >
+      <Container className="py-20">
         <div id="background" className="grid gap-10 md:grid-cols-[1fr_2fr]">
           <div>
             <Eyebrow>Our Background</Eyebrow>
@@ -49,14 +55,14 @@ export default function WhoWeArePage() {
               Gulf Coast Underground began with a simple conviction: that the
               good news of Jesus is meant to move through ordinary people in
               ordinary places. Rather than building one more program, we set out
-              to build a <span className="text-mist">hub</span> — a place that
+              to build a <span className="text-mist">hub</span>, a place that
               equips and releases everyday disciples.
             </p>
             <p>
               The name says it. <span className="text-mist">Gulf Coast</span>{" "}
               roots us in the people and places of coastal Mississippi.{" "}
               <span className="text-mist">Underground</span> reflects a movement
-              that grows quietly and organically — relationship by relationship,
+              that grows quietly and organically, relationship by relationship,
               home by home, neighborhood by neighborhood.
             </p>
             <p>
@@ -103,7 +109,7 @@ export default function WhoWeArePage() {
             <p>
               We function as a decentralized network rather than a single
               congregation. At the center is the{" "}
-              <span className="text-mist">hub</span> — a team that trains,
+              <span className="text-mist">hub</span>, a team that trains,
               resources, and coaches. Out from the hub are{" "}
               <span className="text-mist">microchurches</span> and{" "}
               <span className="text-mist">Discovery Bible Studies</span> spread
@@ -112,7 +118,7 @@ export default function WhoWeArePage() {
             <p>
               This keeps us light and reproducible. Anyone can start a DBS in
               their home. Anyone can be discipled and learn to disciple others.
-              The hub exists to serve and multiply that movement — never to
+              The hub exists to serve and multiply that movement, never to
               centralize it.
             </p>
             <div className="pt-2">

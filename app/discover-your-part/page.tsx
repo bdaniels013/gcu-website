@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, Container, Eyebrow, PageHero } from "@/components/ui";
+import {
+  ButtonLink,
+  Card,
+  Container,
+  Eyebrow,
+  PageHero,
+} from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Discover Your Part",
   description:
-    "Discover the part you were made to play in the mission of God — whether you're starting something new, seeking ministry support, or looking to get connected.",
+    "Discover the part you were made to play in the mission of God, whether you're starting something new, seeking ministry support, or looking to get connected.",
 };
 
 const steps = [
@@ -16,7 +22,7 @@ const steps = [
   {
     n: "02",
     title: "Name what you're carrying",
-    body: "A burden for a neighborhood? A ministry idea? A gift you've been sitting on? Put words to it — that's where the journey begins.",
+    body: "A burden for a neighborhood? A ministry idea? A gift you've been sitting on? Put words to it, that's where the journey begins.",
   },
   {
     n: "03",
@@ -26,7 +32,7 @@ const steps = [
   {
     n: "04",
     title: "Multiply",
-    body: "As you grow, you'll equip others. That's the heart of it — disciples who make disciples across the Gulf Coast.",
+    body: "As you grow, you'll equip others. That's the heart of it, disciples who make disciples across the Gulf Coast.",
   },
 ];
 
@@ -57,7 +63,7 @@ export default function DiscoverYourPartPage() {
       <PageHero
         eyebrow="Discover Your Part"
         title="You were made to play a part in the mission of God."
-        subtitle="We're not here to recruit you for our needs — we're here to help you discover the part you were made for, and to equip you to live it out."
+        subtitle="We're not here to recruit you for our needs, we're here to help you discover the part you were made for, and to equip you to live it out."
       />
 
       {/* Steps */}
@@ -72,7 +78,9 @@ export default function DiscoverYourPartPage() {
           {steps.map((s) => (
             <Card key={s.n}>
               <span className="text-2xl font-bold text-amber">{s.n}</span>
-              <h3 className="mt-3 text-xl font-semibold text-mist">{s.title}</h3>
+              <h3 className="mt-3 text-xl font-semibold text-mist">
+                {s.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-mist-soft">
                 {s.body}
               </p>

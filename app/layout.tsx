@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Gulf Coast Underground",
   },
   description:
-    "Gulf Coast Underground is a mission hub on the Mississippi Gulf Coast advancing the Missio Dei — equipping everyday people to live in missional rhythms through discipleship, community, and gospel transformation.",
+    "Gulf Coast Underground is a mission hub on the Mississippi Gulf Coast advancing the Missio Dei, equipping everyday people to live in missional rhythms through discipleship, community, and gospel transformation.",
   keywords: [
     "Gulf Coast Underground",
     "Gulfport ministry",

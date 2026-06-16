@@ -2,9 +2,9 @@
  * Central configuration for the featured event.
  *
  * This single object powers:
- *   - the full-page popup that appears when the site first loads
- *   - the scrolling countdown bar pinned to the bottom of every page
- *   - the highlighted event on the /events page
+ * - the full-page popup that appears when the site first loads
+ * - the scrolling countdown bar pinned to the bottom of every page
+ * - the highlighted event on the /events page
  *
  * To feature a different event, just edit the fields below.
  */
@@ -26,7 +26,7 @@ export const featuredEvent: FeaturedEvent = {
   title: "GC Underground Gala",
   tagline: "Second Annual · “Fishers of Men”",
   description:
-    "A night of breaking bread & spreading the Gospel. “Where the harvest is plentiful, but the laborers are few.” Limited tickets available — text 228-669-3696 to lock in your spot now.",
+    "A night of breaking bread & spreading the Gospel. “Where the harvest is plentiful, but the laborers are few.” Limited tickets available, text 228-669-3696 to lock in your spot now.",
   startsAt: "2026-09-17T18:00:00",
   location: "Biloxi Visitors Center",
   address: "1050 Beach Blvd, Biloxi, MS 39530",
@@ -35,7 +35,7 @@ export const featuredEvent: FeaturedEvent = {
 };
 
 /**
- * The Gala — full details for the dedicated /gala page. Mirrors the format
+ * The Gala, full details for the dedicated /gala page. Mirrors the format
  * of last year's "Africa the Gala" (sponsorship tiers + dollar amounts kept
  * identical), updated for this year's date, venue, and "Fishers of Men" theme.
  */
@@ -61,14 +61,14 @@ export const gala = {
 
 export interface SponsorTier {
   /** Nautical name for this year's "Fishers of Men" theme (last year used
-   *  Africa animals: Lion / Gorilla / Giraffe / Elephant). */
+   * Africa animals: Lion / Gorilla / Giraffe / Elephant). */
   name: string;
   price: string;
   benefits: string[];
   highlighted?: boolean;
 }
 
-/** Sponsorship levels — benefits & dollar amounts copied from last year. */
+/** Sponsorship levels, benefits & dollar amounts copied from last year. */
 export const galaSponsorTiers: SponsorTier[] = [
   {
     name: "Whale",
@@ -123,13 +123,13 @@ export interface GcuEvent {
 export const events: GcuEvent[] = [
   {
     id: "underground-gala-2026",
-    title: "Second Annual GC Underground Gala — “Fishers of Men”",
+    title: "Second Annual GC Underground Gala, “Fishers of Men”",
     date: "2026-09-17T18:00:00",
     endTime: "9:00 PM",
     location: "Biloxi Visitors Center",
     address: "Biloxi Visitors Center · Biloxi, MS",
     description:
-      "A night of breaking bread and spreading the Gospel. Limited number of tickets available — text 228-669-3696 to lock in your spot now.",
+      "A night of breaking bread and spreading the Gospel. Limited number of tickets available, text 228-669-3696 to lock in your spot now.",
     tag: "Gathering",
   },
   {
@@ -140,7 +140,7 @@ export const events: GcuEvent[] = [
     location: "Various homes across the Gulf Coast",
     address: "Contact us for the group nearest you",
     description:
-      "Learn to read, obey, and share the Scriptures together. No experience needed — just open hands and an open heart.",
+      "Learn to read, obey, and share the Scriptures together. No experience needed, just open hands and an open heart.",
     tag: "DBS",
   },
   {
@@ -151,7 +151,7 @@ export const events: GcuEvent[] = [
     location: "Gulfport & Biloxi neighborhoods",
     address: "Reach out to find your nearest microchurch",
     description:
-      "Small, family-sized communities living out the way of Jesus in everyday rhythms — a shared meal, the Word, and prayer.",
+      "Small, family-sized communities living out the way of Jesus in everyday rhythms, a shared meal, the Word, and prayer.",
     tag: "Microchurch",
   },
   {
@@ -173,7 +173,7 @@ export const events: GcuEvent[] = [
     location: "Gulfport waterfront",
     address: "Meet at the Gulf Coast Underground Hub",
     description:
-      "Serving our neighbors and sharing good news together. Families welcome — let's be the hands and feet of Jesus on the coast.",
+      "Serving our neighbors and sharing good news together. Families welcome, let's be the hands and feet of Jesus on the coast.",
     tag: "Outreach",
   },
 ];

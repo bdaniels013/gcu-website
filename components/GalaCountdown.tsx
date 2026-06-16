@@ -16,7 +16,7 @@ export function GalaCountdown() {
   if (t.ready && t.isPast) {
     return (
       <p className="text-lg font-semibold text-white">
-        The gala is here — welcome aboard!
+        The gala is here, welcome aboard!
       </p>
     );
   }
