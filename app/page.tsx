@@ -37,21 +37,22 @@ export default function HomePage() {
           src="/images/quadrant.jpg"
           alt=""
           aria-hidden
-          className="animate-kenburns absolute inset-0 -z-20 h-full w-full object-cover"
+          className="animate-kenburns absolute inset-0 -z-20 h-full w-full scale-100 object-cover brightness-105 saturate-[1.15]"
         />
-        {/* layered overlay: dark at the edges for legibility, lighter in the
- middle so the coast imagery stays vivid */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-teal-darkest/90 via-teal/40 to-teal-darkest/95" />
-        <div className="absolute inset-0 -z-10 bg-teal-deep/20 mix-blend-multiply" />
+        {/* light teal tint that keeps the coast imagery bright + vivid (like
+            the live site), with a soft darkening only at the very bottom so the
+            torn edge blends into the charcoal band below */}
+        <div className="absolute inset-0 -z-10 bg-teal/45" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-teal-darkest/50" />
 
-        <Container className="py-24 text-center">
+        <Container className="py-20 text-center">
           <img
             src="/images/logo-06.png"
             alt="Gulf Coast Underground, Missio Dei"
-            className="animate-rise mx-auto w-[90%] max-w-4xl drop-shadow-[0_4px_30px_rgba(0,0,0,0.35)]"
+            className="animate-rise mx-auto w-[94%] max-w-5xl drop-shadow-[0_6px_36px_rgba(0,0,0,0.4)]"
           />
           <p
-            className="animate-rise mx-auto mt-7 max-w-2xl text-sm font-semibold uppercase tracking-[0.3em] text-white/90 sm:text-base"
+            className="animate-rise mx-auto mt-6 max-w-2xl text-sm font-semibold uppercase tracking-[0.3em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] sm:text-base"
             style={{ animationDelay: "0.12s" }}
           >
             Advancing the Missio Dei on the Mississippi Gulf Coast
