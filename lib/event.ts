@@ -71,7 +71,7 @@ export interface SponsorTier {
 /** Sponsorship levels — benefits & dollar amounts copied from last year. */
 export const galaSponsorTiers: SponsorTier[] = [
   {
-    name: "Captain",
+    name: "Whale",
     price: "$3,500",
     highlighted: true,
     benefits: [
@@ -83,7 +83,7 @@ export const galaSponsorTiers: SponsorTier[] = [
     ],
   },
   {
-    name: "First Mate",
+    name: "Shark",
     price: "$2,000",
     benefits: [
       "Presenting sponsor including corporate logo throughout evening presentations and mentions throughout the evening",
@@ -92,7 +92,7 @@ export const galaSponsorTiers: SponsorTier[] = [
     ],
   },
   {
-    name: "Navigator",
+    name: "Dolphin",
     price: "$1,000",
     benefits: [
       "Silent auction sponsor including corporate logo on silent auction signs and mentions with every mention of the silent auction",
@@ -100,7 +100,7 @@ export const galaSponsorTiers: SponsorTier[] = [
     ],
   },
   {
-    name: "Deckhand",
+    name: "Sea Turtle",
     price: "$250 – $500",
     benefits: [
       "Corporate logo on event web landing page and a mention at the event",
