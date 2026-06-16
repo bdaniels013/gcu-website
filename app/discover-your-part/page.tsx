@@ -1,59 +1,28 @@
 import type { Metadata } from "next";
-import {
-  ButtonLink,
-  Card,
-  Container,
-  Eyebrow,
-  PageHero,
-} from "@/components/ui";
+import Link from "next/link";
+import { Container, Eyebrow, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Discover Your Part",
   description:
-    "Discover the part you were made to play in the mission of God, whether you're starting something new, seeking ministry support, or looking to get connected.",
+    "Everyone has a calling: the God-given intersection of gifts, passions, and stories. GPS helps you explore those three signals and find your place in the kingdom.",
 };
 
-const steps = [
+const signals = [
   {
-    n: "01",
-    title: "Sit at His feet",
-    body: "Before anything else, we listen. Discovering your part starts with discovering Jesus and what He's already stirring in you.",
+    letter: "G",
+    title: "Gifts",
+    body: "The abilities and spiritual giftings God has uniquely placed in you to serve His kingdom and the people around you.",
   },
   {
-    n: "02",
-    title: "Name what you're carrying",
-    body: "A burden for a neighborhood? A ministry idea? A gift you've been sitting on? Put words to it, that's where the journey begins.",
+    letter: "P",
+    title: "Passions",
+    body: "The people, places, and needs that stir your heart, the things you can't help but care deeply about.",
   },
   {
-    n: "03",
-    title: "Take the next faithful step",
-    body: "You don't need the whole plan. We'll help you take one obedient step, then the next, with people walking beside you.",
-  },
-  {
-    n: "04",
-    title: "Multiply",
-    body: "As you grow, you'll equip others. That's the heart of it, disciples who make disciples across the Gulf Coast.",
-  },
-];
-
-const tracks = [
-  {
-    title: "I want to start something new",
-    body: "You've got a God-given idea or a ministry stirring. We'll help you take the first step and walk with you as you build.",
-    href: "/contact",
-    cta: "Let's talk",
-  },
-  {
-    title: "I need ministry support",
-    body: "You're already leading something. We come alongside with coaching, resources, and genuine partnership.",
-    href: "/connect",
-    cta: "Get support",
-  },
-  {
-    title: "I just want to get connected",
-    body: "You're looking for a place to belong. Find a Discovery Bible Study or microchurch near you.",
-    href: "/connect",
-    cta: "Find your people",
+    letter: "S",
+    title: "Stories",
+    body: "The experiences God has walked you through, the highs and the lows, that shape how you uniquely reflect Him.",
   },
 ];
 
@@ -62,56 +31,71 @@ export default function DiscoverYourPartPage() {
     <>
       <PageHero
         eyebrow="Discover Your Part"
-        title="You were made to play a part in the mission of God."
-        subtitle="We're not here to recruit you for our needs, we're here to help you discover the part you were made for, and to equip you to live it out."
+        title="Everyone has a calling."
+        subtitle="A calling is the God-given intersection of your gifts, passions, and stories. But not everyone knows their calling, and that's exactly what we want to help you discover."
       />
 
-      {/* Steps */}
-      <Container className="py-20">
-        <div className="max-w-2xl">
-          <Eyebrow>The Journey</Eyebrow>
+      {/* GPS intro */}
+      <Container className="py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <Eyebrow>Find Your GPS</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
-            How discovery happens
+            Gifts. Passions. Stories.
           </h2>
+          <p className="mt-5 text-base leading-relaxed text-mist-soft">
+            GPS helps people explore those three signals, gifts, passions, and
+            stories, and find their place in the kingdom. From detailed
+            assessment questions to journaling exercises, GPS leads people into
+            a deeper understanding of their one-of-a-kind Masterpiece Missions.
+          </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {steps.map((s) => (
-            <Card key={s.n}>
-              <span className="text-2xl font-bold text-amber">{s.n}</span>
-              <h3 className="mt-3 text-xl font-semibold text-mist">
-                {s.title}
-              </h3>
+
+        <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-3">
+          {signals.map((s) => (
+            <div
+              key={s.title}
+              className="rounded-2xl border border-black/[0.07] bg-ink-card p-7 text-center shadow-[0_2px_20px_rgba(16,32,31,0.05)]"
+            >
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal text-2xl font-extrabold text-white">
+                {s.letter}
+              </div>
+              <h3 className="mt-4 text-xl font-bold text-mist">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-mist-soft">
                 {s.body}
               </p>
-            </Card>
+            </div>
           ))}
         </div>
       </Container>
 
-      {/* Tracks */}
+      {/* Self-assessment CTA */}
       <section className="border-t border-black/10 bg-ink-soft">
-        <Container className="py-20">
-          <div className="max-w-2xl">
-            <Eyebrow>Where Are You Starting?</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
-              Pick the path that fits you
+        <Container className="py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl rounded-3xl border border-teal/20 bg-ink p-8 text-center shadow-[0_4px_30px_rgba(0,86,85,0.08)] sm:p-12">
+            <Eyebrow>Take the Next Step</Eyebrow>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist">
+              Start with a self-assessment
             </h2>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {tracks.map((t) => (
-              <Card key={t.title} className="flex flex-col">
-                <h3 className="text-xl font-semibold text-mist">{t.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-mist-soft">
-                  {t.body}
-                </p>
-                <div className="mt-6">
-                  <ButtonLink href={t.href} variant="secondary">
-                    {t.cta}
-                  </ButtonLink>
-                </div>
-              </Card>
-            ))}
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-mist-soft">
+              You can get started by taking an online self-assessment focused on
+              your GPS. After you complete it, your results are emailed to you,
+              along with one of our ministry coaches, who will be available to
+              help you get connected and find training and/or support as needed.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/contact"
+                className="inline-flex rounded-md bg-teal px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
+              >
+                Get Started
+              </Link>
+              <Link
+                href="/connect"
+                className="inline-flex rounded-md border border-teal/30 px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-teal transition-colors hover:bg-teal/[0.06]"
+              >
+                Explore Ways to Connect
+              </Link>
+            </div>
           </div>
         </Container>
       </section>

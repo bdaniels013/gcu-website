@@ -22,7 +22,7 @@ const cards = [
   {
     title: "Looking for Community?",
     photo: "/images/photo3.jpg",
-    body: "Looking for a place to belong? We'd love to help you find community and get connected with others living on mission across the Gulf Coast. Complete the form and we'll be in touch.",
+    body: "We always have a number of micro-churches, IDE's (Intentional Discipleship Environments) and/or DBS (Discovery Bible Studies) running in our community. Fill out the connect form so that we can help get you involved.",
     cta: "Get Connected",
     href: "/contact",
   },

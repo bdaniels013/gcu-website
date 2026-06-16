@@ -12,12 +12,12 @@
   --color-ink-card: #ffffff; /* card surface (uses border + shadow) */
   --color-mist: #16201f; /* primary text (near-black) */
   --color-mist-soft: #53625f; /* muted body text */
-  --color-teal: #00545e; /* brand accent */
-  --color-teal-deep: #013b42; /* darker brand (hover) */
+  --color-teal: #005655; /* brand accent (exact Divi accent from live site) */
+  --color-teal-deep: #003c3c; /* darker brand (hover) */
   --color-amber: #c47f29; /* warm secondary accent (used sparingly) */
   --color-amber-deep: #a9691c;
   --color-charcoal: #353b3b; /* dark mission section (matches original) */
-  --color-teal-darkest: #002a30;
+  --color-teal-darkest: #002e3d; /* exact dark teal from live site */
 
   --font-display: var(--font-raleway), "Raleway", Helvetica, Arial, sans-serif;
   --font-body: var(--font-opensans), "Open Sans", Helvetica, Arial, sans-serif;
