@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Eyebrow } from "@/components/ui";
 import { TornDivider } from "@/components/TornDivider";
-import { featuredEvent } from "@/lib/event";
 import Link from "next/link";
 
 const cards = [
@@ -84,24 +83,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured event strip */}
-      <section className="border-y border-teal-darkest/30 bg-teal-deep">
-        <Container className="flex flex-col items-center justify-between gap-4 py-5 sm:flex-row">
-          <p className="text-center text-sm font-medium text-white sm:text-left">
-            <span className="font-bold uppercase tracking-wide">
-              {featuredEvent.title}
-            </span>{" "}
-            <span className="text-white/75">, {featuredEvent.tagline}</span>
-          </p>
-          <Link
-            href="/gala"
-            className="flex-none rounded-md bg-white px-5 py-2 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-white/90"
-          >
-            View the Gala
-          </Link>
-        </Container>
-      </section>
-
       {/* Mission statement, Missio Dei (dark charcoal) */}
       <section className="relative bg-charcoal">
         {/* torn edges biting up into the hero and down into the next band */}
@@ -124,22 +105,22 @@ export default function HomePage() {
           </div>
           <div className="mx-auto mt-10 grid max-w-5xl gap-8 text-[15px] leading-relaxed text-white/75 md:grid-cols-2">
             <p>
-              <span className="font-bold text-white">Missio Dei</span> is the
-              Latin phrase meaning the Mission of God. The GC Underground exists
-              to advance the Missio Dei on the Mississippi Gulf Coast, and we
-              accomplish that by focusing on what Christ called &ldquo;making
-              disciples.&rdquo; Discipleship is a fairly simple concept at the
-              Underground, it simply means to learn and discover how to live in
-              missional rhythms in our everyday context, which is fueled and
-              grows by deep intimate relationship that only comes from sitting
-              at the feet of Jesus and living in regular community with other
-              believers. This is how we learn what it means to follow Christ. It
-              is an obedience-based approach, but it is very important to
-              understand that obedience is a heart posture as opposed to a list
-              of do&apos;s and don&apos;ts. We seek to obey the Lord in all
-              things, not to obtain His approval but because we realize who He
-              is and what He did for us&hellip;because we love Him and He is
-              worthy of our obedience.
+              <span className="font-semibold text-white">Missio&nbsp;Dei</span>{" "}
+              is the Latin phrase meaning the Mission of God. The GC Underground
+              exists to advance the Missio Dei on the Mississippi Gulf Coast,
+              and we accomplish that by focusing on what Christ called
+              &ldquo;making disciples.&rdquo; Discipleship is a fairly simple
+              concept at the Underground, it simply means to learn and discover
+              how to live in missional rhythms in our everyday context, which is
+              fueled and grows by deep intimate relationship that only comes
+              from sitting at the feet of Jesus and living in regular community
+              with other believers. This is how we learn what it means to follow
+              Christ. It is an obedience-based approach, but it is very
+              important to understand that obedience is a heart posture as
+              opposed to a list of do&apos;s and don&apos;ts. We seek to obey
+              the Lord in all things, not to obtain His approval but because we
+              realize who He is and what He did for us&hellip;because we love
+              Him and He is worthy of our obedience.
             </p>
             <p>
               As we experience the transformational power of the Gospel in our
