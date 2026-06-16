@@ -14,6 +14,7 @@ const navItems: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Connect", href: "/connect" },
+  { label: "Gala", href: "/gala" },
   { label: "Events", href: "/events" },
   { label: "Support", href: "/support" },
   { label: "Discover Your Part", href: "/discover-your-part" },
@@ -48,13 +49,13 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Gulf Coast Underground home">
           <Logo className="h-9 w-9" />
-          <span className="text-sm font-bold uppercase tracking-[0.16em] text-mist">
+          <span className="hidden text-sm font-bold uppercase tracking-[0.16em] text-mist xl:inline">
             GC Underground
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden items-center gap-6 lg:flex">
+        <ul className="hidden items-center gap-5 lg:flex">
           {navItems.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);

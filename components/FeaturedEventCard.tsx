@@ -54,10 +54,10 @@ export function FeaturedEventCard({ event }: { event: GcuEvent }) {
             </div>
           </dl>
           <a
-            href="/contact"
+            href="/gala"
             className="mt-7 inline-flex rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-deep"
           >
-            Save Your Spot
+            View Gala Details
           </a>
         </div>
 

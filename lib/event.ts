@@ -29,10 +29,84 @@ export const featuredEvent: FeaturedEvent = {
     "A night of breaking bread & spreading the Gospel. “Where the harvest is plentiful, but the laborers are few.” Limited tickets available — text 228-669-3696 to lock in your spot now.",
   startsAt: "2026-09-17T18:00:00",
   location: "Biloxi Visitors Center",
-  address: "Biloxi Visitors Center · Biloxi, MS",
-  ctaLabel: "Text to Reserve",
-  ctaHref: "sms:+12286693696",
+  address: "1050 Beach Blvd, Biloxi, MS 39530",
+  ctaLabel: "Reserve Your Spot",
+  ctaHref: "/gala",
 };
+
+/**
+ * The Gala — full details for the dedicated /gala page. Mirrors the format
+ * of last year's "Africa the Gala" (sponsorship tiers + dollar amounts kept
+ * identical), updated for this year's date, venue, and "Fishers of Men" theme.
+ */
+export const gala = {
+  ordinal: "Second Annual",
+  title: "GC Underground Gala",
+  theme: "Fishers of Men",
+  tagline: "A Night of Breaking Bread & Spreading the Gospel",
+  verses: [
+    "Blessed are the poor in spirit, for theirs is the kingdom of heaven.",
+    "Where the harvest is plentiful, but the laborers are few.",
+  ],
+  dateLabel: "Thursday, September 17, 2026",
+  timeLabel: "6:00 – 9:00 PM",
+  venue: "Biloxi Visitors Center",
+  venueAddress: "1050 Beach Blvd, Biloxi, MS 39530",
+  startsAtISO: "2026-09-17T18:00:00",
+  ticketNote: "Limited number of tickets available",
+  reserveNumber: "228-669-3696",
+  reserveNumberRaw: "2286693696",
+  reserveMessage: "GALA",
+};
+
+export interface SponsorTier {
+  /** Nautical name for this year's "Fishers of Men" theme (last year used
+   *  Africa animals: Lion / Gorilla / Giraffe / Elephant). */
+  name: string;
+  price: string;
+  benefits: string[];
+  highlighted?: boolean;
+}
+
+/** Sponsorship levels — benefits & dollar amounts copied from last year. */
+export const galaSponsorTiers: SponsorTier[] = [
+  {
+    name: "Captain",
+    price: "$3,500",
+    highlighted: true,
+    benefits: [
+      "Main event sponsor including corporate logo on entrance signs",
+      "Presenting sponsor including corporate logo throughout evening presentations and mentions throughout the evening",
+      "Corporate logo on center pieces at all tables",
+      "Large corporate logo on event web landing page",
+      "Eight person table at the event",
+    ],
+  },
+  {
+    name: "First Mate",
+    price: "$2,000",
+    benefits: [
+      "Presenting sponsor including corporate logo throughout evening presentations and mentions throughout the evening",
+      "Corporate logo on center pieces at all tables",
+      "Large corporate logo on event web landing page",
+    ],
+  },
+  {
+    name: "Navigator",
+    price: "$1,000",
+    benefits: [
+      "Silent auction sponsor including corporate logo on silent auction signs and mentions with every mention of the silent auction",
+      "Corporate logo on event web landing page",
+    ],
+  },
+  {
+    name: "Deckhand",
+    price: "$250 – $500",
+    benefits: [
+      "Corporate logo on event web landing page and a mention at the event",
+    ],
+  },
+];
 
 export interface GcuEvent {
   id: string;

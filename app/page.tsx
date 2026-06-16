@@ -76,10 +76,10 @@ export default function HomePage() {
             <span className="text-white/75">— {featuredEvent.tagline}</span>
           </p>
           <Link
-            href="/events"
+            href="/gala"
             className="flex-none rounded-md bg-white px-5 py-2 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-white/90"
           >
-            View Events
+            View the Gala
           </Link>
         </Container>
       </section>
