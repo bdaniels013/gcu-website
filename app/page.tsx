@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Eyebrow } from "@/components/ui";
+import { TornDivider } from "@/components/TornDivider";
 import { featuredEvent } from "@/lib/event";
 import Link from "next/link";
 
@@ -84,7 +85,10 @@ export default function HomePage() {
       </section>
 
       {/* Mission statement — Missio Dei (dark charcoal) */}
-      <section className="bg-charcoal">
+      <section className="relative bg-charcoal">
+        {/* torn edges biting up into the hero and down into the next band */}
+        <TornDivider fill="fill-charcoal" position="top" />
+        <TornDivider fill="fill-charcoal" position="bottom" />
         <Container className="py-20 sm:py-24">
           <div className="flex flex-col items-center text-center">
             <img

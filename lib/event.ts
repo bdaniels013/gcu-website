@@ -22,16 +22,16 @@ export interface FeaturedEvent {
 }
 
 export const featuredEvent: FeaturedEvent = {
-  id: "underground-night-summer-2026",
-  title: "Underground Night",
-  tagline: "A night of worship, teaching & community on the Gulf Coast",
+  id: "underground-gala-2026",
+  title: "GC Underground Gala",
+  tagline: "Second Annual · “Fishers of Men”",
   description:
-    "Come sit at the feet of Jesus with us. One night, one family — worship, the Word, and space to belong. Bring a friend. Everyone's welcome at the table.",
-  startsAt: "2026-07-18T18:00:00",
-  location: "Gulf Coast Underground Hub",
-  address: "1109 Cowan Road, Unit B9, Gulfport, MS 39507",
-  ctaLabel: "Save Your Spot",
-  ctaHref: "/events#underground-night-summer-2026",
+    "A night of breaking bread & spreading the Gospel. “Where the harvest is plentiful, but the laborers are few.” Limited tickets available — text 228-669-3696 to lock in your spot now.",
+  startsAt: "2026-09-17T18:00:00",
+  location: "Biloxi Visitors Center",
+  address: "Biloxi Visitors Center · Biloxi, MS",
+  ctaLabel: "Text to Reserve",
+  ctaHref: "sms:+12286693696",
 };
 
 export interface GcuEvent {
@@ -48,14 +48,14 @@ export interface GcuEvent {
 /** All upcoming events listed on the /events page. */
 export const events: GcuEvent[] = [
   {
-    id: "underground-night-summer-2026",
-    title: "Underground Night",
-    date: "2026-07-18T18:00:00",
-    endTime: "8:30 PM",
-    location: "Gulf Coast Underground Hub",
-    address: "1109 Cowan Road, Unit B9, Gulfport, MS 39507",
+    id: "underground-gala-2026",
+    title: "Second Annual GC Underground Gala — “Fishers of Men”",
+    date: "2026-09-17T18:00:00",
+    endTime: "9:00 PM",
+    location: "Biloxi Visitors Center",
+    address: "Biloxi Visitors Center · Biloxi, MS",
     description:
-      "A night of worship, teaching, and community. Come as you are — there's room for you here.",
+      "A night of breaking bread and spreading the Gospel. Limited number of tickets available — text 228-669-3696 to lock in your spot now.",
     tag: "Gathering",
   },
   {

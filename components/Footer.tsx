@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { TornDivider } from "./TornDivider";
 
 const links = [
   { label: "Who We Are", href: "/who-we-are" },
@@ -13,20 +14,8 @@ const links = [
 export function Footer() {
   return (
     <footer className="relative bg-teal-deep text-white">
-      {/* Wave divider sitting above the teal footer */}
-      <div className="absolute inset-x-0 -top-px -translate-y-full leading-[0]">
-        <svg
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-          className="h-12 w-full sm:h-20"
-          aria-hidden
-        >
-          <path
-            d="M0,80 C240,20 480,20 720,60 C960,100 1200,100 1440,40 L1440,120 L0,120 Z"
-            className="fill-teal-deep"
-          />
-        </svg>
-      </div>
+      {/* Torn edge tearing up into the section above */}
+      <TornDivider fill="fill-teal-deep" position="top" />
 
       <div className="mx-auto max-w-4xl px-5 py-16 text-center sm:px-8">
         <img
