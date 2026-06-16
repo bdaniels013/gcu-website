@@ -1,33 +1,29 @@
 /**
- * Torn-paper / textured edge divider, mimics the ragged edges on the
- * original gulfcoastunderground.org between the hero, the dark mission
- * band, and the footer (instead of a flat straight line).
+ * Torn / ragged section divider.
  *
- * The SVG is a solid shape whose TOP edge is irregular; place it at the
- * top of a section (it overlaps upward into the section above) so the
- * section's color "tears" up into the previous one.
+ * This is the EXACT shape the live gulfcoastunderground.org uses for its hero
+ * bottom edge — a Divi "section divider" SVG, read directly out of the live
+ * site's CSS background-image (viewBox 0 0 1280 140, preserveAspectRatio
+ * none). Using the real path (instead of a hand-drawn zigzag) is what makes
+ * the hero → body transition match the live design.
  *
- * position="top" → teeth bite upward into the section above
- * position="bottom" → teeth bite downward into the section below
+ *   position="top"    → the shape sits at the top of a section and its ragged
+ *                       peaks rise UP into the section above (e.g. dark mission
+ *                       band tearing up into the hero photo).
+ *   position="bottom" → flipped, tearing DOWN into the section below.
  */
 type Props = {
-  /** Tailwind fill class for the torn shape, e.g. "fill-charcoal" */
+  /** Tailwind fill class for the shape, e.g. "fill-charcoal" */
   fill: string;
   position?: "top" | "bottom";
   className?: string;
 };
 
-// An intentionally irregular edge (mix of small + large teeth) so it reads
-// as torn paper rather than a regular zig-zag.
-const EDGE =
-  "0,22 26,7 52,25 84,10 110,29 142,13 174,30 206,6 236,21 274,11 308,28 " +
-  "340,9 372,26 404,7 438,23 470,12 504,29 536,8 568,24 602,11 636,27 668,7 " +
-  "702,22 736,13 768,30 800,9 832,25 866,6 900,23 934,12 968,28 1000,8 " +
-  "1034,24 1066,11 1100,27 1134,9 1166,21 1200,13 1234,29 1266,7 1300,24 " +
-  "1334,10 1368,26 1402,8 1440,20";
+// Verbatim from the live site's Divi bottom-divider background SVG.
+const DIVI_TORN =
+  "M0 0l64.8 30.95 91.2-2.54 95.46 27.87 120.04.2L443 83.15l90.09-3.12L640 110.12l102.39-29.73 85.55 8.51 88.11-5.75L992 52.22l73.21 4.26L1132 38.79l77-.33L1280 0v140H0V0z";
 
 export function TornDivider({ fill, position = "top", className = "" }: Props) {
-  const path = `M0,40 L${EDGE.replace(/ /g, " L")} L1440,40 Z`;
   const posClass =
     position === "top"
       ? "top-0 -translate-y-[99%]"
@@ -38,11 +34,11 @@ export function TornDivider({ fill, position = "top", className = "" }: Props) {
       className={`pointer-events-none absolute inset-x-0 z-10 leading-[0] ${posClass} ${className}`}
     >
       <svg
-        viewBox="0 0 1440 40"
+        viewBox="0 0 1280 140"
         preserveAspectRatio="none"
-        className="block h-5 w-full sm:h-7"
+        className="block h-[52px] w-full sm:h-[78px] lg:h-[91px]"
       >
-        <path d={path} className={fill} />
+        <path d={DIVI_TORN} className={fill} />
       </svg>
     </div>
   );
