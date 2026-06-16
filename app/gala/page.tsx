@@ -46,7 +46,7 @@ export default function GalaPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-teal sm:text-sm">
             {gala.ordinal}
           </p>
-          <h1 className="mt-5 text-5xl font-medium uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
+          <h1 className="mt-5 text-[2.5rem] font-medium uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
             {gala.title}
           </h1>
           <p className="mt-6 text-2xl font-medium italic text-amber sm:text-4xl">

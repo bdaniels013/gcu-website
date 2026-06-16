@@ -47,7 +47,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-4xl px-5 py-5 text-center text-xs text-white/60 sm:px-8">
+        <div className="mx-auto max-w-4xl px-5 pb-16 pt-5 text-center text-xs text-white/60 sm:px-8 sm:pb-5">
           © {new Date().getFullYear()} Gulf Coast Underground · Advancing the
           Missio Dei on the Mississippi Gulf Coast.
         </div>

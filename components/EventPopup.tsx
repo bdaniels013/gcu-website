@@ -86,16 +86,16 @@ export function EventPopup() {
       role="dialog"
       aria-modal="true"
       aria-label={`Featured event: ${featuredEvent.title}`}
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-mist/70 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-x-hidden overflow-y-auto bg-mist/70 px-4 py-12 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
     >
-      {/* glow accents */}
-      <div className="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-teal/20 blur-3xl" />
-      <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-amber/15 blur-3xl" />
+      {/* glow accents (clipped to viewport) */}
+      <div className="pointer-events-none absolute left-0 top-10 h-72 w-72 -translate-x-1/3 rounded-full bg-teal/20 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 translate-x-1/3 rounded-full bg-amber/15 blur-3xl" />
 
-      <div className="animate-fade-in relative mx-4 my-12 w-full max-w-2xl rounded-3xl border border-black/10 bg-ink p-8 text-center shadow-2xl sm:p-12">
+      <div className="animate-fade-in relative w-full max-w-2xl rounded-3xl border border-black/10 bg-ink p-6 text-center shadow-2xl sm:p-12">
         <button
           type="button"
           onClick={close}
@@ -117,7 +117,7 @@ export function EventPopup() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
           You&apos;re Invited
         </p>
-        <h2 className="mt-4 text-4xl font-medium uppercase tracking-tight text-mist sm:text-5xl">
+        <h2 className="mt-4 break-words text-[1.75rem] font-medium uppercase leading-tight tracking-tight text-mist sm:text-5xl">
           {featuredEvent.title}
         </h2>
         <p className="mx-auto mt-3 max-w-md text-base text-mist-soft">
@@ -139,11 +139,14 @@ export function EventPopup() {
         {/* Countdown */}
         <div className="mt-8 grid grid-cols-4 gap-2 sm:gap-3">
           {units.map((u) => (
-            <div key={u.label} className="rounded-2xl bg-teal px-2 py-4">
-              <div className="text-3xl font-bold tabular-nums text-white sm:text-4xl">
+            <div
+              key={u.label}
+              className="rounded-2xl bg-teal px-1 py-4 sm:px-2"
+            >
+              <div className="text-2xl font-bold tabular-nums text-white sm:text-4xl">
                 {t.ready ? String(u.value).padStart(2, "0") : "--"}
               </div>
-              <div className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-white/70">
+              <div className="mt-1 text-[9px] font-semibold uppercase tracking-widest text-white/70 sm:text-[10px]">
                 {u.label}
               </div>
             </div>

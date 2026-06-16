@@ -61,7 +61,7 @@ export function CountdownBar() {
         {/* Scrolling marquee */}
         <Link
           href={featuredEvent.ctaHref}
-          className="group relative flex-1 overflow-hidden py-2.5"
+          className="group relative min-w-0 flex-1 overflow-hidden py-2.5"
           aria-label={`${featuredEvent.title}, view event details`}
         >
           <div className="flex w-max animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
