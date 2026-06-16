@@ -53,7 +53,7 @@ export default function ConnectPage() {
         >
           <div>
             <Eyebrow>Start Here</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist">
               Discovery Bible Studies (DBS)
             </h2>
           </div>
@@ -85,7 +85,7 @@ export default function ConnectPage() {
         <Container className="py-16 sm:py-20">
           <div className="max-w-3xl">
             <Eyebrow>Go Deeper</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
               Intentional Discipleship Environments (IDE&apos;s)
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-mist-soft">
@@ -113,7 +113,9 @@ export default function ConnectPage() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col border-t border-black/[0.06] p-7">
-                  <h3 className="text-xl font-bold text-mist">{track.name}</h3>
+                  <h3 className="text-xl font-medium uppercase text-mist">
+                    {track.name}
+                  </h3>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-teal">
                     {track.duration}
                   </p>
@@ -139,7 +141,7 @@ export default function ConnectPage() {
         >
           <div>
             <Eyebrow>Be the Church</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
               Microchurch
             </h2>
             <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-mist-soft">
@@ -184,7 +186,7 @@ export default function ConnectPage() {
       >
         <Container className="py-16 text-center sm:py-20">
           <Eyebrow>Connect With Us</Eyebrow>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
             Let&apos;s help you get connected.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-mist-soft">
@@ -196,7 +198,7 @@ export default function ConnectPage() {
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-flex rounded-md bg-teal px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
+              className="inline-flex rounded-[3px] bg-teal px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
             >
               Get Connected
             </Link>

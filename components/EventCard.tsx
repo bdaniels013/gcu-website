@@ -30,7 +30,9 @@ export function EventCard({ event }: { event: GcuEvent }) {
         <span className="text-xs font-bold tracking-widest text-amber">
           {p.month}
         </span>
-        <span className="text-2xl font-bold text-mist">{p.day}</span>
+        <span className="text-2xl font-medium uppercase text-mist">
+          {p.day}
+        </span>
       </div>
 
       <div className="flex flex-1 flex-col">

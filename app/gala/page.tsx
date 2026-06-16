@@ -25,7 +25,7 @@ function ReserveButton({
   return (
     <a
       href={reserveHref}
-      className={`inline-flex items-center justify-center gap-2 rounded-md px-7 py-3 text-sm font-bold uppercase tracking-wide transition-colors ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-md px-7 py-3 text-sm font-medium uppercase tracking-wide transition-colors ${className}`}
     >
       {children}
     </a>
@@ -46,7 +46,7 @@ export default function GalaPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-teal sm:text-sm">
             {gala.ordinal}
           </p>
-          <h1 className="mt-5 text-5xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
+          <h1 className="mt-5 text-5xl font-medium uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
             {gala.title}
           </h1>
           <p className="mt-6 text-2xl font-medium italic text-amber sm:text-4xl">
@@ -75,7 +75,7 @@ export default function GalaPage() {
             </ReserveButton>
             <Link
               href="#sponsor"
-              className="inline-flex items-center justify-center rounded-md border border-white/30 px-7 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-md border border-white/30 px-7 py-3 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-white/10"
             >
               Become a Sponsor
             </Link>
@@ -112,7 +112,7 @@ export default function GalaPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
                 Event Details
               </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
                 Join us for an unforgettable evening
               </h2>
               <dl className="mt-8 space-y-5 text-mist-soft">
@@ -182,7 +182,7 @@ export default function GalaPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
               Partner With Us
             </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
               Sponsorship Opportunities
             </h2>
             <p className="mt-4 text-base leading-relaxed text-mist-soft">
@@ -204,14 +204,14 @@ export default function GalaPage() {
                 }`}
               >
                 <h3
-                  className={`text-xl font-bold uppercase tracking-wide ${
+                  className={`text-xl font-medium uppercase tracking-wide ${
                     tier.highlighted ? "text-white" : "text-mist"
                   }`}
                 >
                   {tier.name}
                 </h3>
                 <p
-                  className={`mt-1 text-3xl font-extrabold ${
+                  className={`mt-1 text-3xl font-medium ${
                     tier.highlighted ? "text-white" : "text-teal"
                   }`}
                 >
@@ -240,7 +240,7 @@ export default function GalaPage() {
                 </ul>
                 <Link
                   href="/contact"
-                  className={`mt-7 inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-colors ${
+                  className={`mt-7 inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-medium uppercase tracking-wide transition-colors ${
                     tier.highlighted
                       ? "bg-white text-teal hover:bg-white/90"
                       : "bg-teal text-white hover:bg-teal-deep"

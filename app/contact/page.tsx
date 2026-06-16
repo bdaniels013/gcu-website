@@ -22,7 +22,7 @@ export default function ContactPage() {
           {/* Details */}
           <div>
             <Eyebrow>Visit & Connect</Eyebrow>
-            <h2 className="mt-3 text-2xl font-bold text-mist">
+            <h2 className="mt-3 text-2xl font-medium uppercase text-mist">
               Find us on the coast
             </h2>
 
@@ -75,7 +75,9 @@ export default function ContactPage() {
 
           {/* Form */}
           <div className="rounded-3xl border border-black/10 bg-ink-soft p-8">
-            <h2 className="text-2xl font-bold text-mist">Send us a message</h2>
+            <h2 className="text-2xl font-medium uppercase text-mist">
+              Send us a message
+            </h2>
             <p className="mt-2 text-sm text-mist-soft">
               Fill this out and your email app will open with your message ready
               to send. Prefer email? Write us directly at{" "}

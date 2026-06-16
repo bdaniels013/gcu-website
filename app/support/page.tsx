@@ -44,7 +44,7 @@ export default function SupportPage() {
         <div className="grid items-start gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <Eyebrow>Why Give</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist">
               Every gift advances the Missio Dei
             </h2>
             <div className="mt-8 space-y-5">
@@ -63,7 +63,7 @@ export default function SupportPage() {
             <p className="text-xs font-semibold uppercase tracking-widest text-amber">
               Give Securely
             </p>
-            <h2 className="mt-3 text-2xl font-bold text-mist">
+            <h2 className="mt-3 text-2xl font-medium uppercase text-mist">
               Make a gift today
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-mist-soft">

@@ -39,7 +39,7 @@ export default function DiscoverYourPartPage() {
       <Container className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Eyebrow>Find Your GPS</Eyebrow>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
             Gifts. Passions. Stories.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-mist-soft">
@@ -56,10 +56,12 @@ export default function DiscoverYourPartPage() {
               key={s.title}
               className="rounded-2xl border border-black/[0.07] bg-ink-card p-7 text-center shadow-[0_2px_20px_rgba(16,32,31,0.05)]"
             >
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal text-2xl font-extrabold text-white">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal text-2xl font-medium text-white">
                 {s.letter}
               </div>
-              <h3 className="mt-4 text-xl font-bold text-mist">{s.title}</h3>
+              <h3 className="mt-4 text-xl font-medium uppercase text-mist">
+                {s.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-mist-soft">
                 {s.body}
               </p>
@@ -73,7 +75,7 @@ export default function DiscoverYourPartPage() {
         <Container className="py-16 sm:py-20">
           <div className="mx-auto max-w-3xl rounded-3xl border border-teal/20 bg-ink p-8 text-center shadow-[0_4px_30px_rgba(0,86,85,0.08)] sm:p-12">
             <Eyebrow>Take the Next Step</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist">
               Start with a self-assessment
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-mist-soft">
@@ -85,13 +87,13 @@ export default function DiscoverYourPartPage() {
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex rounded-md bg-teal px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
+                className="inline-flex rounded-[3px] bg-teal px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
               >
                 Get Started
               </Link>
               <Link
                 href="/connect"
-                className="inline-flex rounded-md border border-teal/30 px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-teal transition-colors hover:bg-teal/[0.06]"
+                className="inline-flex rounded-[3px] border-2 border-teal px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-teal transition-colors hover:bg-teal/[0.06]"
               >
                 Explore Ways to Connect
               </Link>

@@ -1,6 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+/* Design-system primitives — values measured from the live site:
+   content column 1080px, section titles large + UPPERCASE Raleway 500,
+   buttons uppercase Raleway with a 3px radius. */
+
 export function Container({
   children,
   className = "",
@@ -9,7 +13,9 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-7xl px-5 sm:px-8 ${className}`}>
+    <div
+      className={`mx-auto w-full max-w-[var(--content)] px-5 sm:px-8 ${className}`}
+    >
       {children}
     </div>
   );
@@ -20,6 +26,23 @@ export function Eyebrow({ children }: { children: ReactNode }) {
     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
       {children}
     </p>
+  );
+}
+
+/** Large, light, uppercase section title — the live site's signature. */
+export function SectionTitle({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <h2
+      className={`text-[clamp(2rem,5vw,3.5rem)] font-medium uppercase leading-[1.05] tracking-tight text-mist ${className}`}
+    >
+      {children}
+    </h2>
   );
 }
 
@@ -38,11 +61,11 @@ export function PageHero({
       <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-teal/5 blur-3xl" />
       <Container className="relative py-20 sm:py-24">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-mist sm:text-5xl">
+        <h1 className="mt-4 max-w-4xl text-[clamp(2.25rem,5vw,4rem)] font-medium uppercase leading-[1.05] tracking-tight text-mist">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-mist-soft">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-mist-soft sm:text-lg">
             {subtitle}
           </p>
         )}
@@ -65,12 +88,11 @@ export function ButtonLink({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.03]";
+    "inline-flex items-center justify-center rounded-[3px] px-7 py-3 text-sm font-semibold uppercase tracking-[0.1em] transition-colors";
   const styles: Record<string, string> = {
     primary: "bg-teal text-white hover:bg-teal-deep",
     secondary: "bg-amber text-white hover:bg-amber-deep",
-    ghost:
-      "border border-teal/30 text-teal hover:bg-teal/[0.06] hover:scale-100",
+    ghost: "border-2 border-teal text-teal hover:bg-teal hover:text-white",
   };
   const external = href.startsWith("http");
   if (external) {
@@ -101,7 +123,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-3xl border border-black/[0.07] bg-ink-card p-7 shadow-[0_2px_20px_rgba(16,32,31,0.05)] transition-all hover:border-teal/30 hover:shadow-[0_6px_28px_rgba(16,32,31,0.08)] ${className}`}
+      className={`rounded-md border border-black/[0.07] bg-ink-card p-7 shadow-[0_2px_18px_rgba(0,0,0,0.04)] transition-all hover:border-teal/30 hover:shadow-[0_6px_26px_rgba(0,0,0,0.07)] ${className}`}
     >
       {children}
     </div>

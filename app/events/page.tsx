@@ -34,7 +34,7 @@ export default function EventsPage() {
 
         <section className="mt-16">
           <Eyebrow>What&apos;s Coming Up</Eyebrow>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
             Upcoming gatherings & rhythms
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -47,7 +47,7 @@ export default function EventsPage() {
         </section>
 
         <section className="mt-16 rounded-3xl border border-black/10 bg-ink-soft p-10 text-center">
-          <h2 className="text-2xl font-bold text-mist">
+          <h2 className="text-2xl font-medium uppercase text-mist">
             Don&apos;t see a group near you?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm text-mist-soft">

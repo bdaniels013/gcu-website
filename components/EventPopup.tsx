@@ -117,7 +117,7 @@ export function EventPopup() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
           You&apos;re Invited
         </p>
-        <h2 className="mt-4 text-4xl font-bold tracking-tight text-mist sm:text-5xl">
+        <h2 className="mt-4 text-4xl font-medium uppercase tracking-tight text-mist sm:text-5xl">
           {featuredEvent.title}
         </h2>
         <p className="mx-auto mt-3 max-w-md text-base text-mist-soft">

@@ -32,7 +32,7 @@ export function FeaturedEventCard({ event }: { event: GcuEvent }) {
           <span className="inline-flex rounded-full bg-amber/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber">
             {event.tag}
           </span>
-          <h3 className="mt-4 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+          <h3 className="mt-4 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
             {event.title}
           </h3>
           <p className="mt-3 text-base leading-relaxed text-mist-soft">

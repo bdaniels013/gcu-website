@@ -62,13 +62,13 @@ export default function HomePage() {
           >
             <Link
               href="/contact"
-              className="rounded-md bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-teal shadow-lg shadow-teal-darkest/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+              className="rounded-[3px] bg-white px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-teal shadow-lg shadow-teal-darkest/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
               Become a Part
             </Link>
             <Link
               href="/gala"
-              className="rounded-md border border-white/60 px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+              className="rounded-[3px] border-2 border-white/70 px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
             >
               The Gala
             </Link>
@@ -152,7 +152,7 @@ export default function HomePage() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">
               Get Involved
             </p>
-            <h2 className="mt-3 text-4xl font-extrabold uppercase leading-[1.05] tracking-tight text-mist sm:text-5xl">
+            <h2 className="mt-3 text-4xl font-medium uppercase leading-[1.05] tracking-tight text-mist sm:text-5xl">
               Become a Part of the Underground.
             </h2>
             <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-amber" />
@@ -172,12 +172,12 @@ export default function HomePage() {
                     alt=""
                     className="h-60 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 md:h-full"
                   />
-                  <span className="absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-sm font-extrabold text-teal shadow">
+                  <span className="absolute left-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-sm font-medium text-teal shadow">
                     0{i + 1}
                   </span>
                 </div>
                 <div className="flex flex-col justify-center p-8 sm:p-12">
-                  <h3 className="text-xl font-bold uppercase leading-snug tracking-tight text-mist sm:text-2xl">
+                  <h3 className="text-xl font-medium uppercase leading-snug tracking-tight text-mist sm:text-2xl">
                     {c.title}
                   </h3>
                   <p className="mt-4 text-[15px] leading-relaxed text-mist-soft">
@@ -186,7 +186,7 @@ export default function HomePage() {
                   <div className="mt-6">
                     <Link
                       href={c.href}
-                      className="inline-flex items-center gap-2 rounded-md bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all hover:gap-3 hover:bg-teal-deep"
+                      className="inline-flex items-center gap-2 rounded-[3px] bg-teal px-6 py-3 text-sm font-medium uppercase tracking-wide text-white transition-all hover:gap-3 hover:bg-teal-deep"
                     >
                       {c.cta}
                       <span aria-hidden>→</span>
@@ -203,19 +203,19 @@ export default function HomePage() {
       <section className="border-t border-black/10 bg-ink-soft">
         <Container className="py-16 text-center">
           <Eyebrow>We look forward to meeting you</Eyebrow>
-          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-bold tracking-tight text-mist">
+          <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-medium uppercase tracking-tight text-mist">
             Tell us what God is stirring in you.
           </h2>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-md bg-teal px-7 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal-deep"
+              className="rounded-[3px] bg-teal px-7 py-3 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-teal-deep"
             >
               Connect With Us
             </Link>
             <Link
               href="/support"
-              className="rounded-md border border-teal/30 px-7 py-3 text-sm font-bold uppercase tracking-wide text-teal transition-colors hover:bg-teal/[0.06]"
+              className="rounded-[3px] border-2 border-teal px-7 py-3 text-sm font-medium uppercase tracking-wide text-teal transition-colors hover:bg-teal/[0.06]"
             >
               Support the Mission
             </Link>

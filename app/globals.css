@@ -1,26 +1,34 @@
 @import "tailwindcss";
 
 /* ============================================================
- Gulf Coast Underground, brand theme
- Matches gulfcoastunderground.org: light, clean, grassroots.
- Deep-teal (#00545e) brand accent on white, Raleway headings
- + Open Sans body.
- ============================================================ */
+   Gulf Coast Underground — DESIGN SYSTEM
+   Tokens measured from the live gulfcoastunderground.org (Divi) so
+   the rebuild matches it exactly.
+
+   Type:   Raleway everywhere, weight 500 (medium) — NOT bold. Section
+           titles are large + UPPERCASE. Body is airy (line-height 1.7).
+   Color:  headings #333, body #666, brand teal #005655, dark #002e3d,
+           charcoal mission band #3a3a3a.
+   Layout: content column maxes at 1080px (var --content).
+   ============================================================ */
 @theme {
   --color-ink: #ffffff; /* page background */
-  --color-ink-soft: #f2f5f5; /* alternating section background */
+  --color-ink-soft: #f4f6f6; /* alternating section background */
   --color-ink-card: #ffffff; /* card surface (uses border + shadow) */
-  --color-mist: #16201f; /* primary text (near-black) */
-  --color-mist-soft: #53625f; /* muted body text */
-  --color-teal: #005655; /* brand accent (exact Divi accent from live site) */
-  --color-teal-deep: #003c3c; /* darker brand (hover) */
+  --color-mist: #333333; /* headings / strong text (live #333) */
+  --color-mist-soft: #666666; /* body text (live #666) */
+  --color-teal: #005655; /* brand accent (exact Divi accent) */
+  --color-teal-deep: #00423f; /* darker brand (hover) */
   --color-amber: #c47f29; /* warm secondary accent (used sparingly) */
   --color-amber-deep: #a9691c;
-  --color-charcoal: #353b3b; /* dark mission section (matches original) */
-  --color-teal-darkest: #002e3d; /* exact dark teal from live site */
+  --color-charcoal: #3a3a3a; /* dark mission section (live rgb(58,58,58)) */
+  --color-teal-darkest: #002e3d; /* exact dark teal footer (live) */
 
   --font-display: var(--font-raleway), "Raleway", Helvetica, Arial, sans-serif;
-  --font-body: var(--font-opensans), "Open Sans", Helvetica, Arial, sans-serif;
+  --font-body: var(--font-raleway), "Raleway", Helvetica, Arial, sans-serif;
+
+  /* content column width measured from the live site */
+  --content: 1080px;
 }
 
 :root {
@@ -33,12 +41,18 @@ html {
 
 body {
   background-color: var(--color-ink);
-  color: var(--color-mist);
+  color: var(--color-mist-soft);
   font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+/* Headings default to Raleway medium (the live site's signature) — large,
+   light, and refined rather than heavy/bold. Components add UPPERCASE +
+   size where the live site does. */
 h1,
 h2,
 h3,
@@ -46,6 +60,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-mist);
 }
 
 /* Marquee animation for the scrolling countdown bar */

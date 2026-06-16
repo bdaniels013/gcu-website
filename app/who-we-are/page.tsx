@@ -33,7 +33,7 @@ export default function WhoWeArePage() {
       <Container className="py-16 sm:py-20">
         <div id="background" className="scroll-mt-24">
           <Eyebrow>Our Background</Eyebrow>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
             Why we exist
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 text-[15px] leading-relaxed text-mist-soft">
@@ -113,7 +113,7 @@ export default function WhoWeArePage() {
         <Container className="py-16 sm:py-20">
           <div className="max-w-3xl">
             <Eyebrow>Our Manifesto</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
               What we believe to be true
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-mist-soft">
@@ -128,7 +128,7 @@ export default function WhoWeArePage() {
           {/* Focus */}
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
-              <h3 className="text-xl font-bold text-mist">Focus</h3>
+              <h3 className="text-xl font-medium uppercase text-mist">Focus</h3>
               <p className="mt-2 text-sm text-mist-soft">
                 Healthy missiology and ecclesiology, filtered through the lens
                 of healthy Christology.
@@ -160,7 +160,9 @@ export default function WhoWeArePage() {
 
           {/* Values */}
           <div className="mt-14">
-            <h3 className="text-xl font-bold text-mist">Our Values</h3>
+            <h3 className="text-xl font-medium uppercase text-mist">
+              Our Values
+            </h3>
             <p className="mt-2 max-w-2xl text-sm text-mist-soft">
               Our focus and values provide the lens through which we see all of
               life, which ultimately yields walking and living in the life
@@ -198,7 +200,7 @@ export default function WhoWeArePage() {
         >
           <div>
             <Eyebrow>Our Organization</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-mist">
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist">
               How we&apos;re structured
             </h2>
           </div>
@@ -231,7 +233,7 @@ export default function WhoWeArePage() {
             <div className="pt-2">
               <Link
                 href="/connect"
-                className="inline-flex rounded-md bg-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-teal-deep"
+                className="inline-flex rounded-[3px] bg-teal px-6 py-3 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-teal-deep"
               >
                 See How to Connect
               </Link>
