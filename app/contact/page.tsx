@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
-import { Container, Eyebrow, PageHero } from "@/components/ui";
-import { ContactForm } from "@/components/ContactForm";
+import Link from "next/link";
+import { Container } from "@/components/ui";
+import { BannerHero } from "@/components/BannerHero";
+import { TornDivider } from "@/components/TornDivider";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -11,90 +14,62 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Contact Us"
-        title="We'd love to hear from you."
-        subtitle="Questions, prayer requests, or ready to get connected? Reach out, there's a real person on the other end who'd love to walk with you."
-      />
+      <BannerHero />
 
-      <Container className="py-20">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          {/* Details */}
-          <div>
-            <Eyebrow>Visit & Connect</Eyebrow>
-            <h2 className="mt-3 text-2xl font-medium uppercase text-mist">
-              Find us on the coast
-            </h2>
-
-            <dl className="mt-8 space-y-7">
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-widest text-teal">
-                  Address
-                </dt>
-                <dd className="mt-2 text-base leading-relaxed text-mist-soft">
-                  1109 Cowan Road, Unit B9
-                  <br />
-                  Gulfport, MS 39507
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-widest text-teal">
-                  Email
-                </dt>
-                <dd className="mt-2 text-base text-mist-soft">
+      <section className="relative bg-ink">
+        <TornDivider fill="fill-ink" position="top" />
+        <Container className="py-16 sm:py-20">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            {/* Left: identity + address */}
+            <div className="text-center">
+              <img
+                src="/images/logo-07.png"
+                alt="Gulf Coast Underground, Missio Dei"
+                className="mx-auto h-28 w-28 object-contain"
+              />
+              <address className="mt-6 space-y-1 text-[15px] not-italic leading-relaxed text-mist-soft">
+                <p className="font-semibold text-mist">
+                  GC Underground · Missio Dei
+                </p>
+                <p>1109 Cowan Road</p>
+                <p>Unit B9</p>
+                <p>Gulfport, MS 39507</p>
+                <p>
                   <a
                     href="mailto:gcundergroundmission@gmail.com"
-                    className="hover:text-mist"
+                    className="text-teal hover:underline"
                   >
                     gcundergroundmission@gmail.com
                   </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-widest text-teal">
-                  Gather With Us
-                </dt>
-                <dd className="mt-2 text-base leading-relaxed text-mist-soft">
-                  Discovery Bible Studies and microchurches meet throughout the
-                  week across the Gulf Coast. Reach out and we&apos;ll connect
-                  you with the group nearest you.
-                </dd>
-              </div>
-            </dl>
+                </p>
+              </address>
 
-            <div className="mt-10 overflow-hidden rounded-3xl border border-black/10">
+              <h2 className="mt-8 text-xl font-medium uppercase tracking-tight text-mist">
+                Looking to Connect?
+              </h2>
+              <div className="mt-4">
+                <Link
+                  href="/connect#connect-with-us"
+                  className="inline-flex rounded-[3px] bg-teal px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
+                >
+                  Connect With Us
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: map */}
+            <div className="overflow-hidden rounded-md border border-black/10 shadow-[0_2px_18px_rgba(0,0,0,0.06)]">
               <iframe
                 title="Map to Gulf Coast Underground"
                 src="https://maps.google.com/maps?q=1109%20Cowan%20Road%20Unit%20B9%20Gulfport%20MS%2039507&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                className="h-64 w-full grayscale-[0.3]"
+                className="h-80 w-full lg:h-[420px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
-
-          {/* Form */}
-          <div className="rounded-3xl border border-black/10 bg-ink-soft p-8">
-            <h2 className="text-2xl font-medium uppercase text-mist">
-              Send us a message
-            </h2>
-            <p className="mt-2 text-sm text-mist-soft">
-              Fill this out and your email app will open with your message ready
-              to send. Prefer email? Write us directly at{" "}
-              <a
-                href="mailto:gcundergroundmission@gmail.com"
-                className="text-teal hover:underline"
-              >
-                gcundergroundmission@gmail.com
-              </a>
-              .
-            </p>
-            <div className="mt-6">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </section>
     </>
   );
 }

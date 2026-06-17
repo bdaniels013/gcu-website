@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Container, Eyebrow, PageHero } from "@/components/ui";
+import { Container, LinedHeading } from "@/components/ui";
+import { BannerHero } from "@/components/BannerHero";
+import { TornDivider } from "@/components/TornDivider";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Connect",
@@ -12,196 +15,171 @@ export const metadata: Metadata = {
 const ideTracks = [
   {
     name: "Followers Made",
-    duration: "6-month experience",
     image: "/images/followers-made.png",
+    color: "#e0992f",
     body: "A transformative, six-month experience that helps participants develop Jesus-like character and begin to discover their unique calling. Grounded in daily spiritual practices, it leads people to create long-lasting, life-changing habits and build vulnerable, accountable community on 3- and 12-person levels. Gifts Passion Story and its companion book, Find Your Place, is integrated throughout.",
   },
   {
     name: "Missionaries Made",
-    duration: "3+ month experience",
     image: "/images/missionaries-made.png",
+    color: "#8e5ca8",
     body: "Based on the belief that God is already at work redeeming and restoring all people and all things, and all we need to do is join Him. In just over three months, participants start to build habits based on the five rhythms of missionary life: Begin in prayer, Listen and engage, Eat, Serve and Story (BLESS).",
   },
   {
     name: "Leaders Made",
-    duration: "10-month experience",
     image: "/images/leaders-made.png",
+    color: "#d9663a",
     body: "An intense, focused experience to develop disciples who inspire and guide others along the same path, just as Jesus did. During the 10-month program, participants read through most of the Bible, strengthen their spiritual habits, and dive deeper into their calling to discern where their leadership can make the greatest kingdom impact.",
   },
   {
     name: "Microchurch Learning Community",
-    duration: "Year-long experience",
     image: "/images/microchurch-learning.png",
+    color: "#4a9e5c",
     body: "When people start following the rhythms of missional living, a new community naturally forms. This year-long experience equips everyday missionaries to launch and lead the extended spiritual families that emerge, helping participants develop the habits and skills to live in covenant relationship and grow thriving on-mission communities.",
   },
 ];
 
+function GetConnected() {
+  return (
+    <Link
+      href="#connect-with-us"
+      className="inline-flex rounded-[3px] bg-teal px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
+    >
+      Get Connected
+    </Link>
+  );
+}
+
 export default function ConnectPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Connect"
-        title="Find your place in the family."
-        subtitle="Following Jesus was never meant to be done alone. Here are the everyday rhythms where life and discipleship happen at the Underground."
-      />
+      <BannerHero />
 
-      {/* DBS */}
-      <Container className="py-16 sm:py-20">
-        <div
-          id="dbs"
-          className="grid scroll-mt-24 gap-10 md:grid-cols-[1fr_1.6fr]"
-        >
-          <div>
-            <Eyebrow>Start Here</Eyebrow>
-            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist">
-              Discovery Bible Studies (DBS)
-            </h2>
-          </div>
-          <div className="space-y-4 text-[15px] leading-relaxed text-mist-soft">
-            <p>
+      <section className="relative bg-ink">
+        <TornDivider fill="fill-ink" position="top" />
+
+        {/* DBS */}
+        <Container className="py-16 sm:py-20">
+          <div id="dbs" className="scroll-mt-24 text-center">
+            <LinedHeading>Discovery Bible Studies (DBS)</LinedHeading>
+            <p className="mx-auto mt-8 max-w-3xl text-[15px] leading-relaxed text-mist-soft">
               Discovery Bible Study is a great way for those who are not that
               familiar with the Bible to get together with others who are also
               not very familiar with the Bible and discover together what the
               Bible actually says about who God is and what His plan is for
               humanity. A DBS is simple in approach and can be done in any
-              setting and with anywhere from 3 to 12 people.
+              setting and with anywhere from 3 to 12 people. For many people,
+              especially those who are down-trodden or poor in spirit, the
+              institution can be very intimidating and create anxiety. We are
+              intentionally simple in approach to our DBS&apos;s in order to
+              make it easy for anyone to discover God through His Word.
             </p>
-            <p>
-              For many people, especially those who are down-trodden or poor in
-              spirit, the institution can be very intimidating and create
-              anxiety. We are intentionally simple in approach to our DBS&apos;s
-              in order to make it easy for anyone to discover God through His
-              Word.
-            </p>
+            <div className="mt-8">
+              <GetConnected />
+            </div>
           </div>
-        </div>
-      </Container>
+        </Container>
 
-      {/* IDE's */}
-      <section
-        id="ides"
-        className="scroll-mt-24 border-t border-black/10 bg-ink-soft"
-      >
-        <Container className="py-16 sm:py-20">
-          <div className="max-w-3xl">
-            <Eyebrow>Go Deeper</Eyebrow>
-            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
+        {/* IDE's */}
+        <Container className="border-t border-black/10 py-16 sm:py-20">
+          <div id="ides" className="scroll-mt-24 text-center">
+            <LinedHeading>
               Intentional Discipleship Environments (IDE&apos;s)
-            </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-mist-soft">
+            </LinedHeading>
+            <p className="mx-auto mt-8 max-w-3xl text-[15px] leading-relaxed text-mist-soft">
               Our IDE&apos;s, offered through our partnership with Disciples
               Made, Inc., are a great way to connect with others on a deeper
               level by committing to a more long-term track of pursuing God
               together. When each participant completes the track, they have a
               deeper understanding of what it means to live daily rhythms of
               deep and intimate relationship first with Jesus and then with
-              other people, in both community and on mission.
+              other people, in both community and on mission. The tracks below
+              describe the IDE&apos;s we currently offer.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mx-auto mt-12 max-w-4xl divide-y divide-black/10">
             {ideTracks.map((track) => (
               <div
                 key={track.name}
-                className="flex flex-col overflow-hidden rounded-2xl border border-black/[0.07] bg-ink shadow-[0_2px_20px_rgba(16,32,31,0.05)]"
+                className="flex flex-col items-center gap-6 py-10 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left"
               >
-                <div className="flex items-center justify-center bg-white p-6">
+                <div className="flex w-40 flex-none flex-col items-center">
                   <img
                     src={track.image}
                     alt={`${track.name} logo`}
-                    className="h-24 w-auto object-contain"
+                    className="h-20 w-auto object-contain"
                   />
-                </div>
-                <div className="flex flex-1 flex-col border-t border-black/[0.06] p-7">
-                  <h3 className="text-xl font-medium uppercase text-mist">
+                  <span className="mt-3 text-base font-medium text-mist">
                     {track.name}
-                  </h3>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-teal">
-                    {track.duration}
-                  </p>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-mist-soft">
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <p className="text-[15px] leading-relaxed text-mist-soft">
+                    <span className="italic">
+                      *Trademarked by Disciples Made, Inc.{" "}
+                    </span>
                     {track.body}
                   </p>
+                  <a
+                    href="#connect-with-us"
+                    className="mt-5 inline-flex rounded-[3px] px-6 py-2.5 text-sm font-medium uppercase tracking-[0.1em] text-white transition-opacity hover:opacity-90"
+                    style={{ backgroundColor: track.color }}
+                  >
+                    Get More Info
+                  </a>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-xs italic text-mist-soft/70">
-            Followers Made, Missionaries Made, Leaders Made, and the Microchurch
-            Learning Community are trademarked by Disciples Made, Inc.
-          </p>
+        </Container>
+
+        {/* Microchurch */}
+        <Container className="border-t border-black/10 py-16 sm:py-20">
+          <div id="microchurch" className="scroll-mt-24 text-center">
+            <LinedHeading>Microchurch</LinedHeading>
+            <p className="mx-auto mt-8 max-w-3xl text-[15px] leading-relaxed text-mist-soft">
+              We, at the Underground, do believe that the Church comprises the
+              people who have decided to lay their lives down and follow Jesus
+              as opposed to a building. In other words, &ldquo;Church&rdquo; is
+              not something we &ldquo;go to&rdquo; but rather it is who we are.
+              However, we also believe that rich theology informs community,
+              rhythmic gathering for worship and devotion to the Scripture, and
+              covenant relationship all as vital to being the Church. This is
+              where the microchurch fits into the picture. Our microchurches
+              provide that opportunity to enter into covenant relationship with
+              others who are fully devoted Christ-followers for the purpose of
+              rhythmic living centered around worship of and devotion to Christ,
+              covenant relationship and living out the Missio Dei together in
+              your context! If you are interested in being a part of a
+              microchurch, we can help you find one or start one in your area.
+            </p>
+            <div className="mt-8">
+              <GetConnected />
+            </div>
+          </div>
         </Container>
       </section>
 
-      {/* Microchurch */}
-      <Container className="py-16 sm:py-20">
-        <div
-          id="microchurch"
-          className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-[1.5fr_1fr]"
-        >
-          <div>
-            <Eyebrow>Be the Church</Eyebrow>
-            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
-              Microchurch
-            </h2>
-            <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-mist-soft">
-              <p>
-                We, at the Underground, believe that the Church comprises the
-                people who have decided to lay their lives down and follow Jesus
-                as opposed to a building. In other words, &ldquo;Church&rdquo;
-                is not something we &ldquo;go to&rdquo; but rather it is who we
-                are.
-              </p>
-              <p>
-                We also believe that rich theology informs community, rhythmic
-                gathering for worship and devotion to the Scripture, and
-                covenant relationship as vital to being the Church. This is
-                where the microchurch fits in. Our microchurches provide the
-                opportunity to enter into covenant relationship with other fully
-                devoted Christ-followers for rhythmic living centered around
-                worship of and devotion to Christ, covenant relationship, and
-                living out the Missio Dei together in your context. If you are
-                interested in being part of a microchurch, we can help you find
-                one or start one in your area.
-              </p>
-            </div>
-          </div>
-          <figure className="rounded-2xl border border-black/[0.07] bg-white p-6 shadow-[0_2px_20px_rgba(16,32,31,0.05)]">
-            <img
-              src="/images/values.png"
-              alt="Microchurch diagram: Worship, Community, and Mission centered on Jesus"
-              className="mx-auto w-full max-w-sm"
-            />
-            <figcaption className="mt-3 text-center text-xs text-mist-soft">
-              Worship, Community &amp; Mission, centered on Jesus.
-            </figcaption>
-          </figure>
-        </div>
-      </Container>
-
-      {/* Connect With Us */}
+      {/* Connect With Us (dark form) */}
       <section
         id="connect-with-us"
-        className="scroll-mt-24 border-t border-black/10 bg-ink-soft"
+        className="scroll-mt-24 bg-teal-darkest text-white"
       >
-        <Container className="py-16 text-center sm:py-20">
-          <Eyebrow>Connect With Us</Eyebrow>
-          <h2 className="mt-4 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
-            Let&apos;s help you get connected.
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-mist-soft">
-            Have an idea for a mission or ministry? Looking for support for an
-            existing one? Or just looking for community? Complete the form so we
-            can discover how to best serve you, learn more about your ministry,
-            or help you get involved.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-flex rounded-[3px] bg-teal px-7 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
-            >
-              Get Connected
-            </Link>
+        <Container className="py-16 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+            <div>
+              <h2 className="text-4xl font-medium uppercase leading-tight tracking-tight text-white sm:text-5xl">
+                Connect With Us
+              </h2>
+              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/75">
+                Have an idea for a mission or ministry? Looking for support for
+                an existing one? Or just looking for community? Complete the
+                form so we can discover how to best serve you, learn more about
+                your ministry, or help you get involved.
+              </p>
+            </div>
+            <ContactForm />
           </div>
         </Container>
       </section>

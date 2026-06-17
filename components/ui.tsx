@@ -46,6 +46,26 @@ export function SectionTitle({
   );
 }
 
+/** Centered uppercase heading flanked by horizontal rules — the live site's
+ *  signature section header ("OUR BACKGROUND", "OUR MANIFESTO", etc.). */
+export function LinedHeading({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`flex items-center gap-5 sm:gap-8 ${className}`}>
+      <span className="h-px flex-1 bg-black/15" />
+      <h2 className="text-center text-[clamp(1.6rem,4vw,2.75rem)] font-medium uppercase leading-tight tracking-tight text-mist">
+        {children}
+      </h2>
+      <span className="h-px flex-1 bg-black/15" />
+    </div>
+  );
+}
+
 export function PageHero({
   eyebrow,
   title,
