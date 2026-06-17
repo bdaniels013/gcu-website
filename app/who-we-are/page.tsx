@@ -75,7 +75,7 @@ export default function WhoWeArePage() {
             {/* Vision / Mission dark boxes */}
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
               <div className="rounded-md bg-charcoal p-8 text-white">
-                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-teal">
+                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-seafoam">
                   GC Underground Vision
                 </h3>
                 <p className="mt-4 text-[14px] leading-relaxed text-white/80">
@@ -90,7 +90,7 @@ export default function WhoWeArePage() {
                 </p>
               </div>
               <div className="rounded-md bg-charcoal p-8 text-white">
-                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-teal">
+                <h3 className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-seafoam">
                   GC Underground Mission
                 </h3>
                 <p className="mt-4 text-[14px] leading-relaxed text-white/80">
@@ -100,7 +100,9 @@ export default function WhoWeArePage() {
                 <ol className="mt-3 space-y-1.5 text-[14px] leading-relaxed text-white/80">
                   {missionPoints.map((p, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="font-semibold text-teal">{i + 1})</span>
+                      <span className="font-semibold text-seafoam">
+                        {i + 1})
+                      </span>
                       <span>{p}</span>
                     </li>
                   ))}
