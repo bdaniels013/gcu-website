@@ -138,25 +138,25 @@ export default function WhoWeArePage() {
             </p>
 
             {/* Focus / Values Venn diagrams */}
-            <div className="mx-auto mt-12 grid max-w-4xl gap-10 sm:grid-cols-2">
-              <figure className="text-center">
-                <h3 className="text-2xl font-medium uppercase tracking-tight text-mist">
+            <div className="mx-auto mt-12 grid max-w-3xl gap-8 sm:grid-cols-2">
+              <figure className="flex flex-col items-center rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
+                <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
                   Focus
                 </h3>
                 <img
                   src="/images/focus.png"
-                  alt="Focus diagram: Christology at the center of mission"
-                  className="mx-auto mt-5 w-full max-w-xs"
+                  alt="Focus diagram: Christology, Missiology and Ecclesiology meeting in discipleship"
+                  className="mx-auto mt-4 w-full max-w-[200px] mix-blend-multiply"
                 />
               </figure>
-              <figure className="text-center">
-                <h3 className="text-2xl font-medium uppercase tracking-tight text-mist">
+              <figure className="flex flex-col items-center rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
+                <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
                   Values
                 </h3>
                 <img
                   src="/images/values.png"
                   alt="Values diagram: Worship, Community and Mission centered on Jesus"
-                  className="mx-auto mt-5 w-full max-w-xs"
+                  className="mx-auto mt-4 w-full max-w-[200px] mix-blend-multiply"
                 />
               </figure>
             </div>

@@ -55,6 +55,7 @@ function isActive(pathname: string, href: string) {
 
 function DesktopLink({ item, pathname }: { item: NavItem; pathname: string }) {
   const active = isActive(pathname, item.href);
+  const [open, setOpen] = useState(false);
   const linkClass = `inline-flex items-center gap-1 whitespace-nowrap text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors hover:text-teal ${
     active ? "text-teal" : "text-mist-soft"
   }`;
@@ -68,8 +69,16 @@ function DesktopLink({ item, pathname }: { item: NavItem; pathname: string }) {
   }
 
   return (
-    <div className="group relative">
-      <Link href={item.href} className={linkClass}>
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <Link
+        href={item.href}
+        className={linkClass}
+        onClick={() => setOpen(false)}
+      >
         {item.label}
         <svg
           width="11"
@@ -78,18 +87,23 @@ function DesktopLink({ item, pathname }: { item: NavItem; pathname: string }) {
           fill="none"
           stroke="currentColor"
           strokeWidth="3"
-          className="mt-0.5 transition-transform group-hover:rotate-180"
+          className={`mt-0.5 transition-transform ${open ? "rotate-180" : ""}`}
           aria-hidden
         >
           <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </Link>
-      <div className="invisible absolute left-0 top-full z-50 pt-3 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div
+        className={`absolute left-0 top-full z-50 pt-3 transition-opacity duration-150 ${
+          open ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+      >
         <ul className="w-[240px] border-t-[3px] border-[#7a7a7a] bg-white py-5 shadow-[0_2px_5px_rgba(0,0,0,0.1)]">
           {item.children.map((c) => (
             <li key={c.href}>
               <Link
                 href={c.href}
+                onClick={() => setOpen(false)}
                 className="block whitespace-nowrap px-5 py-1.5 text-[13px] font-normal uppercase tracking-[0.04em] text-black transition-colors hover:text-teal"
               >
                 {c.label}
