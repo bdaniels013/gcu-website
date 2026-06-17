@@ -30,10 +30,12 @@ const cards = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero, Gulf Coast banner with teal overlay + white wordmark */}
-      <section className="relative isolate flex min-h-[620px] items-center justify-center overflow-hidden sm:min-h-[760px]">
+      {/* Hero, Gulf Coast banner with teal overlay + white wordmark.
+          Height is kept close to the 3:1 banner so the full image (all four
+          coast panels) stays visible instead of the sides being cropped. */}
+      <section className="relative isolate flex min-h-[440px] items-center justify-center overflow-hidden sm:min-h-[500px] lg:min-h-[540px]">
         <img
-          src="/images/quadrant.jpg"
+          src="/images/quadrant-3.jpg"
           alt=""
           aria-hidden
           className="animate-kenburns absolute inset-0 -z-20 h-full w-full scale-100 object-cover brightness-105 saturate-[1.15]"
@@ -44,11 +46,11 @@ export default function HomePage() {
         <div className="absolute inset-0 -z-10 bg-teal/45" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-teal-darkest/50" />
 
-        <Container className="py-20 text-center">
+        <Container className="py-14 text-center">
           <img
             src="/images/logo-06.png"
             alt="Gulf Coast Underground, Missio Dei"
-            className="animate-rise mx-auto w-[94%] max-w-5xl drop-shadow-[0_6px_36px_rgba(0,0,0,0.4)]"
+            className="animate-rise mx-auto w-[92%] max-w-4xl drop-shadow-[0_6px_36px_rgba(0,0,0,0.4)]"
           />
           <p
             className="animate-rise mx-auto mt-6 max-w-2xl text-sm font-semibold uppercase tracking-[0.3em] text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)] sm:text-base"
