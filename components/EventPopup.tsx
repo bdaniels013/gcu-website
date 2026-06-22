@@ -1,37 +1,20 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { featuredEvent } from "@/lib/event";
-import { useCountdown } from "@/lib/useCountdown";
 
 /**
- * Full-screen takeover that appears as soon as the site loads, promoting the
- * featured event. The visitor must dismiss it with the X (or Escape / the
- * backdrop). Dismissal is remembered for the session so it doesn't nag on
- * every page change.
+ * Full-screen takeover promoting the Gala. Shows the gala flyer artwork (the
+ * top of the vertical flyer on mobile, the banner version on desktop) with a
+ * single "Learn More About the Event" call to action. Dismissal is remembered
+ * for the session.
  */
 const DISMISS_KEY = "gcu-event-popup-dismissed";
 
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
-function formatTime(iso: string): string {
-  return new Date(iso).toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-  });
-}
-
 export function EventPopup() {
   const [visible, setVisible] = useState(false);
-  const t = useCountdown(featuredEvent.startsAt);
 
   useEffect(() => {
     let dismissed = false;
@@ -41,13 +24,11 @@ export function EventPopup() {
       /* sessionStorage may be unavailable */
     }
     if (!dismissed) {
-      // Brief delay so the page paints behind the takeover first.
       const id = setTimeout(() => setVisible(true), 450);
       return () => clearTimeout(id);
     }
   }, []);
 
-  // Lock body scroll + wire up Escape while the popup is open.
   useEffect(() => {
     if (!visible) return;
     const prev = document.body.style.overflow;
@@ -74,107 +55,66 @@ export function EventPopup() {
 
   if (!visible) return null;
 
-  const units = [
-    { label: "Days", value: t.days },
-    { label: "Hours", value: t.hours },
-    { label: "Minutes", value: t.minutes },
-    { label: "Seconds", value: t.seconds },
-  ];
-
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-label={`Featured event: ${featuredEvent.title}`}
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-x-hidden overflow-y-auto bg-mist/70 px-4 py-12 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-mist/70 px-4 py-10 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
     >
-      {/* glow accents (clipped to viewport) */}
-      <div className="pointer-events-none absolute left-0 top-10 h-72 w-72 -translate-x-1/3 rounded-full bg-teal/20 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 translate-x-1/3 rounded-full bg-amber/15 blur-3xl" />
-
-      <div className="animate-fade-in relative w-full max-w-2xl rounded-3xl border border-black/10 bg-ink p-6 text-center shadow-2xl sm:p-12">
+      <div className="animate-fade-in relative w-full max-w-sm overflow-hidden rounded-2xl bg-ink shadow-2xl sm:max-w-3xl">
         <button
           type="button"
           onClick={close}
           aria-label="Close event announcement"
-          className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-mist-soft transition-colors hover:bg-black/[0.06] hover:text-mist"
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur transition-colors hover:bg-black/60"
         >
           <svg
-            width="20"
-            height="20"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
           >
             <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
           </svg>
         </button>
 
-        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
-          You&apos;re Invited
-        </p>
-        <h2 className="mt-4 break-words text-[1.75rem] font-medium uppercase leading-tight tracking-tight text-mist sm:text-5xl">
-          {featuredEvent.title}
-        </h2>
-        <p className="mx-auto mt-3 max-w-md text-base text-mist-soft">
-          {featuredEvent.tagline}
-        </p>
+        <Link
+          href={featuredEvent.ctaHref}
+          onClick={close}
+          aria-label="Gala details"
+        >
+          {/* Mobile: top of the vertical flyer */}
+          <img
+            src="/images/gala-flyer.png"
+            alt="GC Underground Gala — Fishers of Men"
+            className="block aspect-[4/5] w-full object-cover object-top sm:hidden"
+          />
+          {/* Desktop: banner version */}
+          <img
+            src="/images/gala-banner.jpg"
+            alt="GC Underground Gala — Fishers of Men"
+            className="hidden aspect-[16/9] w-full object-cover object-top sm:block"
+          />
+        </Link>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-mist-soft">
-          <span className="inline-flex items-center gap-2">
-            <span className="text-amber">●</span>
-            {formatDate(featuredEvent.startsAt)}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span className="text-amber">●</span>
-            {formatTime(featuredEvent.startsAt)}
-          </span>
-        </div>
-        <p className="mt-1 text-sm text-mist-soft">{featuredEvent.address}</p>
-
-        {/* Countdown */}
-        <div className="mt-8 grid grid-cols-4 gap-2 sm:gap-3">
-          {units.map((u) => (
-            <div
-              key={u.label}
-              className="rounded-2xl bg-teal px-1 py-4 sm:px-2"
-            >
-              <div className="text-2xl font-bold tabular-nums text-white sm:text-4xl">
-                {t.ready ? String(u.value).padStart(2, "0") : "--"}
-              </div>
-              <div className="mt-1 text-[9px] font-semibold uppercase tracking-widest text-white/70 sm:text-[10px]">
-                {u.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {t.ready && t.isPast && (
-          <p className="mt-4 text-sm font-medium text-amber">
-            This event is happening now, come on out!
-          </p>
-        )}
-
-        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-mist-soft">
-          {featuredEvent.description}
-        </p>
-
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="p-5 text-center sm:p-6">
           <Link
             href={featuredEvent.ctaHref}
             onClick={close}
-            className="w-full rounded-full bg-teal px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-teal-deep sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-[3px] bg-orange px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-orange-deep sm:w-auto"
           >
             {featuredEvent.ctaLabel}
           </Link>
           <button
             type="button"
             onClick={close}
-            className="w-full rounded-full border border-black/10 px-7 py-3 text-sm font-medium text-mist-soft transition-colors hover:bg-black/[0.04] sm:w-auto"
+            className="mt-3 block w-full text-xs font-semibold uppercase tracking-widest text-mist-soft transition-colors hover:text-mist sm:mt-2"
           >
             Maybe Later
           </button>

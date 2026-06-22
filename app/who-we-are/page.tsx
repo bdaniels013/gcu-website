@@ -139,85 +139,81 @@ export default function WhoWeArePage() {
               with Him and with others.
             </p>
 
-            {/* Focus / Values Venn diagrams */}
-            <div className="mx-auto mt-12 grid max-w-3xl gap-8 sm:grid-cols-2">
-              <figure className="flex flex-col items-center rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
-                <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
-                  Focus
-                </h3>
-                <img
-                  src="/images/focus.png"
-                  alt="Focus diagram: Christology, Missiology and Ecclesiology meeting in discipleship"
-                  className="mx-auto mt-4 w-full max-w-[200px] mix-blend-multiply"
-                />
-              </figure>
-              <figure className="flex flex-col items-center rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
-                <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
-                  Values
-                </h3>
-                <img
-                  src="/images/values.png"
-                  alt="Values diagram: Worship, Community and Mission centered on Jesus"
-                  className="mx-auto mt-4 w-full max-w-[200px] mix-blend-multiply"
-                />
-              </figure>
-            </div>
-
-            {/* Christology / Christ-Centered two-column */}
-            <div className="mx-auto mt-14 grid max-w-5xl gap-10 lg:grid-cols-2">
-              <div>
-                <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
-                  Christology
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
-                  {christology.body}
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
-                  {christCentered.title}
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
-                  {christCentered.body}
-                </p>
-              </div>
-            </div>
-
-            {/* Missiology & Ecclesiology + Engel Scale */}
-            <div className="mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
-              <div>
-                <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
-                  {missiology.title}
-                </h3>
-                <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
-                  {missiology.body}
-                </p>
-              </div>
-              <figure className="rounded-md border border-black/[0.07] bg-white p-3 shadow-[0_2px_18px_rgba(0,0,0,0.06)]">
-                <img
-                  src="/images/Engel-Scale.jpg"
-                  alt="The Engel Scale: steps to Christ, from no awareness of God to missional living in context"
-                  className="w-full rounded"
-                />
-              </figure>
-            </div>
-
-            {/* Worship / Community / Mission accordions */}
-            <div className="mx-auto mt-14 max-w-3xl space-y-10">
-              {(
-                [
-                  ["Worship", worship],
-                  ["Community", community],
-                  ["Mission", mission],
-                ] as const
-              ).map(([label, group]) => (
-                <div key={label}>
-                  <h3 className="mb-4 text-center text-2xl font-medium uppercase tracking-tight text-mist">
-                    {label}
+            {/* Two parallel columns — FOCUS topics stay in the left column,
+                VALUES topics in the right, matching the live site. */}
+            <div className="mx-auto mt-12 grid max-w-5xl gap-x-10 gap-y-10 lg:grid-cols-2">
+              {/* ── FOCUS column ── */}
+              <div className="space-y-10">
+                <figure className="rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
+                  <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
+                    Focus
                   </h3>
-                  <Accordion items={accordionItems(group)} />
+                  <img
+                    src="/images/focus.png"
+                    alt="Focus diagram: Christology, Missiology and Ecclesiology meeting in discipleship"
+                    className="mx-auto mt-4 w-full max-w-[260px] mix-blend-multiply"
+                  />
+                </figure>
+                <div>
+                  <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
+                    Christology
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
+                    {christology.body}
+                  </p>
                 </div>
-              ))}
+                <div>
+                  <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
+                    {missiology.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
+                    {missiology.body}
+                  </p>
+                  <figure className="mt-5 rounded-md border border-black/[0.07] bg-white p-3 shadow-[0_2px_18px_rgba(0,0,0,0.06)]">
+                    <img
+                      src="/images/Engel-Scale.jpg"
+                      alt="The Engel Scale: steps to Christ, from no awareness of God to missional living in context"
+                      className="w-full rounded"
+                    />
+                  </figure>
+                </div>
+              </div>
+
+              {/* ── VALUES column ── */}
+              <div className="space-y-10">
+                <figure className="rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
+                  <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
+                    Values
+                  </h3>
+                  <img
+                    src="/images/values.png"
+                    alt="Values diagram: Worship, Community and Mission centered on Jesus"
+                    className="mx-auto mt-4 w-full max-w-[260px] mix-blend-multiply"
+                  />
+                </figure>
+                <div>
+                  <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
+                    {christCentered.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
+                    {christCentered.body}
+                  </p>
+                </div>
+                {(
+                  [
+                    ["Worship", worship],
+                    ["Community", community],
+                    ["Mission", mission],
+                  ] as const
+                ).map(([label, group]) => (
+                  <div key={label}>
+                    <h3 className="mb-4 text-xl font-medium uppercase tracking-tight text-mist">
+                      {label}
+                    </h3>
+                    <Accordion items={accordionItems(group)} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Container>

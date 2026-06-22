@@ -40,7 +40,15 @@ const leftItems: NavItem[] = [
 ];
 
 const rightItems: NavItem[] = [
-  { label: "Events", href: "/events" },
+  { label: "Testimonials", href: "/testimonials" },
+  {
+    label: "Partners/Sponsors",
+    href: "/partners",
+    children: [
+      { label: "Strategic Partners", href: "/partners" },
+      { label: "Financial Sponsors", href: "/sponsors" },
+    ],
+  },
   { label: "Support", href: "/support" },
   { label: "Discover Your Part", href: "/discover-your-part" },
   { label: "Contact", href: "/contact" },
@@ -140,14 +148,14 @@ export function Navbar() {
     >
       <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-2.5 sm:px-8">
         {/* Left links (desktop) */}
-        <ul className="hidden items-center justify-end gap-5 lg:flex xl:gap-7">
+        <ul className="hidden items-center justify-end gap-5 xl:flex">
           {leftItems.map((item) => (
             <li key={item.href}>
               <DesktopLink item={item} pathname={pathname} />
             </li>
           ))}
         </ul>
-        <div className="lg:hidden" />
+        <div className="xl:hidden" />
 
         {/* Center logo */}
         <Link
@@ -160,7 +168,7 @@ export function Navbar() {
 
         {/* Right links (desktop) + mobile toggle */}
         <div className="flex items-center">
-          <ul className="hidden items-center justify-start gap-5 lg:flex xl:gap-7">
+          <ul className="hidden items-center justify-start gap-5 xl:flex">
             {rightItems.map((item) => (
               <li key={item.href}>
                 <DesktopLink item={item} pathname={pathname} />
@@ -170,7 +178,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="ml-auto inline-flex items-center justify-center rounded-md p-2 text-mist lg:hidden"
+            className="ml-auto inline-flex items-center justify-center rounded-md p-2 text-mist xl:hidden"
             aria-label="Toggle menu"
             aria-expanded={open}
           >
@@ -194,7 +202,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-black/10 bg-ink/98 backdrop-blur lg:hidden">
+        <div className="border-t border-black/10 bg-ink/98 backdrop-blur xl:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-0.5 px-5 py-4 sm:px-8">
             {allItems.map((item) => (
               <li key={item.href}>

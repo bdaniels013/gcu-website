@@ -21,23 +21,25 @@ export interface FeaturedEvent {
   ctaHref: string;
 }
 
+/** Email used for gala tickets, tables & sponsorships. */
+export const galaEmail = "gcundergroundmission@gmail.com";
+
 export const featuredEvent: FeaturedEvent = {
   id: "underground-gala-2026",
   title: "GC Underground Gala",
   tagline: "Second Annual · “Fishers of Men”",
   description:
-    "A night of breaking bread & spreading the Gospel. “Where the harvest is plentiful, but the laborers are few.” Limited tickets available, text 228-669-3696 to lock in your spot now.",
+    "A night of breaking bread & spreading the Gospel. Tickets, tables & sponsorships available.",
   startsAt: "2026-09-17T18:00:00",
   location: "Biloxi Visitors Center",
   address: "1050 Beach Blvd, Biloxi, MS 39530",
-  ctaLabel: "Reserve Your Spot",
+  ctaLabel: "Learn More About the Event",
   ctaHref: "/gala",
 };
 
 /**
- * The Gala, full details for the dedicated /gala page. Mirrors the format
- * of last year's "Africa the Gala" (sponsorship tiers + dollar amounts kept
- * identical), updated for this year's date, venue, and "Fishers of Men" theme.
+ * The Gala — full details for the dedicated /gala page.
+ * Sponsor tiers + extras taken from the "Fishers of Men" sponsorship flyer.
  */
 export const gala = {
   ordinal: "Second Annual",
@@ -53,58 +55,147 @@ export const gala = {
   venue: "Biloxi Visitors Center",
   venueAddress: "1050 Beach Blvd, Biloxi, MS 39530",
   startsAtISO: "2026-09-17T18:00:00",
-  ticketNote: "Limited number of tickets available",
-  reserveNumber: "228-669-3696",
-  reserveNumberRaw: "2286693696",
-  reserveMessage: "GALA",
+  ticketNote: "Tickets, tables & sponsorships available",
+  email: galaEmail,
 };
 
 export interface SponsorTier {
-  /** Nautical name for this year's "Fishers of Men" theme (last year used
-   * Africa animals: Lion / Gorilla / Giraffe / Elephant). */
   name: string;
+  subtitle: string;
   price: string;
+  availability?: string;
   benefits: string[];
   highlighted?: boolean;
 }
 
-/** Sponsorship levels, benefits & dollar amounts copied from last year. */
+/** Sponsorship levels from the Fishers of Men sponsorship flyer. */
 export const galaSponsorTiers: SponsorTier[] = [
   {
-    name: "Whale",
-    price: "$3,500",
+    name: "Presenting Sponsor",
+    subtitle: "Fisher of Men presenting sponsor",
+    price: "$10,000",
+    availability: "1 available",
     highlighted: true,
     benefits: [
-      "Main event sponsor including corporate logo on entrance signs",
-      "Presenting sponsor including corporate logo throughout evening presentations and mentions throughout the evening",
-      "Corporate logo on center pieces at all tables",
-      "Large corporate logo on event web landing page",
-      "Eight person table at the event",
+      "Recognized as the event's presenting sponsor",
+      "Logo & tagline placement on all event materials",
+      "Website recognition and remarks opportunity",
+      "Premium reserved table for eight",
+      "Full-page program recognition",
+      "Verbal recognition throughout the evening",
     ],
   },
   {
-    name: "Shark",
-    price: "$2,000",
+    name: "Lighthouse Sponsor",
+    subtitle: "Guiding others to Christ",
+    price: "$5,000",
+    availability: "2 available",
+    highlighted: true,
     benefits: [
-      "Presenting sponsor including corporate logo throughout evening presentations and mentions throughout the evening",
-      "Corporate logo on center pieces at all tables",
-      "Large corporate logo on event web landing page",
+      "Premier logo placement",
+      "Premium reserved table for eight",
+      "Half-page program recognition",
+      "Website recognition",
+      "Stage recognition during the event",
+      "Social media recognition",
     ],
   },
   {
-    name: "Dolphin",
+    name: "Captain's Table Sponsor",
+    subtitle: "Leading the mission",
+    price: "$2,500",
+    benefits: [
+      "Reserved table for eight",
+      "Quarter-page program recognition",
+      "Event screen recognition",
+      "Website recognition",
+      "Sponsor recognition during the program",
+    ],
+  },
+  {
+    name: "Nets of Harvest Sponsor",
+    subtitle: "Gathering souls for the kingdom",
     price: "$1,000",
     benefits: [
-      "Silent auction sponsor including corporate logo on silent auction signs and mentions with every mention of the silent auction",
-      "Corporate logo on event web landing page",
+      "Logo displayed during the event",
+      "Website recognition",
+      "Event recognition",
+      "Two reserved seats",
     ],
   },
   {
-    name: "Sea Turtle",
-    price: "$250 – $500",
-    benefits: [
-      "Corporate logo on event web landing page and a mention at the event",
+    name: "Crew Member Sponsor",
+    subtitle: "Name recognition during the event",
+    price: "$500",
+    benefits: ["Website listing", "Program recognition"],
+  },
+  {
+    name: "Friends of the Mission",
+    subtitle: "Standing with the harvest",
+    price: "$250",
+    benefits: ["Program listing", "Website recognition"],
+  },
+];
+
+/** Table & individual ticket options from the flyer. */
+export const galaTickets = [
+  {
+    name: "Mission Table",
+    price: "$800",
+    note: "Reserved table for eight guests",
+    includes: [
+      "Preferred seating",
+      "Dinner service",
+      "Mission presentation",
+      "Fellowship & networking",
     ],
+  },
+  {
+    name: "Individual Ticket",
+    price: "$100",
+    note: "Per guest",
+    includes: ["Event admission", "Dinner", "Program", "Mission presentation"],
+  },
+];
+
+/** Weekly schedule shown in the top banner (RSVP opens Google Calendar). */
+export interface ScheduleItem {
+  title: string;
+  day: string; // human label
+  byDay: string; // iCal BYDAY code, e.g. "WE"
+  time: string; // human label
+  startTime: string; // "HH:MM" 24h
+  endTime: string; // "HH:MM" 24h
+  location: string;
+}
+
+export const schedule: ScheduleItem[] = [
+  {
+    title: "Men's Bible Study",
+    day: "Wednesday",
+    byDay: "WE",
+    time: "12:00 PM",
+    startTime: "12:00",
+    endTime: "13:00",
+    location: "Gulf Coast Underground, Gulfport, MS",
+  },
+  {
+    title: "Men's Bible Study",
+    day: "Friday",
+    byDay: "FR",
+    time: "12:00 PM",
+    startTime: "12:00",
+    endTime: "13:00",
+    location: "Gulf Coast Underground, Gulfport, MS",
+  },
+  {
+    title: "Men's Bible Study",
+    day: "Saturday",
+    byDay: "SA",
+    time: "8:30 AM",
+    startTime: "08:30",
+    endTime: "09:30",
+    location: "Gulf Coast Underground, Gulfport, MS",
   },
 ];
 

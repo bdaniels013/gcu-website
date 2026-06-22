@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Eyebrow } from "@/components/ui";
 import { TornDivider } from "@/components/TornDivider";
+import { ScheduleBanner } from "@/components/ScheduleBanner";
 import Link from "next/link";
 
 const cards = [
@@ -30,6 +31,9 @@ const cards = [
 export default function HomePage() {
   return (
     <>
+      {/* This week's schedule (RSVP opens Google Calendar) */}
+      <ScheduleBanner />
+
       {/* Hero, Gulf Coast banner with teal overlay + white wordmark.
           Height is kept close to the 3:1 banner so the full image (all four
           coast panels) stays visible instead of the sides being cropped. */}
