@@ -5,6 +5,7 @@ import { Container, LinedHeading } from "@/components/ui";
 import { BannerHero } from "@/components/BannerHero";
 import { TornDivider } from "@/components/TornDivider";
 import { Accordion } from "@/components/Accordion";
+import { FocusVenn, ValuesVenn } from "@/components/VennDiagram";
 import { focusItems, values } from "@/lib/manifesto";
 
 export const metadata: Metadata = {
@@ -148,11 +149,9 @@ export default function WhoWeArePage() {
                   <h3 className="text-[clamp(2.5rem,6vw,4rem)] font-medium uppercase tracking-tight text-mist">
                     Focus
                   </h3>
-                  <img
-                    src="/images/focus.png"
-                    alt="Focus diagram: Christology, Missiology and Ecclesiology meeting in discipleship"
-                    className="mx-auto mt-6 w-full max-w-[480px] contrast-[1.6]"
-                  />
+                  <div className="mt-6">
+                    <FocusVenn />
+                  </div>
                 </figure>
                 <div>
                   <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
@@ -185,11 +184,9 @@ export default function WhoWeArePage() {
                   <h3 className="text-[clamp(2.5rem,6vw,4rem)] font-medium uppercase tracking-tight text-mist">
                     Values
                   </h3>
-                  <img
-                    src="/images/values.png"
-                    alt="Values diagram: Worship, Community and Mission centered on Jesus"
-                    className="mx-auto mt-6 w-full max-w-[480px] contrast-[1.6]"
-                  />
+                  <div className="mt-6">
+                    <ValuesVenn />
+                  </div>
                 </figure>
                 <div>
                   <h3 className="text-xl font-medium uppercase tracking-tight text-mist">
