@@ -61,28 +61,29 @@ export const gala = {
 
 export interface SponsorTier {
   name: string;
-  subtitle: string;
+  subtitle?: string;
   price: string;
   availability?: string;
   benefits: string[];
   highlighted?: boolean;
 }
 
-/** Sponsorship levels from the Fishers of Men sponsorship flyer. */
+/** Sponsorship levels — verbatim from the "Fishers of Men" sponsorship flyer. */
 export const galaSponsorTiers: SponsorTier[] = [
   {
     name: "Presenting Sponsor",
-    subtitle: "Fisher of Men presenting sponsor",
+    subtitle: "Fishers of Men presenting sponsor",
     price: "$10,000",
     availability: "1 available",
     highlighted: true,
     benefits: [
-      "Recognized as the event's presenting sponsor",
-      "Logo & tagline placement on all event materials",
-      "Website recognition and remarks opportunity",
+      'Exclusive "Presented By" recognition',
+      "Largest logo placement on all event materials",
+      "Welcome remarks opportunity",
       "Premium reserved table for eight",
       "Full-page program recognition",
-      "Verbal recognition throughout the evening",
+      "Website & social media spotlight",
+      "VIP recognition throughout the evening",
     ],
   },
   {
@@ -96,7 +97,7 @@ export const galaSponsorTiers: SponsorTier[] = [
       "Premium reserved table for eight",
       "Half-page program recognition",
       "Website recognition",
-      "Stage recognition during the event",
+      "Stage recognition during event",
       "Social media recognition",
     ],
   },
@@ -109,7 +110,7 @@ export const galaSponsorTiers: SponsorTier[] = [
       "Quarter-page program recognition",
       "Event screen recognition",
       "Website recognition",
-      "Sponsor recognition during the program",
+      "Sponsor recognition during program",
     ],
   },
   {
@@ -117,7 +118,7 @@ export const galaSponsorTiers: SponsorTier[] = [
     subtitle: "Gathering souls for the kingdom",
     price: "$1,000",
     benefits: [
-      "Logo displayed during the event",
+      "Logo displayed during event",
       "Website recognition",
       "Event recognition",
       "Two reserved seats",
@@ -125,13 +126,15 @@ export const galaSponsorTiers: SponsorTier[] = [
   },
   {
     name: "Crew Member Sponsor",
-    subtitle: "Name recognition during the event",
     price: "$500",
-    benefits: ["Website listing", "Program recognition"],
+    benefits: [
+      "Name recognition during event",
+      "Website listing",
+      "Program recognition",
+    ],
   },
   {
     name: "Friends of the Mission",
-    subtitle: "Standing with the harvest",
     price: "$250",
     benefits: ["Program listing", "Website recognition"],
   },

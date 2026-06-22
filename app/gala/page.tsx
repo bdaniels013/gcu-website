@@ -232,13 +232,15 @@ export default function GalaPage() {
                     >
                       {tier.name}
                     </h3>
-                    <p
-                      className={`mt-0.5 text-xs italic ${
-                        tier.highlighted ? "text-white/80" : "text-mist-soft"
-                      }`}
-                    >
-                      {tier.subtitle}
-                    </p>
+                    {tier.subtitle && (
+                      <p
+                        className={`mt-0.5 text-xs italic ${
+                          tier.highlighted ? "text-white/80" : "text-mist-soft"
+                        }`}
+                      >
+                        {tier.subtitle}
+                      </p>
+                    )}
                   </div>
                   {tier.availability && (
                     <span

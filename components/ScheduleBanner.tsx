@@ -48,15 +48,17 @@ function calendarUrl(item: ScheduleItem): string {
 }
 
 /**
- * Thin "This Week" strip. Rendered inside the sticky header so it stays
- * pinned to the top of every page. Each pill opens a Google Calendar RSVP.
+ * Compact "This Week" Bible-study strip. Rendered inside the sticky header so
+ * it stays pinned to the top of every page. Each pill names the study and
+ * opens a Google Calendar RSVP.
  */
 export function ScheduleBanner() {
   return (
     <div className="bg-orange text-white">
-      <div className="mx-auto flex max-w-7xl items-center gap-3 overflow-x-auto px-5 py-1.5 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <span className="shrink-0 text-[11px] font-bold uppercase tracking-[0.18em] text-white/85">
+      <div className="mx-auto flex max-w-7xl items-center gap-x-4 gap-y-1.5 overflow-x-auto px-5 py-2 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <span className="shrink-0 text-[11px] font-bold uppercase leading-tight tracking-[0.16em] text-white/90">
           This Week
+          <span className="hidden sm:inline"> &middot; Join a Bible Study</span>
         </span>
         <div className="flex items-center gap-2 sm:gap-2.5">
           {schedule.map((item, i) => (
@@ -65,15 +67,16 @@ export function ScheduleBanner() {
               href={calendarUrl(item)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-white/15 px-3 py-1 text-[12px] font-semibold transition-colors hover:bg-white/25"
+              className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white/15 px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/25"
             >
               <span className="uppercase tracking-wide">
                 {item.day.slice(0, 3)}
               </span>
               <span className="text-white/90">{item.time}</span>
-              <span className="hidden text-white/70 md:inline">
-                {item.title}
+              <span aria-hidden className="text-white/60">
+                &middot;
               </span>
+              <span className="font-medium text-white/90">{item.title}</span>
               <span aria-hidden className="text-white/80">
                 →
               </span>
