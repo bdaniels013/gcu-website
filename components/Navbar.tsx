@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import { ScheduleBanner } from "./ScheduleBanner";
 
 interface NavChild {
   label: string;
@@ -34,6 +35,7 @@ const leftItems: NavItem[] = [
       { label: "IDE's", href: "/connect#ides" },
       { label: "Microchurch", href: "/connect#microchurch" },
       { label: "Connect With Us", href: "/connect#connect-with-us" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   { label: "Gala", href: "/gala" },
@@ -51,7 +53,6 @@ const rightItems: NavItem[] = [
   },
   { label: "Support", href: "/support" },
   { label: "Discover Your Part", href: "/discover-your-part" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const allItems = [...leftItems, ...rightItems];
@@ -142,11 +143,11 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b border-black/10 bg-ink/95 backdrop-blur transition-shadow duration-300 ${
+      className={`sticky top-0 z-40 bg-ink/95 backdrop-blur transition-shadow duration-300 ${
         scrolled ? "shadow-sm" : ""
       }`}
     >
-      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-2.5 sm:px-8">
+      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 border-b border-black/10 px-5 py-2.5 sm:px-8">
         {/* Left links (desktop) */}
         <ul className="hidden items-center justify-end gap-5 xl:flex">
           {leftItems.map((item) => (
@@ -199,6 +200,9 @@ export function Navbar() {
           </button>
         </div>
       </nav>
+
+      {/* Thin weekly-schedule strip, pinned with the header on every page */}
+      <ScheduleBanner />
 
       {/* Mobile menu */}
       {open && (

@@ -3,7 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { featuredEvent } from "@/lib/event";
+import { featuredEvent, gala } from "@/lib/event";
 
 /**
  * Full-screen takeover promoting the Gala. Shows the gala flyer artwork (the
@@ -104,10 +104,43 @@ export function EventPopup() {
         </Link>
 
         <div className="p-5 text-center sm:p-6">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange">
+            {gala.ordinal} &middot; &ldquo;{gala.theme}&rdquo;
+          </p>
+          <h2 className="mt-1 text-xl font-medium uppercase tracking-tight text-mist sm:text-2xl">
+            {gala.title}
+          </h2>
+
+          <dl className="mx-auto mt-4 max-w-sm space-y-2 text-[14px]">
+            <div className="flex items-center justify-center gap-2">
+              <dt className="font-bold uppercase tracking-wider text-orange">
+                When
+              </dt>
+              <dd className="text-mist">
+                {gala.dateLabel} &middot; {gala.timeLabel}
+              </dd>
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              <dt className="font-bold uppercase tracking-wider text-orange">
+                Where
+              </dt>
+              <dd className="text-mist">
+                {gala.venue}
+                <span className="block text-[13px] text-mist-soft">
+                  {gala.venueAddress}
+                </span>
+              </dd>
+            </div>
+          </dl>
+
+          <p className="mx-auto mt-3 max-w-xs text-[13px] leading-relaxed text-mist-soft">
+            {gala.tagline}. {gala.ticketNote}.
+          </p>
+
           <Link
             href={featuredEvent.ctaHref}
             onClick={close}
-            className="inline-flex w-full items-center justify-center rounded-[3px] bg-orange px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-orange-deep sm:w-auto"
+            className="mt-5 inline-flex w-full items-center justify-center rounded-[3px] bg-orange px-7 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-orange-deep sm:w-auto"
           >
             {featuredEvent.ctaLabel}
           </Link>

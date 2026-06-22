@@ -47,41 +47,40 @@ function calendarUrl(item: ScheduleItem): string {
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
 
+/**
+ * Thin "This Week" strip. Rendered inside the sticky header so it stays
+ * pinned to the top of every page. Each pill opens a Google Calendar RSVP.
+ */
 export function ScheduleBanner() {
   return (
-    <section className="bg-orange text-white">
-      <div className="mx-auto flex max-w-[var(--content)] flex-col gap-6 px-5 py-8 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:py-7">
-        <div className="text-center lg:text-left">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/80">
-            This Week
-          </p>
-          <h2 className="mt-1 text-2xl font-medium uppercase tracking-tight sm:text-3xl">
-            Join Us at the Underground
-          </h2>
-        </div>
-
-        <div className="grid gap-3 sm:grid-cols-3 lg:flex-1 lg:max-w-2xl">
+    <div className="bg-orange text-white">
+      <div className="mx-auto flex max-w-7xl items-center gap-3 overflow-x-auto px-5 py-1.5 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <span className="shrink-0 text-[11px] font-bold uppercase tracking-[0.18em] text-white/85">
+          This Week
+        </span>
+        <div className="flex items-center gap-2 sm:gap-2.5">
           {schedule.map((item, i) => (
             <a
               key={i}
               href={calendarUrl(item)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-md bg-white/15 p-4 text-center transition-colors hover:bg-white/25"
+              className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-white/15 px-3 py-1 text-[12px] font-semibold transition-colors hover:bg-white/25"
             >
-              <span className="text-xs font-bold uppercase tracking-widest text-white/90">
-                {item.day}
+              <span className="uppercase tracking-wide">
+                {item.day.slice(0, 3)}
               </span>
-              <span className="mt-1 text-lg font-semibold">{item.time}</span>
-              <span className="text-[13px] text-white/85">{item.title}</span>
-              <span className="mt-3 inline-flex items-center justify-center gap-1.5 rounded-[3px] bg-white px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-orange">
-                RSVP
-                <span aria-hidden>→</span>
+              <span className="text-white/90">{item.time}</span>
+              <span className="hidden text-white/70 md:inline">
+                {item.title}
+              </span>
+              <span aria-hidden className="text-white/80">
+                →
               </span>
             </a>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
