@@ -151,7 +151,7 @@ export default function WhoWeArePage() {
                   <img
                     src="/images/focus.png"
                     alt="Focus diagram: Christology, Missiology and Ecclesiology meeting in discipleship"
-                    className="mx-auto mt-6 w-full max-w-[460px]"
+                    className="mx-auto mt-6 w-full max-w-[480px] contrast-[1.6]"
                   />
                 </figure>
                 <div>
@@ -188,7 +188,7 @@ export default function WhoWeArePage() {
                   <img
                     src="/images/values.png"
                     alt="Values diagram: Worship, Community and Mission centered on Jesus"
-                    className="mx-auto mt-6 w-full max-w-[460px]"
+                    className="mx-auto mt-6 w-full max-w-[480px] contrast-[1.6]"
                   />
                 </figure>
                 <div>
