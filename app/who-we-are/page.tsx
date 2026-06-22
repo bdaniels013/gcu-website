@@ -144,14 +144,14 @@ export default function WhoWeArePage() {
             <div className="mx-auto mt-12 grid max-w-5xl gap-x-10 gap-y-10 lg:grid-cols-2">
               {/* ── FOCUS column ── */}
               <div className="space-y-10">
-                <figure className="rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
-                  <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
+                <figure className="text-center">
+                  <h3 className="text-[clamp(2.5rem,6vw,4rem)] font-medium uppercase tracking-tight text-mist">
                     Focus
                   </h3>
                   <img
                     src="/images/focus.png"
                     alt="Focus diagram: Christology, Missiology and Ecclesiology meeting in discipleship"
-                    className="mx-auto mt-4 w-full max-w-[260px] mix-blend-multiply"
+                    className="mx-auto mt-6 w-full max-w-[460px]"
                   />
                 </figure>
                 <div>
@@ -181,14 +181,14 @@ export default function WhoWeArePage() {
 
               {/* ── VALUES column ── */}
               <div className="space-y-10">
-                <figure className="rounded-xl border border-black/[0.06] bg-ink-soft p-6 text-center shadow-[0_2px_18px_rgba(0,0,0,0.04)]">
-                  <h3 className="text-lg font-medium uppercase tracking-[0.12em] text-teal">
+                <figure className="text-center">
+                  <h3 className="text-[clamp(2.5rem,6vw,4rem)] font-medium uppercase tracking-tight text-mist">
                     Values
                   </h3>
                   <img
                     src="/images/values.png"
                     alt="Values diagram: Worship, Community and Mission centered on Jesus"
-                    className="mx-auto mt-4 w-full max-w-[260px] mix-blend-multiply"
+                    className="mx-auto mt-6 w-full max-w-[460px]"
                   />
                 </figure>
                 <div>
