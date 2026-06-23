@@ -16,7 +16,11 @@ export const metadata: Metadata = {
  */
 type Testimony = { name: string; youtubeId: string; caption?: string };
 const testimonies: Testimony[] = [
-  // Example: { name: "John D.", youtubeId: "dQw4w9WgXcQ", caption: "Found community" },
+  {
+    name: "Josh Pope",
+    youtubeId: "yHzfN9SmPso",
+    caption: "From Addiction to Redemption",
+  },
 ];
 
 export default function TestimonialsPage() {
@@ -36,7 +40,13 @@ export default function TestimonialsPage() {
           </div>
 
           {testimonies.length > 0 ? (
-            <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
+            <div
+              className={`mx-auto mt-12 grid gap-8 ${
+                testimonies.length === 1
+                  ? "max-w-2xl"
+                  : "max-w-5xl md:grid-cols-2"
+              }`}
+            >
               {testimonies.map((t) => (
                 <figure key={t.youtubeId}>
                   <div className="aspect-video overflow-hidden rounded-lg border border-black/[0.07] bg-black shadow-[0_2px_18px_rgba(0,0,0,0.08)]">
