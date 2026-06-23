@@ -21,6 +21,14 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
+  // Used to build absolute URLs for the favicon, Open Graph and Twitter
+  // share images. On Vercel this resolves to the live production domain
+  // automatically; falls back to the ministry's domain otherwise.
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "https://gulfcoastunderground.org",
+  ),
   title: {
     default: "Gulf Coast Underground | A Mission Hub on the Gulf Coast",
     template: "%s | Gulf Coast Underground",
@@ -42,6 +50,12 @@ export const metadata: Metadata = {
       "A mission hub on the Mississippi Gulf Coast equipping everyday people to live in missional rhythms.",
     type: "website",
     locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gulf Coast Underground",
+    description:
+      "A mission hub on the Mississippi Gulf Coast equipping everyday people to live in missional rhythms.",
   },
 };
 
