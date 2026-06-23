@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, September 17, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
 };
 
+// YouTube video featured on the gala page (swap the ID to change the video).
+const GALA_VIDEO_ID = "czEuKpo_VAE";
+
 const reserveHref = `mailto:${gala.email}?subject=${encodeURIComponent(
   "GC Underground Gala — Tickets / Tables / Sponsorship",
 )}&body=${encodeURIComponent(
@@ -87,6 +90,32 @@ export default function GalaPage() {
                 “{v}”
               </p>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ───────── Video ───────── */}
+      <section className="bg-ink">
+        <Container className="pb-16 sm:pb-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
+              Watch
+            </p>
+            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
+              A look at the mission
+            </h2>
+          </div>
+          <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-xl border border-black/10 bg-black shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}`}
+                title="GC Underground Gala"
+                className="h-full w-full"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
         </Container>
       </section>
