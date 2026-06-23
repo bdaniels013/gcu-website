@@ -38,11 +38,11 @@ const leftItems: NavItem[] = [
       { label: "Contact", href: "/contact" },
     ],
   },
-  { label: "Gala", href: "/gala" },
+  { label: "Testimonials", href: "/testimonials" },
 ];
 
 const rightItems: NavItem[] = [
-  { label: "Testimonials", href: "/testimonials" },
+  { label: "Gala", href: "/gala" },
   {
     label: "Partners/Sponsors",
     href: "/partners",

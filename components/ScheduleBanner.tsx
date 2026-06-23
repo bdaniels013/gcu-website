@@ -48,41 +48,50 @@ function calendarUrl(item: ScheduleItem): string {
 }
 
 /**
- * Compact "This Week" Bible-study strip. Rendered inside the sticky header so
- * it stays pinned to the top of every page. Each pill names the study and
- * opens a Google Calendar RSVP.
+ * Scrolling "This Week" Bible-study ticker. Rendered inside the sticky header
+ * so it stays pinned to the top of every page; the content marquees sideways
+ * (and pauses on hover so the pills stay clickable). Each pill names the study
+ * and opens a Google Calendar RSVP.
  */
 export function ScheduleBanner() {
+  // One marquee segment: the label followed by every study pill.
+  const Segment = (
+    <div className="flex items-center gap-2.5 pr-8">
+      <span className="shrink-0 text-[11px] font-bold uppercase leading-tight tracking-[0.16em] text-white/90">
+        This Week &middot; Join a Bible Study
+      </span>
+      {schedule.map((item, i) => (
+        <a
+          key={i}
+          href={calendarUrl(item)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white/15 px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/25"
+        >
+          <span className="uppercase tracking-wide">{item.day.slice(0, 3)}</span>
+          <span className="text-white/90">{item.time}</span>
+          <span aria-hidden className="text-white/60">
+            &middot;
+          </span>
+          <span className="font-medium text-white/90">{item.title}</span>
+          <span aria-hidden className="text-white/80">
+            →
+          </span>
+        </a>
+      ))}
+    </div>
+  );
+
   return (
-    <div className="bg-orange text-white">
-      <div className="mx-auto flex max-w-7xl items-center gap-x-4 gap-y-1.5 overflow-x-auto px-5 py-2 sm:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <span className="shrink-0 text-[11px] font-bold uppercase leading-tight tracking-[0.16em] text-white/90">
-          This Week
-          <span className="hidden sm:inline"> &middot; Join a Bible Study</span>
-        </span>
-        <div className="flex items-center gap-2 sm:gap-2.5">
-          {schedule.map((item, i) => (
-            <a
-              key={i}
-              href={calendarUrl(item)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white/15 px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/25"
-            >
-              <span className="uppercase tracking-wide">
-                {item.day.slice(0, 3)}
-              </span>
-              <span className="text-white/90">{item.time}</span>
-              <span aria-hidden className="text-white/60">
-                &middot;
-              </span>
-              <span className="font-medium text-white/90">{item.title}</span>
-              <span aria-hidden className="text-white/80">
-                →
-              </span>
-            </a>
-          ))}
-        </div>
+    <div className="overflow-hidden bg-orange py-2 text-white">
+      {/* Duplicated segments give the -50% loop a seamless wrap. */}
+      <div className="flex w-max animate-marquee items-center">
+        {Segment}
+        {Segment}
+        {Segment}
+        {Segment}
+        {Segment}
+        {Segment}
       </div>
     </div>
   );
