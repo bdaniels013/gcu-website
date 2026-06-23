@@ -63,12 +63,12 @@ export default function HomePage() {
             className="animate-rise mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
             style={{ animationDelay: "0.24s" }}
           >
-            <Link
-              href="/contact"
+            <a
+              href="#calendar"
               className="rounded-[3px] bg-white px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-teal shadow-lg shadow-teal-darkest/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
             >
               Become a Part
-            </Link>
+            </a>
             <Link
               href="/gala"
               className="rounded-[3px] border-2 border-white/70 px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
@@ -162,23 +162,14 @@ export default function HomePage() {
           </div>
 
           {/* This month at the Underground — weekly studies + the gala.
-              Compact embed; the full add-to-calendar version is on /calendar. */}
-          <div className="mx-auto mt-10 max-w-4xl">
+              The full calendar (with add-to-calendar buttons) lives here now. */}
+          <div id="calendar" className="mx-auto mt-10 max-w-4xl">
             <p className="text-center text-[15px] leading-relaxed text-mist-soft">
               A great first step is simply showing up. Here&apos;s what&apos;s
               happening this month at the Underground.
             </p>
             <div className="mt-8">
-              <CalendarView showAddPanel={false} />
-            </div>
-            <div className="mt-6 text-center">
-              <Link
-                href="/calendar"
-                className="inline-flex items-center gap-2 rounded-[3px] border-2 border-teal px-6 py-3 text-sm font-medium uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
-              >
-                Open Full Calendar
-                <span aria-hidden>→</span>
-              </Link>
+              <CalendarView />
             </div>
           </div>
 

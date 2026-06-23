@@ -20,7 +20,7 @@ export function ScheduleBanner() {
       {schedule.map((item, i) => (
         <Link
           key={i}
-          href="/calendar"
+          href="/#calendar"
           className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white/15 px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/25"
         >
           <span className="uppercase tracking-wide">{item.day.slice(0, 3)}</span>
