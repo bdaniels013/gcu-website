@@ -50,6 +50,29 @@ export function studiesOnWeekday(weekday: number): ScheduleItem[] {
   return schedule.filter((s) => DAY_INDEX[s.byDay] === weekday);
 }
 
+/**
+ * Static .ics file for each weekly study (kept in sync with `schedule`).
+ * Tapping one on a phone opens the built-in calendar's "Add Event" sheet;
+ * on desktop it downloads / opens in Apple Calendar or Outlook.
+ */
+const ICS_BY_DAY: Record<string, string> = {
+  WE: "/calendar/mens-bible-study-wednesday.ics",
+  FR: "/calendar/mens-bible-study-friday.ics",
+  SA: "/calendar/mens-bible-study-saturday.ics",
+};
+
+export function icsUrl(item: ScheduleItem): string | undefined {
+  return ICS_BY_DAY[item.byDay];
+}
+
+/** The next date (on/after `from`) that falls on the study's weekday. */
+export function nextOccurrence(byDay: string, from: Date): Date {
+  const d = new Date(from);
+  const diff = (DAY_INDEX[byDay] - d.getDay() + 7) % 7;
+  d.setDate(d.getDate() + diff);
+  return d;
+}
+
 /** Short time label for tight calendar cells, e.g. "12:00 PM" → "12p". */
 export function shortTime(time: string): string {
   const [hm, period] = time.split(" ");

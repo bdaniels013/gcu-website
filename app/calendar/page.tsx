@@ -22,8 +22,8 @@ export default function CalendarPage() {
             <LinedHeading>Calendar</LinedHeading>
             <p className="mx-auto mt-8 max-w-2xl text-[15px] leading-relaxed text-mist-soft">
               Here&apos;s what&apos;s happening at the Underground. Our Men&apos;s
-              Bible Studies meet every week — tap any study to add it to your
-              Google Calendar, and we&apos;d love to see you there.
+              Bible Studies meet every week — tap any study to add it straight to
+              your phone or Google Calendar, and we&apos;d love to see you there.
             </p>
           </div>
 
