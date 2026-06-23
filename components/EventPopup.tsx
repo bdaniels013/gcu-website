@@ -60,17 +60,17 @@ export function EventPopup() {
       role="dialog"
       aria-modal="true"
       aria-label={`Featured event: ${featuredEvent.title}`}
-      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-mist/70 px-4 py-10 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-mist/70 px-3 py-5 backdrop-blur-sm sm:px-6 sm:py-8"
       onClick={(e) => {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="animate-fade-in relative w-full max-w-sm overflow-hidden rounded-2xl bg-ink shadow-2xl sm:max-w-3xl">
+      <div className="animate-fade-in relative w-full max-w-lg overflow-hidden rounded-2xl bg-ink shadow-2xl sm:max-w-4xl lg:max-w-6xl">
         <button
           type="button"
           onClick={close}
           aria-label="Close event announcement"
-          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur transition-colors hover:bg-black/60"
+          className="absolute right-3 top-3 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-black/40 text-white backdrop-blur transition-colors hover:bg-black/60"
         >
           <svg
             width="18"
@@ -114,7 +114,7 @@ export function EventPopup() {
           <button
             type="button"
             onClick={close}
-            className="mt-3 block w-full text-xs font-semibold uppercase tracking-widest text-mist-soft transition-colors hover:text-mist sm:mt-2"
+            className="mt-3 block w-full cursor-pointer text-xs font-semibold uppercase tracking-widest text-mist-soft transition-colors hover:text-mist sm:mt-2"
           >
             Maybe Later
           </button>
