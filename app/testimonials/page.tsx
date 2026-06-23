@@ -26,6 +26,11 @@ const testimonies: Testimony[] = [
     youtubeId: "ULBGf4WFZtA",
     caption: "A Personal Testimony",
   },
+  {
+    name: "Testimonies from Africa",
+    youtubeId: "tyNPPZDithY",
+    caption: "Stories from the mission field",
+  },
 ];
 
 export default function TestimonialsPage() {
