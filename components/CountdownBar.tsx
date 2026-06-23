@@ -44,19 +44,19 @@ export function CountdownBar() {
   // One marquee "segment", duplicated so the loop is seamless.
   const Segment = (
     <span className="mx-8 inline-flex items-center gap-3 text-sm font-medium">
-      <span className="text-amber">★</span>
-      <span className="font-semibold uppercase tracking-wider text-ink">
+      <span className="text-white">★</span>
+      <span className="font-semibold uppercase tracking-wider text-white">
         {featuredEvent.title}
       </span>
-      <span className="text-ink/70">{featuredEvent.tagline}</span>
-      <span className="rounded-full bg-ink/15 px-3 py-0.5 font-bold tabular-nums text-ink">
+      <span className="text-white/80">{featuredEvent.tagline}</span>
+      <span className="rounded-full bg-white/20 px-3 py-0.5 font-bold tabular-nums text-white">
         {countText}
       </span>
     </span>
   );
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-teal-deep/40 bg-teal text-ink shadow-[0_-6px_24px_rgba(0,0,0,0.35)]">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-orange-deep/50 bg-orange text-white shadow-[0_-6px_24px_rgba(0,0,0,0.25)]">
       <div className="flex items-center">
         {/* Scrolling marquee */}
         <Link
@@ -81,7 +81,7 @@ export function CountdownBar() {
           type="button"
           onClick={hide}
           aria-label="Hide countdown bar"
-          className="flex h-10 w-10 flex-none items-center justify-center text-ink/70 transition-colors hover:bg-ink/10 hover:text-ink"
+          className="flex h-10 w-10 flex-none items-center justify-center text-white/80 transition-colors hover:bg-white/15 hover:text-white"
         >
           <svg
             width="18"
