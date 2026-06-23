@@ -46,7 +46,7 @@ export default function WhoWeArePage() {
 
         {/* OUR BACKGROUND */}
         <Container className="py-16 sm:py-20">
-          <div id="background" className="scroll-mt-24">
+          <div id="background" className="scroll-mt-36">
             <LinedHeading>Our Background</LinedHeading>
             <div className="mx-auto mt-8 max-w-3xl space-y-4 text-center text-[15px] leading-relaxed text-mist-soft">
               <p>
@@ -129,8 +129,8 @@ export default function WhoWeArePage() {
         </Container>
 
         {/* OUR MANIFESTO */}
-        <Container className="scroll-mt-24 border-t border-black/10 py-16 sm:py-20">
-          <div id="manifesto" className="scroll-mt-24">
+        <Container className="scroll-mt-36 border-t border-black/10 py-16 sm:py-20">
+          <div id="manifesto" className="scroll-mt-36">
             <LinedHeading>Our Manifesto</LinedHeading>
             <p className="mx-auto mt-8 max-w-3xl text-center text-[15px] leading-relaxed text-mist-soft">
               The Gulf Coast Underground is Christ-centered and discipleship
@@ -216,8 +216,8 @@ export default function WhoWeArePage() {
         </Container>
 
         {/* OUR ORGANIZATION */}
-        <Container className="scroll-mt-24 border-t border-black/10 py-16 sm:py-20">
-          <div id="organization" className="scroll-mt-24">
+        <Container className="scroll-mt-36 border-t border-black/10 py-16 sm:py-20">
+          <div id="organization" className="scroll-mt-36">
             <LinedHeading>Our Organization</LinedHeading>
             <p className="mx-auto mt-8 max-w-3xl text-center text-[15px] leading-relaxed text-mist-soft">
               The Gulf Coast Underground Missio Dei is not legally set up as a

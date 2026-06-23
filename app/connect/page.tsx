@@ -60,7 +60,7 @@ export default function ConnectPage() {
 
         {/* DBS */}
         <Container className="py-16 sm:py-20">
-          <div id="dbs" className="scroll-mt-24 text-center">
+          <div id="dbs" className="scroll-mt-36 text-center">
             <LinedHeading>Discovery Bible Studies (DBS)</LinedHeading>
             <p className="mx-auto mt-8 max-w-3xl text-[15px] leading-relaxed text-mist-soft">
               Discovery Bible Study is a great way for those who are not that
@@ -82,7 +82,7 @@ export default function ConnectPage() {
 
         {/* IDE's */}
         <Container className="border-t border-black/10 py-16 sm:py-20">
-          <div id="ides" className="scroll-mt-24 text-center">
+          <div id="ides" className="scroll-mt-36 text-center">
             <LinedHeading>
               Intentional Discipleship Environments (IDE&apos;s)
             </LinedHeading>
@@ -136,7 +136,7 @@ export default function ConnectPage() {
 
         {/* Microchurch */}
         <Container className="border-t border-black/10 py-16 sm:py-20">
-          <div id="microchurch" className="scroll-mt-24 text-center">
+          <div id="microchurch" className="scroll-mt-36 text-center">
             <LinedHeading>Microchurch</LinedHeading>
             <p className="mx-auto mt-8 max-w-3xl text-[15px] leading-relaxed text-mist-soft">
               We, at the Underground, do believe that the Church comprises the
@@ -164,7 +164,7 @@ export default function ConnectPage() {
       {/* Connect With Us (dark form) */}
       <section
         id="connect-with-us"
-        className="scroll-mt-24 bg-teal-darkest text-white"
+        className="scroll-mt-36 bg-teal-darkest text-white"
       >
         <Container className="py-16 sm:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">

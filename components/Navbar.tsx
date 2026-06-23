@@ -142,6 +142,19 @@ export function Navbar() {
     setOpen(false);
   }, [pathname]);
 
+  // Mobile menu tap: always close the menu. A main item (no hash) should land
+  // at the very top of the destination — including when it's the page we're
+  // already on, where the router won't scroll. Hash items keep their jump to
+  // the section (offset for the sticky header via scroll-margin in CSS).
+  function handleMobileNav(href: string) {
+    setOpen(false);
+    if (!href.includes("#")) {
+      requestAnimationFrame(() =>
+        window.scrollTo({ top: 0, behavior: "auto" }),
+      );
+    }
+  }
+
   return (
     <header
       className={`sticky top-0 z-40 bg-ink/95 backdrop-blur transition-shadow duration-300 ${
@@ -214,6 +227,7 @@ export function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  onClick={() => handleMobileNav(item.href)}
                   className={`block rounded-lg px-3 py-3 text-base font-semibold uppercase tracking-wide transition-colors ${
                     isActive(pathname, item.href)
                       ? "text-teal"
@@ -228,6 +242,7 @@ export function Navbar() {
                       <li key={c.href}>
                         <Link
                           href={c.href}
+                          onClick={() => handleMobileNav(c.href)}
                           className="block rounded-lg px-3 py-2 text-sm font-medium text-mist-soft hover:text-teal"
                         >
                           {c.label}

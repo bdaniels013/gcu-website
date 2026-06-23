@@ -225,7 +225,7 @@ export default function GalaPage() {
       {/* ───────── Sponsorship ───────── */}
       <section
         id="sponsor"
-        className="scroll-mt-24 border-t border-black/10 bg-ink"
+        className="scroll-mt-36 border-t border-black/10 bg-ink"
       >
         <Container className="py-16 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">

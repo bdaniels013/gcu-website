@@ -45,6 +45,13 @@
     scroll-behavior: smooth;
   }
 
+  /* Hash anchors land below the sticky header (nav + schedule strip) instead
+     of being hidden underneath it. Matches the scroll-mt-36 on anchor
+     sections; this also covers any id'd target without an explicit class. */
+  [id] {
+    scroll-margin-top: 9rem;
+  }
+
   body {
     background-color: var(--color-ink);
     color: var(--color-mist-soft);
