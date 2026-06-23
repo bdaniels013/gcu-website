@@ -84,7 +84,7 @@ export default function PartnersPage() {
             </p>
             <div className="mt-6">
               <Link
-                href="/connect#connect-with-us"
+                href="/contact"
                 className="inline-flex rounded-[3px] bg-teal px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
               >
                 Get in Touch

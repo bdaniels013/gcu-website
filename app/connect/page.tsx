@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Container, LinedHeading } from "@/components/ui";
 import { BannerHero } from "@/components/BannerHero";
 import { TornDivider } from "@/components/TornDivider";
-import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Connect",
@@ -42,7 +41,7 @@ const ideTracks = [
 function GetConnected() {
   return (
     <Link
-      href="#connect-with-us"
+      href="/contact"
       className="inline-flex rounded-[3px] bg-teal px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
     >
       Get Connected
@@ -121,13 +120,13 @@ export default function ConnectPage() {
                     </span>
                     {track.body}
                   </p>
-                  <a
-                    href="#connect-with-us"
+                  <Link
+                    href="/contact"
                     className="mt-5 inline-flex rounded-[3px] px-6 py-2.5 text-sm font-medium uppercase tracking-[0.1em] text-white transition-opacity hover:opacity-90"
                     style={{ backgroundColor: track.color }}
                   >
                     Get More Info
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -157,29 +156,6 @@ export default function ConnectPage() {
             <div className="mt-8">
               <GetConnected />
             </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Connect With Us (dark form) */}
-      <section
-        id="connect-with-us"
-        className="scroll-mt-36 bg-teal-darkest text-white"
-      >
-        <Container className="py-16 sm:py-20">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-            <div>
-              <h2 className="text-4xl font-medium uppercase leading-tight tracking-tight text-white sm:text-5xl">
-                Connect With Us
-              </h2>
-              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/75">
-                Have an idea for a mission or ministry? Looking for support for
-                an existing one? Or just looking for community? Complete the
-                form so we can discover how to best serve you, learn more about
-                your ministry, or help you get involved.
-              </p>
-            </div>
-            <ContactForm />
           </div>
         </Container>
       </section>

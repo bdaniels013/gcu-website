@@ -35,7 +35,6 @@ const leftItems: NavItem[] = [
       { label: "DBS", href: "/connect#dbs" },
       { label: "IDE's", href: "/connect#ides" },
       { label: "Microchurch", href: "/connect#microchurch" },
-      { label: "Connect With Us", href: "/connect#connect-with-us" },
       { label: "Contact", href: "/contact" },
     ],
   },

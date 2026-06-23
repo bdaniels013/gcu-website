@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/ui";
 import { BannerHero } from "@/components/BannerHero";
 import { TornDivider } from "@/components/TornDivider";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -16,16 +16,16 @@ export default function ContactPage() {
     <>
       <BannerHero />
 
+      {/* Identity + address + map */}
       <section className="relative bg-ink">
         <TornDivider fill="fill-ink" position="top" />
         <Container className="py-16 sm:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Left: identity + address */}
-            <div className="text-center">
+            <div className="text-center lg:text-left">
               <img
                 src="/images/logo-07.png"
                 alt="Gulf Coast Underground, Missio Dei"
-                className="mx-auto h-28 w-28 object-contain"
+                className="mx-auto h-28 w-28 object-contain lg:mx-0"
               />
               <address className="mt-6 space-y-1 text-[15px] not-italic leading-relaxed text-mist-soft">
                 <p className="font-semibold text-mist">
@@ -43,21 +43,8 @@ export default function ContactPage() {
                   </a>
                 </p>
               </address>
-
-              <h2 className="mt-8 text-xl font-medium uppercase tracking-tight text-mist">
-                Looking to Connect?
-              </h2>
-              <div className="mt-4">
-                <Link
-                  href="/connect#connect-with-us"
-                  className="inline-flex rounded-[3px] bg-teal px-7 py-3 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
-                >
-                  Connect With Us
-                </Link>
-              </div>
             </div>
 
-            {/* Right: map */}
             <div className="overflow-hidden rounded-md border border-black/10 shadow-[0_2px_18px_rgba(0,0,0,0.06)]">
               <iframe
                 title="Map to Gulf Coast Underground"
@@ -67,6 +54,26 @@ export default function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* The one contact form (dark teal) */}
+      <section className="bg-teal-darkest text-white">
+        <Container className="py-16 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+            <div>
+              <h2 className="text-4xl font-medium uppercase leading-tight tracking-tight text-white sm:text-5xl">
+                Connect With Us
+              </h2>
+              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/75">
+                Have an idea for a mission or ministry? Looking for support for
+                an existing one? Complete the form so we can discover how to best
+                serve you, learn more about your ministry, or help you get
+                involved.
+              </p>
+            </div>
+            <ContactForm />
           </div>
         </Container>
       </section>

@@ -43,10 +43,10 @@ export default function DiscoverYourPartPage() {
 
           <div className="mt-10">
             <Link
-              href="/contact"
+              href="/#calendar"
               className="inline-flex rounded-[3px] bg-teal px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-teal-deep"
             >
-              Request Info to Get Started
+              Join Us This Week
             </Link>
           </div>
         </Container>

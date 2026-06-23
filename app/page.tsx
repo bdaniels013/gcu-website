@@ -22,9 +22,9 @@ const cards = [
   {
     title: "Looking for Community?",
     photo: "/images/photo3.jpg",
-    body: "We always have a number of micro-churches, IDE's (Intentional Discipleship Environments) and/or DBS (Discovery Bible Studies) running in our community. Fill out the connect form so that we can help get you involved.",
+    body: "We always have a number of micro-churches, IDE's (Intentional Discipleship Environments) and/or DBS (Discovery Bible Studies) running in our community. Check the calendar and join us this week.",
     cta: "Get Connected",
-    href: "/contact",
+    href: "/#calendar",
   },
 ];
 
