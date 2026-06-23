@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Eyebrow } from "@/components/ui";
 import { TornDivider } from "@/components/TornDivider";
+import { CalendarView } from "@/components/CalendarView";
 import Link from "next/link";
 
 const cards = [
@@ -160,7 +161,28 @@ export default function HomePage() {
             <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-amber" />
           </div>
 
-          <div className="mt-14 space-y-7">
+          {/* This month at the Underground — weekly studies + the gala.
+              Compact embed; the full add-to-calendar version is on /calendar. */}
+          <div className="mx-auto mt-10 max-w-4xl">
+            <p className="text-center text-[15px] leading-relaxed text-mist-soft">
+              A great first step is simply showing up. Here&apos;s what&apos;s
+              happening this month at the Underground.
+            </p>
+            <div className="mt-8">
+              <CalendarView showAddPanel={false} />
+            </div>
+            <div className="mt-6 text-center">
+              <Link
+                href="/calendar"
+                className="inline-flex items-center gap-2 rounded-[3px] border-2 border-teal px-6 py-3 text-sm font-medium uppercase tracking-wide text-teal transition-colors hover:bg-teal hover:text-white"
+              >
+                Open Full Calendar
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-16 space-y-7">
             {cards.map((c, i) => (
               <div
                 key={c.title}
