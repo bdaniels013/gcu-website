@@ -21,6 +21,11 @@ const testimonies: Testimony[] = [
     youtubeId: "yHzfN9SmPso",
     caption: "From Addiction to Redemption",
   },
+  {
+    name: "Chad Lewis",
+    youtubeId: "ULBGf4WFZtA",
+    caption: "A Personal Testimony",
+  },
 ];
 
 export default function TestimonialsPage() {
