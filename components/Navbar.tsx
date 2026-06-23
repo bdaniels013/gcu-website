@@ -31,6 +31,7 @@ const leftItems: NavItem[] = [
     label: "Connect",
     href: "/connect",
     children: [
+      { label: "Calendar", href: "/calendar" },
       { label: "DBS", href: "/connect#dbs" },
       { label: "IDE's", href: "/connect#ides" },
       { label: "Microchurch", href: "/connect#microchurch" },

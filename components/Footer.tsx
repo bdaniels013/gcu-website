@@ -5,6 +5,7 @@ import { TornDivider } from "./TornDivider";
 const links = [
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Connect", href: "/connect" },
+  { label: "Calendar", href: "/calendar" },
   { label: "Gala", href: "/gala" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Partners", href: "/partners" },

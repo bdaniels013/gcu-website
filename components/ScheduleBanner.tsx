@@ -1,57 +1,14 @@
 "use client";
 
-import { schedule, type ScheduleItem } from "@/lib/event";
-
-const DAY_INDEX: Record<string, number> = {
-  SU: 0,
-  MO: 1,
-  TU: 2,
-  WE: 3,
-  TH: 4,
-  FR: 5,
-  SA: 6,
-};
-
-/** Next upcoming occurrence of a weekday + time, in the visitor's timezone. */
-function nextOccurrence(byDay: string, time: string): Date {
-  const [h, m] = time.split(":").map(Number);
-  const now = new Date();
-  const d = new Date(now);
-  const diff = (DAY_INDEX[byDay] - d.getDay() + 7) % 7;
-  d.setDate(d.getDate() + diff);
-  d.setHours(h, m, 0, 0);
-  if (d.getTime() < now.getTime()) d.setDate(d.getDate() + 7);
-  return d;
-}
-
-function fmt(d: Date): string {
-  const p = (n: number) => String(n).padStart(2, "0");
-  return (
-    `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}T` +
-    `${p(d.getHours())}${p(d.getMinutes())}00`
-  );
-}
-
-function calendarUrl(item: ScheduleItem): string {
-  const start = nextOccurrence(item.byDay, item.startTime);
-  const end = nextOccurrence(item.byDay, item.endTime);
-  const params = new URLSearchParams({
-    action: "TEMPLATE",
-    text: `${item.title} — Gulf Coast Underground`,
-    dates: `${fmt(start)}/${fmt(end)}`,
-    recur: `RRULE:FREQ=WEEKLY;BYDAY=${item.byDay}`,
-    location: item.location,
-    details:
-      "Weekly gathering with Gulf Coast Underground. We'd love to see you there!",
-  });
-  return `https://calendar.google.com/calendar/render?${params.toString()}`;
-}
+import Link from "next/link";
+import { schedule } from "@/lib/event";
 
 /**
  * Scrolling "This Week" Bible-study ticker. Rendered inside the sticky header
  * so it stays pinned to the top of every page; the content marquees sideways
- * (and pauses on hover so the pills stay clickable). Each pill names the study
- * and opens a Google Calendar RSVP.
+ * (and pauses on hover so the pills stay clickable). Every pill links to the
+ * calendar page, where visitors can see the full month and add studies to
+ * their own Google Calendar.
  */
 export function ScheduleBanner() {
   // One marquee segment: the label followed by every study pill.
@@ -61,11 +18,9 @@ export function ScheduleBanner() {
         This Week &middot; Join a Bible Study
       </span>
       {schedule.map((item, i) => (
-        <a
+        <Link
           key={i}
-          href={calendarUrl(item)}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/calendar"
           className="flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-white/15 px-3.5 py-1.5 text-[12.5px] font-semibold transition-colors hover:bg-white/25"
         >
           <span className="uppercase tracking-wide">{item.day.slice(0, 3)}</span>
@@ -77,7 +32,7 @@ export function ScheduleBanner() {
           <span aria-hidden className="text-white/80">
             →
           </span>
-        </a>
+        </Link>
       ))}
     </div>
   );
