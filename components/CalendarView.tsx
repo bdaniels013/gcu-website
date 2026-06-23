@@ -191,9 +191,10 @@ export function CalendarView() {
         <h3 className="text-center text-lg font-medium uppercase tracking-wide text-mist">
           Add a weekly study to your calendar
         </h3>
-        <p className="mx-auto mt-2 max-w-md text-center text-sm leading-relaxed text-mist-soft">
-          Pick a study and choose your calendar. On a phone, &ldquo;Apple /
-          Phone&rdquo; opens your built-in calendar app.
+        <p className="mx-auto mt-2 max-w-lg text-center text-sm leading-relaxed text-mist-soft">
+          Come to one study a week, or join us for all three. You&apos;re welcome
+          at any and all of them, so add as many as you&apos;d like. On a phone,
+          &ldquo;Apple / Phone&rdquo; opens your built-in calendar app.
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {schedule.map((s, i) => (
