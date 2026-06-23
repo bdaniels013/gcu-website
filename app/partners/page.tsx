@@ -10,13 +10,6 @@ export const metadata: Metadata = {
     "The ministry partners we work alongside to advance the Missio Dei and multiply disciples across the Mississippi Gulf Coast.",
 };
 
-const partners = [
-  {
-    name: "Disciples Made, Inc.",
-    body: "Our partner for Intentional Discipleship Environments (IDE's). Through Disciples Made we offer Followers Made, Missionaries Made, Leaders Made, and the Microchurch Learning Community — web-based discipleship tracks that help people learn to sit at the feet of Jesus and live on mission.",
-  },
-];
-
 /** Strategic partner feature videos (YouTube IDs from watch?v=…). */
 type PartnerVideo = { name: string; youtubeId: string; caption?: string };
 const partnerVideos: PartnerVideo[] = [
@@ -49,24 +42,8 @@ export default function PartnersPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-3xl space-y-6">
-            {partners.map((p) => (
-              <div
-                key={p.name}
-                className="rounded-xl border border-black/[0.07] bg-ink-soft p-8 shadow-[0_2px_18px_rgba(0,0,0,0.04)]"
-              >
-                <h2 className="text-xl font-medium uppercase tracking-tight text-mist">
-                  {p.name}
-                </h2>
-                <p className="mt-3 text-[15px] leading-relaxed text-mist-soft">
-                  {p.body}
-                </p>
-              </div>
-            ))}
-          </div>
-
           {partnerVideos.length > 0 && (
-            <div className="mx-auto mt-16 max-w-5xl">
+            <div className="mx-auto mt-12 max-w-5xl">
               <h2 className="text-center text-2xl font-medium uppercase tracking-tight text-mist">
                 Partner Stories
               </h2>
