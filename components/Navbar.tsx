@@ -208,7 +208,8 @@ export function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="max-h-[calc(100dvh-7rem)] overflow-y-auto overscroll-contain border-t border-black/10 bg-ink/98 backdrop-blur xl:hidden">
-          <ul className="mx-auto flex max-w-7xl flex-col gap-0.5 px-5 py-4 sm:px-8">
+          {/* pb clears the fixed countdown bar so the last item stays tappable */}
+          <ul className="mx-auto flex max-w-7xl flex-col gap-0.5 px-5 pb-28 pt-4 sm:px-8">
             {allItems.map((item) => (
               <li key={item.href}>
                 <Link
