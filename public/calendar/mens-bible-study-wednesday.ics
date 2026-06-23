@@ -27,7 +27,7 @@ DTSTART;TZID=America/Chicago:20260107T120000
 DTEND;TZID=America/Chicago:20260107T130000
 RRULE:FREQ=WEEKLY;BYDAY=WE
 SUMMARY:Men's Bible Study - Gulf Coast Underground
-LOCATION:Gulf Coast Underground\, Gulfport\, MS
+LOCATION:1109 Cowan Road\, Unit B9\, Gulfport\, MS 39507
 DESCRIPTION:Weekly gathering with Gulf Coast Underground. See you there!
 END:VEVENT
 END:VCALENDAR

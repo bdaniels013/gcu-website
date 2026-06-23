@@ -180,7 +180,7 @@ export const schedule: ScheduleItem[] = [
     time: "12:00 PM",
     startTime: "12:00",
     endTime: "13:00",
-    location: "Gulf Coast Underground, Gulfport, MS",
+    location: "1109 Cowan Road, Unit B9, Gulfport, MS 39507",
   },
   {
     title: "Men's Bible Study",
@@ -189,7 +189,7 @@ export const schedule: ScheduleItem[] = [
     time: "12:00 PM",
     startTime: "12:00",
     endTime: "13:00",
-    location: "Gulf Coast Underground, Gulfport, MS",
+    location: "1109 Cowan Road, Unit B9, Gulfport, MS 39507",
   },
   {
     title: "Men's Bible Study",
@@ -198,7 +198,7 @@ export const schedule: ScheduleItem[] = [
     time: "8:30 AM",
     startTime: "08:30",
     endTime: "09:30",
-    location: "Gulf Coast Underground, Gulfport, MS",
+    location: "1109 Cowan Road, Unit B9, Gulfport, MS 39507",
   },
 ];
 
