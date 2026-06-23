@@ -8,15 +8,13 @@ import {
 } from "@/components/ui";
 import { BannerHero } from "@/components/BannerHero";
 import { TornDivider } from "@/components/TornDivider";
+import { TithelyGiveButton } from "@/components/TithelyGiveButton";
 
 export const metadata: Metadata = {
   title: "Support",
   description:
     "Partner financially with Gulf Coast Underground to equip everyday disciples and advance the Missio Dei on the Mississippi Gulf Coast.",
 };
-
-// Update this to the ministry's live Tithe.ly (or other) giving URL.
-const GIVING_URL = "https://tithe.ly/give?c=gulfcoastunderground";
 
 const reasons = [
   {
@@ -82,7 +80,7 @@ export default function SupportPage() {
                 secure giving partner.
               </p>
               <div className="mt-7 flex flex-col gap-3">
-                <ButtonLink href={GIVING_URL}>Give Online</ButtonLink>
+                <TithelyGiveButton className="w-full" />
                 <ButtonLink href="/contact" variant="ghost">
                   Other ways to give
                 </ButtonLink>
