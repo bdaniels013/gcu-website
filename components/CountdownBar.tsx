@@ -19,15 +19,24 @@ export function CountdownBar() {
     : "Loading…";
 
   // One marquee "segment", duplicated so the loop is seamless.
+  // Simple line: ★ Fishers of Men Gala • countdown • Reserve Your Spot →
   const Segment = (
-    <span className="mx-8 inline-flex items-center gap-3 text-sm font-medium">
-      <span className="text-white">★</span>
-      <span className="font-semibold uppercase tracking-wider text-white">
-        {featuredEvent.title}
+    <span className="mx-6 inline-flex items-center gap-3 text-sm font-medium text-white">
+      <span aria-hidden>★</span>
+      <span className="font-semibold uppercase tracking-wider">
+        Fishers of Men Gala
       </span>
-      <span className="text-white/80">{featuredEvent.tagline}</span>
-      <span className="rounded-full bg-white/20 px-3 py-0.5 font-bold tabular-nums text-white">
+      <span aria-hidden className="text-white/55">
+        •
+      </span>
+      <span className="rounded-full bg-white/20 px-3 py-0.5 font-bold tabular-nums">
         {countText}
+      </span>
+      <span aria-hidden className="text-white/55">
+        •
+      </span>
+      <span className="font-semibold uppercase tracking-wider">
+        Reserve Your Spot <span aria-hidden>→</span>
       </span>
     </span>
   );

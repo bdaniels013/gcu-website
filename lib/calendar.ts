@@ -83,3 +83,6 @@ export function shortTime(time: string): string {
 
 /** The gala, as a single dated calendar entry. */
 export const galaDate = new Date(gala.startsAtISO);
+
+/** Static .ics for the gala (tap to add the event to a personal calendar). */
+export const galaIcsUrl = "/calendar/fishers-of-men-gala.ics";

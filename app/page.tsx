@@ -63,18 +63,18 @@ export default function HomePage() {
             className="animate-rise mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
             style={{ animationDelay: "0.24s" }}
           >
-            <a
-              href="#calendar"
-              className="rounded-[3px] bg-white px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-teal shadow-lg shadow-teal-darkest/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              Become a Part
-            </a>
             <Link
               href="/gala"
-              className="rounded-[3px] border-2 border-white/70 px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+              className="rounded-[3px] bg-orange px-10 py-4 text-base font-bold uppercase tracking-[0.12em] text-white shadow-xl shadow-black/30 ring-1 ring-white/30 transition-all hover:-translate-y-0.5 hover:bg-orange-deep"
             >
               The Gala
             </Link>
+            <a
+              href="#calendar"
+              className="rounded-[3px] border-2 border-orange bg-transparent px-6 py-2.5 text-xs font-medium uppercase tracking-[0.12em] text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-orange/20"
+            >
+              Become a Part
+            </a>
           </div>
         </Container>
 

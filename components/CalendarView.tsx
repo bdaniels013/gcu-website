@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { gala, schedule } from "@/lib/event";
 import {
@@ -8,6 +7,7 @@ import {
   studiesOnWeekday,
   shortTime,
   galaDate,
+  galaIcsUrl,
   icsUrl,
   nextOccurrence,
 } from "@/lib/calendar";
@@ -192,14 +192,14 @@ export function CalendarView({
                   </a>
                 ))}
                 {isGala && (
-                  <Link
-                    href="/gala"
-                    title={`${gala.title} — ${gala.theme}`}
+                  <a
+                    href={galaIcsUrl}
+                    title={`${gala.title} — ${gala.theme} (tap to add to your calendar)`}
                     className="block truncate rounded bg-teal px-1 py-0.5 text-[9px] font-bold leading-tight text-white transition-colors hover:bg-teal-deep sm:text-[10px]"
                   >
                     <span className="sm:hidden">Gala</span>
                     <span className="hidden sm:inline">The Gala</span>
-                  </Link>
+                  </a>
                 )}
               </div>
             </div>
