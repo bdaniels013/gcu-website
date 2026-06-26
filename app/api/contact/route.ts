@@ -55,8 +55,12 @@ export async function POST(req: Request) {
   });
 
   if (error) {
+    console.error("Resend send error:", error);
     return NextResponse.json(
-      { error: "Sorry, something went wrong sending your message." },
+      {
+        error: "Sorry, something went wrong sending your message.",
+        detail: `${error.name}: ${error.message}`,
+      },
       { status: 502 },
     );
   }
