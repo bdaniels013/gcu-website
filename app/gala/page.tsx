@@ -11,11 +11,8 @@ export const metadata: Metadata = {
     "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, September 17, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
 };
 
-const reserveHref = `mailto:${gala.email}?subject=${encodeURIComponent(
-  "GC Underground Gala — Tickets / Tables / Sponsorship",
-)}&body=${encodeURIComponent(
-  "Hi! I'd like more information about the GC Underground Gala (Sept 17, 2026).\n\nName:\nPhone:\nI'm interested in: (tickets / a table / sponsorship)\n",
-)}`;
+// Gala inquiries (tickets, tables, sponsorship) route to the contact form.
+const reserveHref = "/contact";
 
 export default function GalaPage() {
   return (
@@ -128,14 +125,14 @@ export default function GalaPage() {
                     Tickets &amp; Tables
                   </dt>
                   <dd className="mt-1 text-base text-mist">
-                    {gala.ticketNote}. Email{" "}
+                    {gala.ticketNote}.{" "}
                     <a
                       href={reserveHref}
                       className="font-semibold text-teal hover:underline"
                     >
-                      {gala.email}
+                      Reserve your spot
                     </a>{" "}
-                    for more information now.
+                    and we&apos;ll follow up with the details.
                   </dd>
                 </div>
               </dl>
@@ -297,12 +294,12 @@ export default function GalaPage() {
           </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-mist-soft">
-            Interested in sponsoring or have questions? Email{" "}
+            Interested in sponsoring or have questions?{" "}
             <a
               href={reserveHref}
               className="font-semibold text-teal hover:underline"
             >
-              {gala.email}
+              Reach out through our contact form
             </a>{" "}
             and we&apos;ll follow up with you.
           </p>

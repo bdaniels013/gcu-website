@@ -4,6 +4,8 @@ import { useState } from "react";
 
 const CONTACT_EMAIL = "gcundergroundmission@gmail.com";
 
+type Status = "idle" | "sending" | "sent" | "error";
+
 const areas = [
   "Gulfport",
   "Biloxi",
@@ -17,31 +19,42 @@ const areas = [
 /** "Connect With Us" form, styled for the dark teal section (matches the live
  *  site's Connect form: Name, Phone, Email, where you live, Message). */
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") || "");
-    const phone = String(data.get("phone") || "");
-    const email = String(data.get("email") || "");
-    const area = String(data.get("area") || "");
-    const message = String(data.get("message") || "");
+    if (status === "sending") return;
+    const formEl = e.currentTarget;
+    const data = new FormData(formEl);
+    const payload = {
+      name: String(data.get("name") || ""),
+      phone: String(data.get("phone") || ""),
+      email: String(data.get("email") || ""),
+      area: String(data.get("area") || ""),
+      message: String(data.get("message") || ""),
+    };
 
-    const subject = "Website inquiry, Connect With Us";
-    const body = [
-      `Name: ${name}`,
-      `Phone: ${phone}`,
-      `Email: ${email}`,
-      `Where they live: ${area}`,
-      "",
-      message,
-    ].join("\n");
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-    setSubmitted(true);
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        setStatus("sent");
+        formEl.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error || "Sorry, something went wrong.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Couldn't reach the server. Please try again.");
+      setStatus("error");
+    }
   }
 
   const field =
@@ -121,15 +134,24 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="rounded-[3px] bg-white px-7 py-3 text-sm font-bold uppercase tracking-[0.12em] text-teal transition-colors hover:bg-white/90"
+        disabled={status === "sending"}
+        className="rounded-[3px] bg-white px-7 py-3 text-sm font-bold uppercase tracking-[0.12em] text-teal transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-70"
       >
-        Send
+        {status === "sending" ? "Sending…" : "Send"}
       </button>
 
-      {submitted && (
-        <p className="text-sm text-white/80">
-          Your email app should have opened with your message. If it
-          didn&apos;t, email us directly at {CONTACT_EMAIL}.
+      {status === "sent" && (
+        <p className="text-sm font-medium text-white">
+          Thanks! Your message has been sent. We&apos;ll be in touch soon.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="text-sm text-white/90">
+          {errorMsg} You can also email us directly at{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+            {CONTACT_EMAIL}
+          </a>
+          .
         </p>
       )}
     </form>
