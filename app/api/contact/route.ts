@@ -7,7 +7,7 @@ import { Resend } from "resend";
 const TO_EMAIL = "gcundergroundmission@gmail.com";
 const FROM_EMAIL =
   process.env.CONTACT_FROM ??
-  "GC Underground <noreply@gulfcoastunderground.org>";
+  "GC Underground <noreply@mail.gulfcoastunderground.com>";
 
 export async function POST(req: Request) {
   const apiKey = process.env.RESEND_API_KEY;
