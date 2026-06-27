@@ -11,8 +11,9 @@ export const metadata: Metadata = {
     "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, September 17, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
 };
 
-// Gala inquiries (tickets, tables, sponsorship) route to the contact form.
-const reserveHref = "/contact";
+// Gala CTAs route to the dedicated gala form, pre-selecting the intent.
+const reserveHref = "/gala/reserve";
+const sponsorHref = "/gala/reserve?type=sponsor";
 
 export default function GalaPage() {
   return (
@@ -58,7 +59,7 @@ export default function GalaPage() {
               Reserve Your Spot
             </a>
             <Link
-              href="#sponsor"
+              href={sponsorHref}
               className="inline-flex items-center justify-center rounded-[3px] border border-white/40 px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-white/10"
             >
               Become a Sponsor
@@ -280,7 +281,7 @@ export default function GalaPage() {
                   ))}
                 </ul>
                 <a
-                  href={reserveHref}
+                  href={`${sponsorHref}&level=${encodeURIComponent(tier.name)}`}
                   className={`mt-7 inline-flex items-center justify-center rounded-[3px] px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-colors ${
                     tier.highlighted
                       ? "bg-white text-teal hover:bg-white/90"
@@ -296,10 +297,10 @@ export default function GalaPage() {
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-mist-soft">
             Interested in sponsoring or have questions?{" "}
             <a
-              href={reserveHref}
+              href={sponsorHref}
               className="font-semibold text-teal hover:underline"
             >
-              Reach out through our contact form
+              Start a sponsorship inquiry
             </a>{" "}
             and we&apos;ll follow up with you.
           </p>

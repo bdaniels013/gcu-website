@@ -1,23 +1,7 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-// Inquiries are delivered to the ministry inbox, sent from an address on the
-// Resend-verified domain. Override the sender with the CONTACT_FROM env var if
-// you use a different verified domain or local-part.
-const TO_EMAIL = "gcundergroundmission@gmail.com";
-const FROM_EMAIL =
-  process.env.CONTACT_FROM ??
-  "GC Underground <noreply@mail.gulfcoastunderground.org>";
+import { sendMinistryEmail } from "@/lib/resendMail";
 
 export async function POST(req: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json(
-      { error: "Email is not configured yet." },
-      { status: 500 },
-    );
-  }
-
   let body: Record<string, string>;
   try {
     body = await req.json();
@@ -38,12 +22,9 @@ export async function POST(req: Request) {
     );
   }
 
-  const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
-    from: FROM_EMAIL,
-    to: TO_EMAIL,
-    replyTo: email,
+  const result = await sendMinistryEmail({
     subject: `Website inquiry from ${name}`,
+    replyTo: email,
     text: [
       `Name:  ${name}`,
       `Email: ${email}`,
@@ -54,13 +35,8 @@ export async function POST(req: Request) {
     ].join("\n"),
   });
 
-  if (error) {
-    console.error("Resend send error:", error);
-    return NextResponse.json(
-      { error: "Sorry, something went wrong sending your message." },
-      { status: 502 },
-    );
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error }, { status: result.status });
   }
-
   return NextResponse.json({ ok: true });
 }
