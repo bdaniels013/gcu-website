@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui";
@@ -20,41 +21,31 @@ export default function GalaPage() {
     <>
       {/* ───────── Hero (dark nautical) ───────── */}
       <section className="relative isolate overflow-hidden bg-teal-darkest">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-teal-deep/40 via-teal-darkest to-teal-darkest" />
-        <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-teal/20 blur-3xl" />
-        <div className="pointer-events-none absolute right-[10%] top-[20%] h-40 w-40 rounded-full bg-orange/20 blur-3xl" />
+        {/* Full gala banner artwork — the square flyer on mobile, the wide
+            banner on larger screens. It carries the title / theme / date, so
+            the hero text below is just the live countdown and the CTAs. A soft
+            gradient melts the banner's bottom edge into the dark band. */}
+        <div className="relative">
+          <img
+            src="/images/popup-flyer-mobile.jpg"
+            alt="Second Annual GC Underground Gala, Fishers of Men"
+            className="block w-full sm:hidden"
+          />
+          <img
+            src="/images/popup-flyer-desktop.jpg"
+            alt="Second Annual GC Underground Gala, Fishers of Men"
+            className="hidden w-full sm:block"
+          />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-teal-darkest" />
+        </div>
 
-        <Container className="relative py-20 text-center sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-seafoam sm:text-sm">
-            {gala.ordinal}
-          </p>
-          <h1 className="mt-5 text-[2.5rem] font-medium uppercase leading-[0.95] tracking-tight text-white sm:text-7xl">
-            {gala.title}
-          </h1>
-          <p className="mt-6 text-2xl font-medium italic text-amber sm:text-4xl">
-            “{gala.theme}”
-          </p>
-          <p className="mt-4 text-sm uppercase tracking-[0.2em] text-white/70 sm:text-base">
-            {gala.tagline}
-          </p>
+        <Container className="relative pb-16 pt-8 text-center sm:pb-20 sm:pt-10">
+          <GalaCountdown />
 
-          <div className="mt-8 flex flex-col items-center gap-1 text-white/85">
-            <p className="text-base font-semibold sm:text-lg">
-              {gala.dateLabel} · {gala.timeLabel}
-            </p>
-            <p className="text-sm text-white/70">
-              {gala.venue} · {gala.venueAddress}
-            </p>
-          </div>
-
-          <div className="mt-10">
-            <GalaCountdown />
-          </div>
-
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href={reserveHref}
-              className="inline-flex items-center justify-center rounded-[3px] bg-orange px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-orange-deep"
+              className="inline-flex items-center justify-center rounded-[3px] bg-orange px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-black/30 transition-colors hover:bg-orange-deep"
             >
               Reserve Your Spot
             </a>
@@ -65,7 +56,7 @@ export default function GalaPage() {
               Become a Sponsor
             </Link>
           </div>
-          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-white/55">
+          <p className="mt-4 text-xs uppercase tracking-[0.25em] text-white/60">
             {gala.ticketNote}
           </p>
         </Container>
