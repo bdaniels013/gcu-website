@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { EventPopup } from "@/components/EventPopup";
 import { CountdownBar } from "@/components/CountdownBar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -73,6 +74,7 @@ export default function RootLayout({
         <EventPopup />
         <CountdownBar />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
