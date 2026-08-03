@@ -65,7 +65,7 @@ export function EventPopup() {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="animate-fade-in relative w-full max-w-sm overflow-hidden rounded-2xl bg-ink shadow-2xl sm:max-w-md">
+      <div className="animate-fade-in relative w-full max-w-sm overflow-hidden rounded-2xl bg-ink shadow-2xl sm:max-w-3xl">
         <button
           type="button"
           onClick={close}
@@ -89,11 +89,16 @@ export function EventPopup() {
           onClick={close}
           aria-label="Gala details"
         >
-          {/* Full gala flyer (all details included) */}
+          {/* Mobile: vertical flyer; desktop: wide 16:9 banner */}
           <img
             src="/images/gala-flyer.jpg"
             alt={`${gala.title} — ${gala.theme}. ${gala.dateLabel}, ${gala.timeLabel}, ${gala.venue}.`}
-            className="block w-full"
+            className="block w-full sm:hidden"
+          />
+          <img
+            src="/images/gala-banner-wide.jpg"
+            alt={`${gala.title} — ${gala.theme}. ${gala.dateLabel}, ${gala.timeLabel}, ${gala.venue}.`}
+            className="hidden w-full sm:block"
           />
         </Link>
 
