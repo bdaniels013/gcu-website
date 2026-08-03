@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 const reserveHref = "/gala/reserve";
 const sponsorHref = "/gala/reserve?type=sponsor";
 
+// Gala announcement video (swap the ID to change the video).
+const GALA_VIDEO_ID = "WdG6KgQog0U";
+
 export default function GalaPage() {
   return (
     <>
@@ -75,6 +78,30 @@ export default function GalaPage() {
                 “{v}”
               </p>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ───────── Video ───────── */}
+      <section className="border-t border-black/10 bg-ink">
+        <Container className="py-16 text-center sm:py-20">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
+            Watch
+          </p>
+          <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
+            Gala Announcement
+          </h2>
+          <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-xl border border-black/10 bg-black shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}`}
+                title="GCU Gala Announcement"
+                className="h-full w-full"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
           </div>
         </Container>
       </section>
