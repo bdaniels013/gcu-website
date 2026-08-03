@@ -9,7 +9,7 @@ import { gala, galaSponsorTiers, galaTickets } from "@/lib/event";
 export const metadata: Metadata = {
   title: "GC Underground Gala, Fishers of Men",
   description:
-    "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, September 17, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
+    "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, October 29, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
 };
 
 // Gala CTAs route to the dedicated gala form, pre-selecting the intent.
@@ -21,26 +21,26 @@ export default function GalaPage() {
     <>
       {/* ───────── Hero (dark nautical) ───────── */}
       <section className="relative isolate overflow-hidden bg-teal-darkest">
-        {/* Full gala banner artwork — the square flyer on mobile, the wide
-            banner on larger screens. It carries the title / theme / date, so
-            the hero text below is just the live countdown and the CTAs. A soft
-            gradient melts the banner's bottom edge into the dark band. */}
-        <div className="relative">
-          <img
-            src="/images/popup-flyer-mobile.jpg"
-            alt="Second Annual GC Underground Gala, Fishers of Men"
-            className="block w-full sm:hidden"
-          />
-          <img
-            src="/images/popup-flyer-desktop.jpg"
-            alt="Second Annual GC Underground Gala, Fishers of Men"
-            className="hidden w-full sm:block"
-          />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-teal-darkest" />
-        </div>
+        {/* The vertical flyer carries the title / theme / date. A blurred copy
+            fills the width behind the sharp, centered poster. */}
+        <img
+          src="/images/gala-flyer.jpg"
+          alt=""
+          aria-hidden
+          className="absolute inset-0 -z-20 h-full w-full scale-110 object-cover blur-2xl brightness-[0.4]"
+        />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-teal-darkest/25 via-teal-darkest/20 to-teal-darkest" />
 
-        <Container className="relative pb-16 pt-8 text-center sm:pb-20 sm:pt-10">
-          <GalaCountdown />
+        <Container className="relative pb-16 pt-10 text-center sm:pb-20 sm:pt-12">
+          <img
+            src="/images/gala-flyer.jpg"
+            alt="Second Annual GC Underground Gala, Fishers of Men — Thursday, October 29, 2026"
+            className="mx-auto w-full max-w-sm rounded-xl shadow-2xl shadow-black/50 sm:max-w-md"
+          />
+
+          <div className="mt-10">
+            <GalaCountdown />
+          </div>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a

@@ -23,8 +23,8 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:fishers-of-men-gala-2026@gulfcoastunderground.org
 DTSTAMP:20260101T000000Z
-DTSTART;TZID=America/Chicago:20260917T180000
-DTEND;TZID=America/Chicago:20260917T210000
+DTSTART;TZID=America/Chicago:20261029T180000
+DTEND;TZID=America/Chicago:20261029T210000
 SUMMARY:GC Underground Gala - Fishers of Men
 LOCATION:Biloxi Visitors Center\, 1050 Beach Blvd\, Biloxi\, MS 39530
 DESCRIPTION:Second Annual GC Underground Gala. A night of breaking bread and spreading the Gospel.

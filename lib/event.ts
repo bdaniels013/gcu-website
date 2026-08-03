@@ -30,7 +30,7 @@ export const featuredEvent: FeaturedEvent = {
   tagline: "Second Annual · “Fishers of Men”",
   description:
     "A night of breaking bread & spreading the Gospel. Tickets, tables & sponsorships available.",
-  startsAt: "2026-09-17T18:00:00",
+  startsAt: "2026-10-29T18:00:00",
   location: "Biloxi Visitors Center",
   address: "1050 Beach Blvd, Biloxi, MS 39530",
   ctaLabel: "Learn More About the Event",
@@ -50,11 +50,11 @@ export const gala = {
     "Blessed are the poor in spirit, for theirs is the kingdom of heaven.",
     "Where the harvest is plentiful, but the laborers are few.",
   ],
-  dateLabel: "Thursday, September 17, 2026",
+  dateLabel: "Thursday, October 29, 2026",
   timeLabel: "6:00 – 9:00 PM",
   venue: "Biloxi Visitors Center",
   venueAddress: "1050 Beach Blvd, Biloxi, MS 39530",
-  startsAtISO: "2026-09-17T18:00:00",
+  startsAtISO: "2026-10-29T18:00:00",
   ticketNote: "Tickets, tables & sponsorships available",
   email: galaEmail,
 };
@@ -218,7 +218,7 @@ export const events: GcuEvent[] = [
   {
     id: "underground-gala-2026",
     title: "Second Annual GC Underground Gala, “Fishers of Men”",
-    date: "2026-09-17T18:00:00",
+    date: "2026-10-29T18:00:00",
     endTime: "9:00 PM",
     location: "Biloxi Visitors Center",
     address: "Biloxi Visitors Center · Biloxi, MS",
