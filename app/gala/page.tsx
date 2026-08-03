@@ -22,7 +22,20 @@ const GALA_VIDEO_ID = "WdG6KgQog0U";
 export default function GalaPage() {
   return (
     <>
-      {/* ───────── Hero (dark nautical) ───────── */}
+      {/* ───────── Announcement video (top, autoplays) ───────── */}
+      <section className="bg-teal-darkest">
+        <div className="aspect-video w-full">
+          <iframe
+            src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}?autoplay=1&playsinline=1&rel=0`}
+            title="GCU Gala Announcement"
+            className="h-full w-full"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </section>
+
+      {/* ───────── Hero (banner) ───────── */}
       <section className="relative isolate overflow-hidden bg-teal-darkest">
         {/* Full gala flyer — the vertical flyer on mobile, the wide 16:9
             banner on larger screens. It carries the title / theme / date, so
@@ -78,30 +91,6 @@ export default function GalaPage() {
                 “{v}”
               </p>
             ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* ───────── Video ───────── */}
-      <section className="border-t border-black/10 bg-ink">
-        <Container className="py-16 text-center sm:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
-            Watch
-          </p>
-          <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
-            Gala Announcement
-          </h2>
-          <div className="mx-auto mt-8 max-w-3xl overflow-hidden rounded-xl border border-black/10 bg-black shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
-            <div className="aspect-video">
-              <iframe
-                src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}`}
-                title="GCU Gala Announcement"
-                className="h-full w-full"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
           </div>
         </Container>
       </section>
