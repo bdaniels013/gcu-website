@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui";
 import { TornDivider } from "@/components/TornDivider";
 import { GalaCountdown } from "@/components/GalaCountdown";
+import { GalaVideo } from "@/components/GalaVideo";
 import { gala, galaSponsorTiers, galaTickets } from "@/lib/event";
 
 export const metadata: Metadata = {
@@ -66,17 +67,9 @@ export default function GalaPage() {
         <TornDivider fill="fill-ink" position="bottom" />
       </section>
 
-      {/* ───────── Announcement video (autoplays) ───────── */}
+      {/* ───────── Announcement video (plays on scroll into view) ───────── */}
       <section className="bg-ink">
-        <div className="aspect-video w-full">
-          <iframe
-            src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}?autoplay=1&playsinline=1&rel=0`}
-            title="GCU Gala Announcement"
-            className="h-full w-full"
-            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
+        <GalaVideo videoId={GALA_VIDEO_ID} title="GCU Gala Announcement" />
       </section>
 
       {/* ───────── Scripture ───────── */}
