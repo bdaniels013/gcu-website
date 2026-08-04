@@ -22,19 +22,6 @@ const GALA_VIDEO_ID = "WdG6KgQog0U";
 export default function GalaPage() {
   return (
     <>
-      {/* ───────── Announcement video (top, autoplays) ───────── */}
-      <section className="bg-teal-darkest">
-        <div className="aspect-video w-full">
-          <iframe
-            src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}?autoplay=1&playsinline=1&rel=0`}
-            title="GCU Gala Announcement"
-            className="h-full w-full"
-            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
-        </div>
-      </section>
-
       {/* ───────── Hero (banner) ───────── */}
       <section className="relative isolate overflow-hidden bg-teal-darkest">
         {/* Full gala flyer — the vertical flyer on mobile, the wide 16:9
@@ -77,6 +64,19 @@ export default function GalaPage() {
         </Container>
 
         <TornDivider fill="fill-ink" position="bottom" />
+      </section>
+
+      {/* ───────── Announcement video (autoplays) ───────── */}
+      <section className="bg-ink">
+        <div className="aspect-video w-full">
+          <iframe
+            src={`https://www.youtube.com/embed/${GALA_VIDEO_ID}?autoplay=1&playsinline=1&rel=0`}
+            title="GCU Gala Announcement"
+            className="h-full w-full"
+            allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
       </section>
 
       {/* ───────── Scripture ───────── */}
