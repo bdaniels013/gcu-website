@@ -5,7 +5,7 @@ import { Container } from "@/components/ui";
 import { TornDivider } from "@/components/TornDivider";
 import { GalaCountdown } from "@/components/GalaCountdown";
 import { GalaVideo } from "@/components/GalaVideo";
-import { gala, galaSponsorTiers, galaTickets } from "@/lib/event";
+import { gala, galaTickets } from "@/lib/event";
 
 export const metadata: Metadata = {
   title: "GC Underground Gala, Fishers of Men",
@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 // Gala CTAs route to the dedicated gala form, pre-selecting the intent.
 const reserveHref = "/gala/reserve";
 const sponsorHref = "/gala/reserve?type=sponsor";
+// Sponsor package PDF (served from /public/docs).
+const sponsorPdfHref = "/docs/gc-underground-gala-sponsor-package.pdf";
 
 // Gala announcement video (swap the ID to change the video).
 const GALA_VIDEO_ID = "WdG6KgQog0U";
@@ -67,8 +69,9 @@ export default function GalaPage() {
         <TornDivider fill="fill-ink" position="bottom" />
       </section>
 
-      {/* ───────── Announcement video (plays on scroll into view) ───────── */}
-      <section className="bg-ink">
+      {/* ───────── Announcement video (plays on scroll into view) ─────────
+          White breathing room above the video separates it from the hero. */}
+      <section className="bg-ink pt-12 sm:pt-16 lg:pt-20">
         <GalaVideo videoId={GALA_VIDEO_ID} title="GCU Gala Announcement" />
       </section>
 
@@ -197,111 +200,33 @@ export default function GalaPage() {
       >
         <Container className="py-16 sm:py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal">
-              Partner With Us
+            <p className="text-base leading-relaxed text-mist-soft">
+              <strong className="font-bold text-mist">Partner with us</strong>{" "}
+              and change eternity. Thank you for considering a sponsorship of
+              the GC Underground Gala — every level helps spread the Gospel
+              across the Gulf Coast.
             </p>
-            <h2 className="mt-3 text-3xl font-medium uppercase tracking-tight text-mist sm:text-4xl">
-              Sponsorship Opportunities
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-mist-soft">
-              Partner with us and change eternity. Thank you for considering a
-              sponsorship of the GC Underground Gala — every level helps spread
-              the Gospel across the Gulf Coast.
-            </p>
-          </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {galaSponsorTiers.map((tier) => (
-              <div
-                key={tier.name}
-                className={`flex flex-col rounded-md border p-7 ${
-                  tier.highlighted
-                    ? "border-teal bg-teal text-white shadow-[0_8px_30px_rgba(0,84,94,0.25)]"
-                    : "border-black/[0.07] bg-ink-card shadow-[0_2px_20px_rgba(0,0,0,0.05)]"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3
-                      className={`text-lg font-medium uppercase tracking-wide ${
-                        tier.highlighted ? "text-white" : "text-mist"
-                      }`}
-                    >
-                      {tier.name}
-                    </h3>
-                    {tier.subtitle && (
-                      <p
-                        className={`mt-0.5 text-xs italic ${
-                          tier.highlighted ? "text-white/80" : "text-mist-soft"
-                        }`}
-                      >
-                        {tier.subtitle}
-                      </p>
-                    )}
-                  </div>
-                  {tier.availability && (
-                    <span
-                      className={`flex-none rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${
-                        tier.highlighted
-                          ? "bg-white/20 text-white"
-                          : "bg-orange/15 text-orange-deep"
-                      }`}
-                    >
-                      {tier.availability}
-                    </span>
-                  )}
-                </div>
-                <p
-                  className={`mt-3 text-3xl font-bold ${
-                    tier.highlighted ? "text-white" : "text-teal"
-                  }`}
-                >
-                  {tier.price}
-                </p>
-                <ul className="mt-5 flex-1 space-y-2.5 text-sm leading-relaxed">
-                  {tier.benefits.map((b) => (
-                    <li key={b} className="flex gap-2.5">
-                      <span
-                        className={
-                          tier.highlighted ? "text-white" : "text-teal"
-                        }
-                        aria-hidden
-                      >
-                        ✦
-                      </span>
-                      <span
-                        className={
-                          tier.highlighted ? "text-white/90" : "text-mist-soft"
-                        }
-                      >
-                        {b}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={`${sponsorHref}&level=${encodeURIComponent(tier.name)}`}
-                  className={`mt-7 inline-flex items-center justify-center rounded-[3px] px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition-colors ${
-                    tier.highlighted
-                      ? "bg-white text-teal hover:bg-white/90"
-                      : "bg-orange text-white hover:bg-orange-deep"
-                  }`}
-                >
-                  Become a Sponsor
-                </a>
-              </div>
-            ))}
+            {/* Large link to the downloadable sponsor package */}
+            <a
+              href={sponsorPdfHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex max-w-full items-center justify-center rounded-[3px] bg-orange px-8 py-4 text-center text-lg font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-black/10 transition-colors hover:bg-orange-deep sm:px-10 sm:text-xl"
+            >
+              Click here for sponsor info
+            </a>
           </div>
 
           <p className="mx-auto mt-10 max-w-2xl text-center text-sm text-mist-soft">
-            Interested in sponsoring or have questions?{" "}
+            Do You Have Questions?{" "}
             <a
               href={sponsorHref}
               className="font-semibold text-teal hover:underline"
             >
               Start a sponsorship inquiry
-            </a>{" "}
-            and we&apos;ll follow up with you.
+            </a>
+            .
           </p>
         </Container>
       </section>
