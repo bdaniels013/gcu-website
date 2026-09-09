@@ -7,10 +7,39 @@ import { GalaCountdown } from "@/components/GalaCountdown";
 import { GalaVideo } from "@/components/GalaVideo";
 import { gala, galaTickets } from "@/lib/event";
 
+const GALA_TITLE = "GC Underground Gala, Fishers of Men";
+const GALA_DESCRIPTION =
+  "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, October 29, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.";
+// The short, shareable address shown in link previews (og:url).
+const GALA_SHARE_URL = "https://gulfcoastunderground.org/gala";
+// Wide 16:9 gala banner used as the link-preview image when the page is shared.
+const GALA_SHARE_IMAGE = {
+  url: "/images/gala-banner-wide.jpg",
+  width: 1920,
+  height: 1080,
+  alt: "Second Annual GC Underground Gala, Fishers of Men — Thursday, October 29, 2026",
+};
+
 export const metadata: Metadata = {
-  title: "GC Underground Gala, Fishers of Men",
-  description:
-    "Join us for the Second Annual GC Underground Gala, “Fishers of Men.” A night of breaking bread & spreading the Gospel. Thursday, October 29, 2026, 6:00–9:00 PM at the Biloxi Visitors Center.",
+  title: GALA_TITLE,
+  description: GALA_DESCRIPTION,
+  // Resolved against metadataBase (the live production host on Vercel).
+  alternates: { canonical: "/gala/" },
+  openGraph: {
+    title: GALA_TITLE,
+    description: GALA_DESCRIPTION,
+    url: GALA_SHARE_URL,
+    siteName: "Gulf Coast Underground",
+    type: "website",
+    locale: "en_US",
+    images: [GALA_SHARE_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: GALA_TITLE,
+    description: GALA_DESCRIPTION,
+    images: [GALA_SHARE_IMAGE],
+  },
 };
 
 // Gala CTAs route to the dedicated gala form, pre-selecting the intent.
