@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/ui";
 import { TornDivider } from "@/components/TornDivider";
 import { GalaCountdown } from "@/components/GalaCountdown";
@@ -47,6 +46,8 @@ const reserveHref = "/gala/reserve";
 const sponsorHref = "/gala/reserve?type=sponsor";
 // Sponsor package PDF (served from /public/docs).
 const sponsorPdfHref = "/docs/gc-underground-gala-sponsor-package.pdf";
+// External Tithe.ly event registration (individual tickets).
+const registerHref = "https://tithe.ly/event-registration/#/11269969";
 
 // Gala announcement video (swap the ID to change the video).
 const GALA_VIDEO_ID = "WdG6KgQog0U";
@@ -78,17 +79,21 @@ export default function GalaPage() {
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={reserveHref}
+              href={registerHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-[3px] bg-orange px-8 py-3.5 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-black/30 transition-colors hover:bg-orange-deep"
             >
-              Reserve Your Spot
+              Register Here
             </a>
-            <Link
-              href={sponsorHref}
+            <a
+              href={sponsorPdfHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-[3px] border border-white/40 px-8 py-3.5 text-sm font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-white/10"
             >
               Become a Sponsor
-            </Link>
+            </a>
           </div>
           <p className="mt-4 text-xs uppercase tracking-[0.25em] text-white/60">
             {gala.ticketNote}
@@ -171,41 +176,54 @@ export default function GalaPage() {
 
               {/* Ticket / table options */}
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {galaTickets.map((tk) => (
-                  <div
-                    key={tk.name}
-                    className="rounded-md border border-black/[0.07] bg-ink p-5 shadow-[0_2px_14px_rgba(0,0,0,0.05)]"
-                  >
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="text-base font-medium uppercase tracking-tight text-mist">
-                        {tk.name}
-                      </h3>
-                      <span className="text-lg font-bold text-teal">
-                        {tk.price}
-                      </span>
+                {galaTickets.map((tk) => {
+                  const isTable = tk.name === "Mission Table";
+                  return (
+                    <div
+                      key={tk.name}
+                      className="flex flex-col rounded-md border border-black/[0.07] bg-ink p-5 shadow-[0_2px_14px_rgba(0,0,0,0.05)]"
+                    >
+                      <div className="flex items-baseline justify-between">
+                        <h3 className="text-base font-medium uppercase tracking-tight text-mist">
+                          {tk.name}
+                        </h3>
+                        <span className="text-lg font-bold text-teal">
+                          {tk.price}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs text-mist-soft">{tk.note}</p>
+                      <ul className="mt-3 space-y-1 text-[13px] text-mist-soft">
+                        {tk.includes.map((inc) => (
+                          <li key={inc} className="flex gap-2">
+                            <span className="text-teal" aria-hidden>
+                              ·
+                            </span>
+                            {inc}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-auto pt-5">
+                        {isTable ? (
+                          <a
+                            href={reserveHref}
+                            className="inline-flex w-full items-center justify-center rounded-[3px] bg-orange px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange-deep"
+                          >
+                            Reserve a Table
+                          </a>
+                        ) : (
+                          <a
+                            href={registerHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex w-full items-center justify-center rounded-[3px] bg-orange px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-orange-deep"
+                          >
+                            Register Here
+                          </a>
+                        )}
+                      </div>
                     </div>
-                    <p className="mt-1 text-xs text-mist-soft">{tk.note}</p>
-                    <ul className="mt-3 space-y-1 text-[13px] text-mist-soft">
-                      {tk.includes.map((inc) => (
-                        <li key={inc} className="flex gap-2">
-                          <span className="text-teal" aria-hidden>
-                            ·
-                          </span>
-                          {inc}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8">
-                <a
-                  href={reserveHref}
-                  className="inline-flex rounded-[3px] bg-orange px-7 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-orange-deep"
-                >
-                  Reserve Your Spot
-                </a>
+                  );
+                })}
               </div>
             </div>
 
