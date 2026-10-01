@@ -7,17 +7,11 @@ import { galaSponsorTiers, galaTickets } from "@/lib/event";
 const CONTACT_EMAIL = "gcundergroundmission@gmail.com";
 
 type Status = "idle" | "sending" | "sent" | "error";
-type Intent = "tickets" | "table" | "sponsor";
+type Intent = "table" | "sponsor";
 
-const individual = galaTickets.find((t) => t.name === "Individual Ticket");
 const table = galaTickets.find((t) => t.name === "Mission Table");
 
 const intentOptions: { id: Intent; label: string; sub: string }[] = [
-  {
-    id: "tickets",
-    label: "Individual Tickets",
-    sub: individual ? `${individual.price} per guest` : "Per guest",
-  },
   {
     id: "table",
     label: "Reserve a Table",
@@ -34,8 +28,7 @@ export function GalaForm() {
   const params = useSearchParams();
   const typeParam = params.get("type");
   const levelParam = params.get("level") || "";
-  const initialIntent: Intent =
-    typeParam === "sponsor" ? "sponsor" : typeParam === "table" ? "table" : "tickets";
+  const initialIntent: Intent = typeParam === "sponsor" ? "sponsor" : "table";
 
   const [intent, setIntent] = useState<Intent>(initialIntent);
   const [status, setStatus] = useState<Status>("idle");
@@ -51,7 +44,6 @@ export function GalaForm() {
       name: String(data.get("name") || ""),
       email: String(data.get("email") || ""),
       phone: String(data.get("phone") || ""),
-      ticketQty: String(data.get("ticketQty") || ""),
       tableQty: String(data.get("tableQty") || ""),
       sponsorLevel: String(data.get("sponsorLevel") || ""),
       message: String(data.get("message") || ""),
@@ -103,7 +95,7 @@ export function GalaForm() {
       {/* Intent selector */}
       <fieldset>
         <legend className={label}>I&apos;m interested in</legend>
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2">
           {intentOptions.map((o) => {
             const active = intent === o.id;
             return (
@@ -176,26 +168,6 @@ export function GalaForm() {
       </div>
 
       {/* Conditional fields */}
-      {intent === "tickets" && (
-        <div>
-          <label className={label} htmlFor="g-ticketQty">
-            How many tickets?
-          </label>
-          <input
-            id="g-ticketQty"
-            name="ticketQty"
-            type="number"
-            min={1}
-            defaultValue={1}
-            className={`${field} max-w-[140px]`}
-          />
-          {individual && (
-            <p className="mt-1.5 text-xs text-mist-soft">
-              {individual.price} per guest · includes dinner &amp; program.
-            </p>
-          )}
-        </div>
-      )}
       {intent === "table" && (
         <div>
           <label className={label} htmlFor="g-tableQty">

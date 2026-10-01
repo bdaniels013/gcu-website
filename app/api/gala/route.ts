@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { sendMinistryEmail } from "@/lib/resendMail";
 
 const INTENT_LABEL: Record<string, string> = {
-  tickets: "Individual Tickets",
   table: "Mission Table",
   sponsor: "Sponsorship",
 };
@@ -19,7 +18,6 @@ export async function POST(req: Request) {
   const email = (body.email ?? "").trim();
   const phone = (body.phone ?? "").trim();
   const intent = (body.intent ?? "").trim();
-  const ticketQty = (body.ticketQty ?? "").trim();
   const tableQty = (body.tableQty ?? "").trim();
   const sponsorLevel = (body.sponsorLevel ?? "").trim();
   const message = (body.message ?? "").trim();
@@ -33,7 +31,6 @@ export async function POST(req: Request) {
 
   const intentLabel = INTENT_LABEL[intent] ?? "Gala inquiry";
   const detailLines: string[] = [];
-  if (intent === "tickets") detailLines.push(`Tickets requested: ${ticketQty || "—"}`);
   if (intent === "table") detailLines.push(`Tables requested: ${tableQty || "—"}`);
   if (intent === "sponsor") detailLines.push(`Sponsorship level: ${sponsorLevel || "—"}`);
 
